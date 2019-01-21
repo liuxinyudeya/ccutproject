@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_integral_manager_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_integral_manager" id="result_T_u_integral_manager"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_integral_manager" id="param_T_u_integral_manager"/>
+<insert id="insert_t_u_integral_manager" parameterMap="param_T_u_integral_manager" >
+
+insert into t_u_integral_manager   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="item_id != null and item_id != ''">
+item_id,
+ </if>
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="goods_name != null and goods_name != ''">
+goods_name,
+ </if>
+<if test="total_num != null and total_num != ''">
+total_num,
+ </if>
+<if test="out_num != null and out_num != ''">
+out_num,
+ </if>
+<if test="integral != null and integral != ''">
+integral,
+ </if>
+<if test="goods_pic != null and goods_pic != ''">
+goods_pic,
+ </if>
+<if test="attention != null and attention != ''">
+attention,
+ </if>
+<if test="integral_type != null and integral_type != ''">
+integral_type,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="item_id != null and item_id != ''">
+#{item_id},
+ </if>
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="goods_name != null and goods_name != ''">
+#{goods_name},
+ </if>
+<if test="total_num != null and total_num != ''">
+#{total_num},
+ </if>
+<if test="out_num != null and out_num != ''">
+#{out_num},
+ </if>
+<if test="integral != null and integral != ''">
+#{integral},
+ </if>
+<if test="goods_pic != null and goods_pic != ''">
+#{goods_pic},
+ </if>
+<if test="attention != null and attention != ''">
+#{attention},
+ </if>
+<if test="integral_type != null and integral_type != ''">
+#{integral_type},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_integral_manager" parameterMap="param_T_u_integral_manager" >
+update t_u_integral_manager set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_integral_manager" parameterMap="param_T_u_integral_manager" >update t_u_integral_manager   
+
+<set>
+<if test="item_id != null and item_id != ''">
+item_id=#{item_id},
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="goods_name != null and goods_name != ''">
+goods_name=#{goods_name},
+ </if>
+<if test="total_num != null and total_num != ''">
+total_num=#{total_num},
+ </if>
+<if test="out_num != null and out_num != ''">
+out_num=#{out_num},
+ </if>
+<if test="integral != null and integral != ''">
+integral=#{integral},
+ </if>
+<if test="goods_pic != null and goods_pic != ''">
+goods_pic=#{goods_pic},
+ </if>
+<if test="attention != null and attention != ''">
+attention=#{attention},
+ </if>
+<if test="integral_type != null and integral_type != ''">
+integral_type=#{integral_type},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_integral_manager" parameterMap="param_T_u_integral_manager"  resultMap="result_T_u_integral_manager">
+select ITEM_ID,ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,GOODS_NAME,TOTAL_NUM,OUT_NUM,INTEGRAL,GOODS_PIC,ATTENTION,INTEGRAL_TYPE
+ from t_u_integral_manager where is_delete != 1<if test="item_id != null and item_id != ''">
+ and item_id=#{item_id}
+ </if>
+<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="goods_name != null and goods_name != ''">
+ and goods_name=#{goods_name}
+ </if>
+<if test="total_num != null and total_num != ''">
+ and total_num=#{total_num}
+ </if>
+<if test="out_num != null and out_num != ''">
+ and out_num=#{out_num}
+ </if>
+<if test="integral != null and integral != ''">
+ and integral=#{integral}
+ </if>
+<if test="goods_pic != null and goods_pic != ''">
+ and goods_pic=#{goods_pic}
+ </if>
+<if test="attention != null and attention != ''">
+ and attention=#{attention}
+ </if>
+<if test="integral_type != null and integral_type != ''">
+ and integral_type=#{integral_type}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.anwserview.dao.QueryQuestions_Dao_Iface">
+	<cache type="com.ccunix.icar.base.util.RedisCache" />
+	<resultMap type="com.ccunix.icar.anwserview.domain.Questions"
+		id="Questions">
+		<result column="id" property="id" />
+		<result column="topic_name" property="topic_name" />
+		<collection property="anwser"
+			ofType="com.ccunix.icar.anwserview.domain.Question_Answer">
+			<result column="topic_answer" property="topic_answer" />
+			<result column="topic_describe" property="topic_describe" />
+		</collection>
+	</resultMap>
+
+
+	<select id="queryQuestions" resultMap="Questions">
+		select
+		t.id,t.topic_name,a.topic_answer,a.topic_describe from t_u_topic
+		t,t_u_answer a where t.id=a.topic_id order by a.topic_answer
+	</select>
+
+
+
+
+
+</mapper>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_car_model_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_car_model" id="result_T_u_car_model"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_car_model" id="param_T_u_car_model"/>
+<insert id="insert_t_u_car_model" parameterMap="param_T_u_car_model" >
+
+insert into t_u_car_model   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="photo != null and photo != ''">
+photo,
+ </if>
+<if test="car_model_type_code != null and car_model_type_code != ''">
+car_model_type_code,
+ </if>
+<if test="price_of_base_service != null and price_of_base_service != ''">
+price_of_base_service,
+ </if>
+<if test="car_model_type_name != null and car_model_type_name != ''">
+car_model_type_name,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="name != null and name != ''">
+name,
+ </if>
+<if test="brand_id != null and brand_id != ''">
+brand_id,
+ </if>
+<if test="brand_name != null and brand_name != ''">
+brand_name,
+ </if>
+<if test="first_letter_of_name != null and first_letter_of_name != ''">
+first_letter_of_name,
+ </if>
+<if test="id != null and id != ''">
+id,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="photo != null and photo != ''">
+#{photo},
+ </if>
+<if test="car_model_type_code != null and car_model_type_code != ''">
+#{car_model_type_code},
+ </if>
+<if test="price_of_base_service != null and price_of_base_service != ''">
+#{price_of_base_service},
+ </if>
+<if test="car_model_type_name != null and car_model_type_name != ''">
+#{car_model_type_name},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="name != null and name != ''">
+#{name},
+ </if>
+<if test="brand_id != null and brand_id != ''">
+#{brand_id},
+ </if>
+<if test="brand_name != null and brand_name != ''">
+#{brand_name},
+ </if>
+<if test="first_letter_of_name != null and first_letter_of_name != ''">
+#{first_letter_of_name},
+ </if>
+<if test="id != null and id != ''">
+#{id},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_car_model" parameterMap="param_T_u_car_model" >
+update t_u_car_model set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_car_model" parameterMap="param_T_u_car_model" >update t_u_car_model   
+
+<set>
+<if test="photo != null and photo != ''">
+photo=#{photo},
+ </if>
+<if test="car_model_type_code != null and car_model_type_code != ''">
+car_model_type_code=#{car_model_type_code},
+ </if>
+<if test="price_of_base_service != null and price_of_base_service != ''">
+price_of_base_service=#{price_of_base_service},
+ </if>
+<if test="car_model_type_name != null and car_model_type_name != ''">
+car_model_type_name=#{car_model_type_name},
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="name != null and name != ''">
+name=#{name},
+ </if>
+<if test="brand_id != null and brand_id != ''">
+brand_id=#{brand_id},
+ </if>
+<if test="brand_name != null and brand_name != ''">
+brand_name=#{brand_name},
+ </if>
+<if test="first_letter_of_name != null and first_letter_of_name != ''">
+first_letter_of_name=#{first_letter_of_name},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_car_model" parameterMap="param_T_u_car_model"  resultMap="result_T_u_car_model">
+select PHOTO,CAR_MODEL_TYPE_CODE,PRICE_OF_BASE_SERVICE,CAR_MODEL_TYPE_NAME,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,NAME,BRAND_ID,BRAND_NAME,FIRST_LETTER_OF_NAME,ID
+ from t_u_car_model where is_delete != 1<if test="photo != null and photo != ''">
+ and photo=#{photo}
+ </if>
+<if test="car_model_type_code != null and car_model_type_code != ''">
+ and car_model_type_code=#{car_model_type_code}
+ </if>
+<if test="price_of_base_service != null and price_of_base_service != ''">
+ and price_of_base_service=#{price_of_base_service}
+ </if>
+<if test="car_model_type_name != null and car_model_type_name != ''">
+ and car_model_type_name=#{car_model_type_name}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="name != null and name != ''">
+ and name=#{name}
+ </if>
+<if test="brand_id != null and brand_id != ''">
+ and brand_id=#{brand_id}
+ </if>
+<if test="brand_name != null and brand_name != ''">
+ and brand_name=#{brand_name}
+ </if>
+<if test="first_letter_of_name != null and first_letter_of_name != ''">
+ and first_letter_of_name=#{first_letter_of_name}
+ </if>
+<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+ ORDER BY brand_name, name
+</select>
+
+
+
+
+
+</mapper>

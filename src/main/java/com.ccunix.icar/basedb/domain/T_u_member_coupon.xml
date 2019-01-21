@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_member_coupon_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_member_coupon" id="result_T_u_member_coupon"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_member_coupon" id="param_T_u_member_coupon"/>
+<insert id="insert_t_u_member_coupon" parameterMap="param_T_u_member_coupon" >
+
+insert into t_u_member_coupon   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="coupon_photo != null and coupon_photo != ''">
+coupon_photo,
+ </if>
+<if test="is_used != null and is_used != '' or is_used==0 ">
+is_used,
+ </if>
+<if test="time_used != null and time_used != ''">
+time_used,
+ </if>
+<if test="order_used != null and order_used != ''">
+order_used,
+ </if>
+<if test="order_amount != null and order_amount != ''">
+order_amount,
+ </if>
+<if test="amount_of_coupon != null and amount_of_coupon != '' or amount_of_coupon==0.0">
+amount_of_coupon,
+ </if>
+<if test="deduction_amount != null and deduction_amount != ''">
+deduction_amount,
+ </if>
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="order_owner_id != null and order_owner_id != ''">
+order_owner_id,
+ </if>
+<if test="coupon_id != null and coupon_id != ''">
+coupon_id,
+ </if>
+<if test="duration_of_use_start != null and duration_of_use_start != ''">
+duration_of_use_start,
+ </if>
+<if test="duration_of_use_end != null and duration_of_use_end != ''">
+duration_of_use_end,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="coupon_photo != null and coupon_photo != ''">
+#{coupon_photo},
+ </if>
+<if test="is_used != null and is_used != '' or is_used==0 ">
+#{is_used},
+ </if>
+<if test="time_used != null and time_used != ''">
+#{time_used},
+ </if>
+<if test="order_used != null and order_used != ''">
+#{order_used},
+ </if>
+<if test="order_amount != null and order_amount != ''">
+#{order_amount},
+ </if>
+<if test="amount_of_coupon != null and amount_of_coupon != '' or amount_of_coupon==0.0">
+#{amount_of_coupon},
+ </if>
+<if test="deduction_amount != null and deduction_amount != ''">
+#{deduction_amount},
+ </if>
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="order_owner_id != null and order_owner_id != ''">
+#{order_owner_id},
+ </if>
+<if test="coupon_id != null and coupon_id != ''">
+#{coupon_id},
+ </if>
+<if test="duration_of_use_start != null and duration_of_use_start != ''">
+#{duration_of_use_start},
+ </if>
+<if test="duration_of_use_end != null and duration_of_use_end != ''">
+#{duration_of_use_end},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_member_coupon" parameterMap="param_T_u_member_coupon" >
+update t_u_member_coupon set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_member_coupon" parameterMap="param_T_u_member_coupon" >update t_u_member_coupon   
+
+<set>
+<if test="coupon_photo != null and coupon_photo != ''">
+coupon_photo=#{coupon_photo},
+ </if>
+<if test="is_used != null and is_used != ''">
+is_used=#{is_used},
+ </if>
+<if test="time_used != null and time_used != ''">
+time_used=#{time_used},
+ </if>
+<if test="order_used != null and order_used != ''">
+order_used=#{order_used},
+ </if>
+<if test="order_amount != null and order_amount != ''">
+order_amount=#{order_amount},
+ </if>
+<if test="amount_of_coupon != null and amount_of_coupon != ''">
+amount_of_coupon=#{amount_of_coupon},
+ </if>
+<if test="deduction_amount != null and deduction_amount != ''">
+deduction_amount=#{deduction_amount},
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="order_owner_id != null and order_owner_id != ''">
+order_owner_id=#{order_owner_id},
+ </if>
+<if test="coupon_id != null and coupon_id != ''">
+coupon_id=#{coupon_id},
+ </if>
+<if test="duration_of_use_start != null and duration_of_use_start != ''">
+duration_of_use_start=#{duration_of_use_start},
+ </if>
+<if test="duration_of_use_end != null and duration_of_use_end != ''">
+duration_of_use_end=#{duration_of_use_end},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_member_coupon" parameterMap="param_T_u_member_coupon"  resultMap="result_T_u_member_coupon">
+select COUPON_PHOTO,IS_USED,TIME_USED,ORDER_USED,ORDER_AMOUNT,AMOUNT_OF_COUPON,DEDUCTION_AMOUNT,ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,ORDER_OWNER_ID,COUPON_ID,DURATION_OF_USE_START,DURATION_OF_USE_END
+ from t_u_member_coupon where is_delete != 1<if test="coupon_photo != null and coupon_photo != ''">
+ and coupon_photo=#{coupon_photo}
+ </if>
+<if test="is_used != null and is_used != ''">
+ and is_used=#{is_used}
+ </if>
+<if test="time_used != null and time_used != ''">
+ and time_used=#{time_used}
+ </if>
+<if test="order_used != null and order_used != ''">
+ and order_used=#{order_used}
+ </if>
+<if test="order_amount != null and order_amount != ''">
+ and order_amount=#{order_amount}
+ </if>
+<if test="amount_of_coupon != null and amount_of_coupon != ''">
+ and amount_of_coupon=#{amount_of_coupon}
+ </if>
+<if test="deduction_amount != null and deduction_amount != ''">
+ and deduction_amount=#{deduction_amount}
+ </if>
+<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="order_owner_id != null and order_owner_id != ''">
+ and order_owner_id=#{order_owner_id}
+ </if>
+<if test="coupon_id != null and coupon_id != ''">
+ and coupon_id=#{coupon_id}
+ </if>
+<if test="duration_of_use_start != null and duration_of_use_start != ''">
+ and duration_of_use_start=#{duration_of_use_start}
+ </if>
+<if test="duration_of_use_end != null and duration_of_use_end != ''">
+ and duration_of_use_end=#{duration_of_use_end}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

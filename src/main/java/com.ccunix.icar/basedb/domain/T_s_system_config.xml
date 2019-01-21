@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_s_system_config_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_s_system_config" id="result_T_s_system_config"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_s_system_config" id="param_T_s_system_config"/>
+<insert id="insert_t_s_system_config" parameterMap="param_T_s_system_config" >
+
+insert into t_s_system_config   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="city_id != null and city_id != ''">
+city_id,
+ </if>
+<if test="city_name != null and city_name != ''">
+city_name,
+ </if>
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="key != null and key != ''">
+key,
+ </if>
+<if test="value != null and value != ''">
+value,
+ </if>
+<if test="description != null and description != ''">
+description,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="city_id != null and city_id != ''">
+#{city_id},
+ </if>
+<if test="city_name != null and city_name != ''">
+#{city_name},
+ </if>
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="key != null and key != ''">
+#{key},
+ </if>
+<if test="value != null and value != ''">
+#{value},
+ </if>
+<if test="description != null and description != ''">
+#{description},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_s_system_config" parameterMap="param_T_s_system_config" >
+update t_s_system_config set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_s_system_config" parameterMap="param_T_s_system_config" >update t_s_system_config   
+
+<set>
+<if test="city_id != null and city_id != ''">
+city_id=#{city_id},
+ </if>
+<if test="city_name != null and city_name != ''">
+city_name=#{city_name},
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="key != null and key != ''">
+key=#{key},
+ </if>
+<if test="value != null and value != ''">
+value=#{value},
+ </if>
+<if test="description != null and description != ''">
+description=#{description},
+ </if>
+
+</set>
+ where 
+<if test="city_id != null and city_id != ''">
+ city_id=#{city_id}
+ </if>
+ <if test="key != null and key != ''">
+ and key=#{key}
+ </if>
+</update>
+<select id="queryAll_t_s_system_config" parameterMap="param_T_s_system_config"  resultMap="result_T_s_system_config">
+select CITY_ID,CITY_NAME,ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,KEY,VALUE,DESCRIPTION
+ from t_s_system_config where is_delete != 1<if test="city_id != null and city_id != ''">
+ and city_id=#{city_id}
+ </if>
+<if test="city_name != null and city_name != ''">
+ and city_name=#{city_name}
+ </if>
+<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="key != null and key != ''">
+ and key=#{key}
+ </if>
+<if test="value != null and value != ''">
+ and value=#{value}
+ </if>
+<if test="description != null and description != ''">
+ and description=#{description}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

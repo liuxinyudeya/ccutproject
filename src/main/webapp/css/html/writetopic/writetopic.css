@@ -1,0 +1,43 @@
+.content{
+	width: 100vw;
+	padding: 20px 20px;
+	background-color: #fcfcfc;
+	height: 100vh;
+}
+.topicform{
+	/*width: 50%;*/
+	/*background-color: #ecececec;*/
+}
+
+.form-control{
+	width: 50%;
+}
+.error{
+	color: red;
+}
+
+.mydisplay{
+	display: flex;
+	align-items: center;
+}
+.width50px{
+	width: 50px;
+}
+.width100px{
+	width: 100px;
+}
+.width10{
+	width: 10%;
+}
+.marginLeft10px{
+	margin-left: 10px;
+}
+.textalignright{
+	text-align: right;;
+}
+.paddingleft20{
+	padding-left: 25%;
+}
+.marginright20px{
+	margin-right: 50px;
+}

@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_receive_money_from_wechat_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_receive_money_from_wechat" id="result_T_u_receive_money_from_wechat"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_receive_money_from_wechat" id="param_T_u_receive_money_from_wechat"/>
+<insert id="insert_t_u_receive_money_from_wechat" parameterMap="param_T_u_receive_money_from_wechat" >
+
+insert into t_u_receive_money_from_wechat   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="appid != null and appid != ''">
+appid,
+ </if>
+<if test="mch_id != null and mch_id != ''">
+mch_id,
+ </if>
+<if test="device_info != null and device_info != ''">
+device_info,
+ </if>
+<if test="nonce_str != null and nonce_str != ''">
+nonce_str,
+ </if>
+<if test="result_code != null and result_code != ''">
+result_code,
+ </if>
+<if test="err_code != null and err_code != ''">
+err_code,
+ </if>
+<if test="err_code_des != null and err_code_des != ''">
+err_code_des,
+ </if>
+<if test="openid != null and openid != ''">
+openid,
+ </if>
+<if test="is_subscribe != null and is_subscribe != ''">
+is_subscribe,
+ </if>
+<if test="trade_type != null and trade_type != ''">
+trade_type,
+ </if>
+<if test="bank_type != null and bank_type != ''">
+bank_type,
+ </if>
+<if test="total_fee != null and total_fee != ''">
+total_fee,
+ </if>
+<if test="fee_type != null and fee_type != ''">
+fee_type,
+ </if>
+<if test="cash_fee != null and cash_fee != ''">
+cash_fee,
+ </if>
+<if test="cash_fee_type != null and cash_fee_type != ''">
+cash_fee_type,
+ </if>
+<if test="coupon_fee != null and coupon_fee != ''">
+coupon_fee,
+ </if>
+<if test="coupon_count != null and coupon_count != ''">
+coupon_count,
+ </if>
+<if test="coupon_id_n != null and coupon_id_n != ''">
+coupon_id_n,
+ </if>
+<if test="coupon_fee_n != null and coupon_fee_n != ''">
+coupon_fee_n,
+ </if>
+<if test="transaction_id != null and transaction_id != ''">
+transaction_id,
+ </if>
+<if test="out_trade_no != null and out_trade_no != ''">
+out_trade_no,
+ </if>
+<if test="attach != null and attach != ''">
+attach,
+ </if>
+<if test="time_end != null and time_end != ''">
+time_end,
+ </if>
+<if test="return_code != null and return_code != ''">
+return_code,
+ </if>
+<if test="return_msg != null and return_msg != ''">
+return_msg,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="appid != null and appid != ''">
+#{appid},
+ </if>
+<if test="mch_id != null and mch_id != ''">
+#{mch_id},
+ </if>
+<if test="device_info != null and device_info != ''">
+#{device_info},
+ </if>
+<if test="nonce_str != null and nonce_str != ''">
+#{nonce_str},
+ </if>
+<if test="result_code != null and result_code != ''">
+#{result_code},
+ </if>
+<if test="err_code != null and err_code != ''">
+#{err_code},
+ </if>
+<if test="err_code_des != null and err_code_des != ''">
+#{err_code_des},
+ </if>
+<if test="openid != null and openid != ''">
+#{openid},
+ </if>
+<if test="is_subscribe != null and is_subscribe != ''">
+#{is_subscribe},
+ </if>
+<if test="trade_type != null and trade_type != ''">
+#{trade_type},
+ </if>
+<if test="bank_type != null and bank_type != ''">
+#{bank_type},
+ </if>
+<if test="total_fee != null and total_fee != ''">
+#{total_fee},
+ </if>
+<if test="fee_type != null and fee_type != ''">
+#{fee_type},
+ </if>
+<if test="cash_fee != null and cash_fee != ''">
+#{cash_fee},
+ </if>
+<if test="cash_fee_type != null and cash_fee_type != ''">
+#{cash_fee_type},
+ </if>
+<if test="coupon_fee != null and coupon_fee != ''">
+#{coupon_fee},
+ </if>
+<if test="coupon_count != null and coupon_count != ''">
+#{coupon_count},
+ </if>
+<if test="coupon_id_n != null and coupon_id_n != ''">
+#{coupon_id_n},
+ </if>
+<if test="coupon_fee_n != null and coupon_fee_n != ''">
+#{coupon_fee_n},
+ </if>
+<if test="transaction_id != null and transaction_id != ''">
+#{transaction_id},
+ </if>
+<if test="out_trade_no != null and out_trade_no != ''">
+#{out_trade_no},
+ </if>
+<if test="attach != null and attach != ''">
+#{attach},
+ </if>
+<if test="time_end != null and time_end != ''">
+#{time_end},
+ </if>
+<if test="return_code != null and return_code != ''">
+#{return_code},
+ </if>
+<if test="return_msg != null and return_msg != ''">
+#{return_msg},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_receive_money_from_wechat" parameterMap="param_T_u_receive_money_from_wechat" >
+update t_u_receive_money_from_wechat set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_receive_money_from_wechat" parameterMap="param_T_u_receive_money_from_wechat" >update t_u_receive_money_from_wechat   
+
+<set>
+<if test="appid != null and appid != ''">
+appid=#{appid},
+ </if>
+<if test="mch_id != null and mch_id != ''">
+mch_id=#{mch_id},
+ </if>
+<if test="device_info != null and device_info != ''">
+device_info=#{device_info},
+ </if>
+<if test="nonce_str != null and nonce_str != ''">
+nonce_str=#{nonce_str},
+ </if>
+<if test="result_code != null and result_code != ''">
+result_code=#{result_code},
+ </if>
+<if test="err_code != null and err_code != ''">
+err_code=#{err_code},
+ </if>
+<if test="err_code_des != null and err_code_des != ''">
+err_code_des=#{err_code_des},
+ </if>
+<if test="openid != null and openid != ''">
+openid=#{openid},
+ </if>
+<if test="is_subscribe != null and is_subscribe != ''">
+is_subscribe=#{is_subscribe},
+ </if>
+<if test="trade_type != null and trade_type != ''">
+trade_type=#{trade_type},
+ </if>
+<if test="bank_type != null and bank_type != ''">
+bank_type=#{bank_type},
+ </if>
+<if test="total_fee != null and total_fee != ''">
+total_fee=#{total_fee},
+ </if>
+<if test="fee_type != null and fee_type != ''">
+fee_type=#{fee_type},
+ </if>
+<if test="cash_fee != null and cash_fee != ''">
+cash_fee=#{cash_fee},
+ </if>
+<if test="cash_fee_type != null and cash_fee_type != ''">
+cash_fee_type=#{cash_fee_type},
+ </if>
+<if test="coupon_fee != null and coupon_fee != ''">
+coupon_fee=#{coupon_fee},
+ </if>
+<if test="coupon_count != null and coupon_count != ''">
+coupon_count=#{coupon_count},
+ </if>
+<if test="coupon_id_n != null and coupon_id_n != ''">
+coupon_id_n=#{coupon_id_n},
+ </if>
+<if test="coupon_fee_n != null and coupon_fee_n != ''">
+coupon_fee_n=#{coupon_fee_n},
+ </if>
+<if test="transaction_id != null and transaction_id != ''">
+transaction_id=#{transaction_id},
+ </if>
+<if test="out_trade_no != null and out_trade_no != ''">
+out_trade_no=#{out_trade_no},
+ </if>
+<if test="attach != null and attach != ''">
+attach=#{attach},
+ </if>
+<if test="time_end != null and time_end != ''">
+time_end=#{time_end},
+ </if>
+<if test="return_code != null and return_code != ''">
+return_code=#{return_code},
+ </if>
+<if test="return_msg != null and return_msg != ''">
+return_msg=#{return_msg},
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_receive_money_from_wechat" parameterMap="param_T_u_receive_money_from_wechat"  resultMap="result_T_u_receive_money_from_wechat">
+select ID,APPID,MCH_ID,DEVICE_INFO,NONCE_STR,RESULT_CODE,ERR_CODE,ERR_CODE_DES,OPENID,IS_SUBSCRIBE,TRADE_TYPE,BANK_TYPE,TOTAL_FEE,FEE_TYPE,CASH_FEE,CASH_FEE_TYPE,COUPON_FEE,COUPON_COUNT,COUPON_ID_N,COUPON_FEE_N,TRANSACTION_ID,OUT_TRADE_NO,ATTACH,TIME_END,RETURN_CODE,RETURN_MSG,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER
+ from t_u_receive_money_from_wechat where is_delete != 1<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="appid != null and appid != ''">
+ and appid=#{appid}
+ </if>
+<if test="mch_id != null and mch_id != ''">
+ and mch_id=#{mch_id}
+ </if>
+<if test="device_info != null and device_info != ''">
+ and device_info=#{device_info}
+ </if>
+<if test="nonce_str != null and nonce_str != ''">
+ and nonce_str=#{nonce_str}
+ </if>
+<if test="result_code != null and result_code != ''">
+ and result_code=#{result_code}
+ </if>
+<if test="err_code != null and err_code != ''">
+ and err_code=#{err_code}
+ </if>
+<if test="err_code_des != null and err_code_des != ''">
+ and err_code_des=#{err_code_des}
+ </if>
+<if test="openid != null and openid != ''">
+ and openid=#{openid}
+ </if>
+<if test="is_subscribe != null and is_subscribe != ''">
+ and is_subscribe=#{is_subscribe}
+ </if>
+<if test="trade_type != null and trade_type != ''">
+ and trade_type=#{trade_type}
+ </if>
+<if test="bank_type != null and bank_type != ''">
+ and bank_type=#{bank_type}
+ </if>
+<if test="total_fee != null and total_fee != ''">
+ and total_fee=#{total_fee}
+ </if>
+<if test="fee_type != null and fee_type != ''">
+ and fee_type=#{fee_type}
+ </if>
+<if test="cash_fee != null and cash_fee != ''">
+ and cash_fee=#{cash_fee}
+ </if>
+<if test="cash_fee_type != null and cash_fee_type != ''">
+ and cash_fee_type=#{cash_fee_type}
+ </if>
+<if test="coupon_fee != null and coupon_fee != ''">
+ and coupon_fee=#{coupon_fee}
+ </if>
+<if test="coupon_count != null and coupon_count != ''">
+ and coupon_count=#{coupon_count}
+ </if>
+<if test="coupon_id_n != null and coupon_id_n != ''">
+ and coupon_id_n=#{coupon_id_n}
+ </if>
+<if test="coupon_fee_n != null and coupon_fee_n != ''">
+ and coupon_fee_n=#{coupon_fee_n}
+ </if>
+<if test="transaction_id != null and transaction_id != ''">
+ and transaction_id=#{transaction_id}
+ </if>
+<if test="out_trade_no != null and out_trade_no != ''">
+ and out_trade_no=#{out_trade_no}
+ </if>
+<if test="attach != null and attach != ''">
+ and attach=#{attach}
+ </if>
+<if test="time_end != null and time_end != ''">
+ and time_end=#{time_end}
+ </if>
+<if test="return_code != null and return_code != ''">
+ and return_code=#{return_code}
+ </if>
+<if test="return_msg != null and return_msg != ''">
+ and return_msg=#{return_msg}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

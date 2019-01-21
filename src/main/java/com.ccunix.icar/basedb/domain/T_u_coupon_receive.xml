@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_coupon_receive_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_coupon_receive" id="result_T_u_coupon_receive"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_coupon_receive" id="param_T_u_coupon_receive"/>
+<insert id="insert_t_u_coupon_receive" parameterMap="param_T_u_coupon_receive" >
+
+insert into t_u_coupon_receive   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="time_receive != null and time_receive != ''">
+time_receive,
+ </if>
+<if test="receiver_id != null and receiver_id != ''">
+receiver_id,
+ </if>
+<if test="receiver_name != null and receiver_name != ''">
+receiver_name,
+ </if>
+<if test="receive_channel != null and receive_channel != ''">
+receive_channel,
+ </if>
+<if test="type_code_receive != null and type_code_receive != ''">
+type_code_receive,
+ </if>
+<if test="type_name_receive != null and type_name_receive != ''">
+type_name_receive,
+ </if>
+<if test="parameter_receive != null and parameter_receive != ''">
+parameter_receive,
+ </if>
+<if test="all_coupons_receive != null and all_coupons_receive != ''">
+all_coupons_receive,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="time_receive != null and time_receive != ''">
+#{time_receive},
+ </if>
+<if test="receiver_id != null and receiver_id != ''">
+#{receiver_id},
+ </if>
+<if test="receiver_name != null and receiver_name != ''">
+#{receiver_name},
+ </if>
+<if test="receive_channel != null and receive_channel != ''">
+#{receive_channel},
+ </if>
+<if test="type_code_receive != null and type_code_receive != ''">
+#{type_code_receive},
+ </if>
+<if test="type_name_receive != null and type_name_receive != ''">
+#{type_name_receive},
+ </if>
+<if test="parameter_receive != null and parameter_receive != ''">
+#{parameter_receive},
+ </if>
+<if test="all_coupons_receive != null and all_coupons_receive != ''">
+#{all_coupons_receive},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_coupon_receive" parameterMap="param_T_u_coupon_receive" >
+update t_u_coupon_receive set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_coupon_receive" parameterMap="param_T_u_coupon_receive" >update t_u_coupon_receive   
+
+<set>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="time_receive != null and time_receive != ''">
+time_receive=#{time_receive},
+ </if>
+<if test="receiver_id != null and receiver_id != ''">
+receiver_id=#{receiver_id},
+ </if>
+<if test="receiver_name != null and receiver_name != ''">
+receiver_name=#{receiver_name},
+ </if>
+<if test="receive_channel != null and receive_channel != ''">
+receive_channel=#{receive_channel},
+ </if>
+<if test="type_code_receive != null and type_code_receive != ''">
+type_code_receive=#{type_code_receive},
+ </if>
+<if test="type_name_receive != null and type_name_receive != ''">
+type_name_receive=#{type_name_receive},
+ </if>
+<if test="parameter_receive != null and parameter_receive != ''">
+parameter_receive=#{parameter_receive},
+ </if>
+<if test="all_coupons_receive != null and all_coupons_receive != ''">
+all_coupons_receive=#{all_coupons_receive},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_coupon_receive" parameterMap="param_T_u_coupon_receive"  resultMap="result_T_u_coupon_receive">
+select ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,TIME_RECEIVE,RECEIVER_ID,RECEIVER_NAME,RECEIVE_CHANNEL,TYPE_CODE_RECEIVE,TYPE_NAME_RECEIVE,PARAMETER_RECEIVE,ALL_COUPONS_RECEIVE
+ from t_u_coupon_receive where is_delete != 1<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="time_receive != null and time_receive != ''">
+ and time_receive=#{time_receive}
+ </if>
+<if test="receiver_id != null and receiver_id != ''">
+ and receiver_id=#{receiver_id}
+ </if>
+<if test="receiver_name != null and receiver_name != ''">
+ and receiver_name=#{receiver_name}
+ </if>
+<if test="receive_channel != null and receive_channel != ''">
+ and receive_channel=#{receive_channel}
+ </if>
+<if test="type_code_receive != null and type_code_receive != ''">
+ and type_code_receive=#{type_code_receive}
+ </if>
+<if test="type_name_receive != null and type_name_receive != ''">
+ and type_name_receive=#{type_name_receive}
+ </if>
+<if test="parameter_receive != null and parameter_receive != ''">
+ and parameter_receive=#{parameter_receive}
+ </if>
+<if test="all_coupons_receive != null and all_coupons_receive != ''">
+ and all_coupons_receive=#{all_coupons_receive}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_car_brand_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_car_brand" id="result_T_u_car_brand"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_car_brand" id="param_T_u_car_brand"/>
+<insert id="insert_t_u_car_brand" parameterMap="param_T_u_car_brand" >
+
+insert into t_u_car_brand   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="name != null and name != ''">
+name,
+ </if>
+<if test="first_letter != null and first_letter != ''">
+first_letter,
+ </if>
+<if test="the_count != null and the_count != ''">
+the_count,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="name != null and name != ''">
+#{name},
+ </if>
+<if test="first_letter != null and first_letter != ''">
+#{first_letter},
+ </if>
+<if test="the_count != null and the_count != ''">
+#{the_count},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_car_brand" parameterMap="param_T_u_car_brand" >
+update t_u_car_brand set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_car_brand" parameterMap="param_T_u_car_brand" >update t_u_car_brand   
+
+<set>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="name != null and name != ''">
+name=#{name},
+ </if>
+<if test="first_letter != null and first_letter != ''">
+first_letter=#{first_letter},
+ </if>
+<if test="the_count != null and the_count != ''">
+the_count=#{the_count},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_car_brand" parameterMap="param_T_u_car_brand"  resultMap="result_T_u_car_brand">
+select ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,NAME,FIRST_LETTER,THE_COUNT
+ from t_u_car_brand where is_delete != 1<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="name != null and name != ''">
+ and name=#{name}
+ </if>
+<if test="first_letter != null and first_letter != ''">
+ and first_letter=#{first_letter}
+ </if>
+<if test="the_count != null and the_count != ''">
+ and the_count=#{the_count}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

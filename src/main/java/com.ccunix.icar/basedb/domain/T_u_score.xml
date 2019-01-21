@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_score_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_score" id="result_T_u_score"/>
+<resultMap type="com.ccunix.icar.answer.domain.Score" id="result"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_score" id="param_T_u_score"/>
+<insert id="insert_t_u_score" parameterMap="param_T_u_score" >
+
+insert into t_u_score   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="user_id != null and user_id != ''">
+user_id,
+ </if>
+<if test="score != null and score != ''">
+score,
+ </if>
+<if test="remarks != null and remarks != ''">
+remarks,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="user_id != null and user_id != ''">
+#{user_id},
+ </if>
+<if test="score != null and score != ''">
+#{score},
+ </if>
+<if test="remarks != null and remarks != ''">
+#{remarks},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_score" parameterMap="param_T_u_score" >
+update t_u_score set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_score" parameterMap="param_T_u_score" >update t_u_score   
+
+<set>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="user_id != null and user_id != ''">
+user_id=#{user_id},
+ </if>
+<if test="score != null and score != ''">
+score=#{score},
+ </if>
+<if test="remarks != null and remarks != ''">
+remarks=#{remarks},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_score" parameterMap="param_T_u_score"  resultMap="result_T_u_score">
+select ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,USER_ID,SCORE,REMARKS
+ from t_u_score where is_delete != 1<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="user_id != null and user_id != ''">
+ and user_id=#{user_id}
+ </if>
+<if test="score != null and score != ''">
+ and score=#{score}
+ </if>
+<if test="remarks != null and remarks != ''">
+ and remarks=#{remarks}
+ </if>
+</select>
+
+<select id="queryBy_t_u_score"   resultMap="result">
+select ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,USER_ID,SCORE scores,REMARKS
+ from t_u_score where is_delete != 1
+</select>
+
+
+
+
+
+</mapper>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_statistic_day_of_franchise_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_statistic_day_of_franchise" id="result_T_u_statistic_day_of_franchise"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_statistic_day_of_franchise" id="param_T_u_statistic_day_of_franchise"/>
+<insert id="insert_t_u_statistic_day_of_franchise" parameterMap="param_T_u_statistic_day_of_franchise" >
+
+insert into t_u_statistic_day_of_franchise   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="statistic_date != null and statistic_date != ''">
+statistic_date,
+ </if>
+<if test="target_id != null and target_id != ''">
+target_id,
+ </if>
+<if test="target_name != null and target_name != ''">
+target_name,
+ </if>
+<if test="target_identity_id != null and target_identity_id != ''">
+target_identity_id,
+ </if>
+<if test="target_identity_name != null and target_identity_name != ''">
+target_identity_name,
+ </if>
+<if test="city_id_of_city != null and city_id_of_city != ''">
+city_id_of_city,
+ </if>
+<if test="city_name_of_city != null and city_name_of_city != ''">
+city_name_of_city,
+ </if>
+<if test="order_count_of_target != null and order_count_of_target != ''">
+order_count_of_target,
+ </if>
+<if test="order_amount_of_target != null and order_amount_of_target != ''">
+order_amount_of_target,
+ </if>
+<if test="cancel_count_of_target != null and cancel_count_of_target != ''">
+cancel_count_of_target,
+ </if>
+<if test="cancel_amount_of_target != null and cancel_amount_of_target != ''">
+cancel_amount_of_target,
+ </if>
+<if test="complete_count_of_target != null and complete_count_of_target != ''">
+complete_count_of_target,
+ </if>
+<if test="complete_amount_of_target != null and complete_amount_of_target != ''">
+complete_amount_of_target,
+ </if>
+<if test="order_count_of_department != null and order_count_of_department != ''">
+order_count_of_department,
+ </if>
+<if test="order_amount_of_department != null and order_amount_of_department != ''">
+order_amount_of_department,
+ </if>
+<if test="cancel_count_of_department != null and cancel_count_of_department != ''">
+cancel_count_of_department,
+ </if>
+<if test="cancel_amount_of_department != null and cancel_amount_of_department != ''">
+cancel_amount_of_department,
+ </if>
+<if test="complete_count_of_department != null and complete_count_of_department != ''">
+complete_count_of_department,
+ </if>
+<if test="complete_amount_of_department != null and complete_amount_of_department != ''">
+complete_amount_of_department,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="statistic_date != null and statistic_date != ''">
+#{statistic_date},
+ </if>
+<if test="target_id != null and target_id != ''">
+#{target_id},
+ </if>
+<if test="target_name != null and target_name != ''">
+#{target_name},
+ </if>
+<if test="target_identity_id != null and target_identity_id != ''">
+#{target_identity_id},
+ </if>
+<if test="target_identity_name != null and target_identity_name != ''">
+#{target_identity_name},
+ </if>
+<if test="city_id_of_city != null and city_id_of_city != ''">
+#{city_id_of_city},
+ </if>
+<if test="city_name_of_city != null and city_name_of_city != ''">
+#{city_name_of_city},
+ </if>
+<if test="order_count_of_target != null and order_count_of_target != ''">
+#{order_count_of_target},
+ </if>
+<if test="order_amount_of_target != null and order_amount_of_target != ''">
+#{order_amount_of_target},
+ </if>
+<if test="cancel_count_of_target != null and cancel_count_of_target != ''">
+#{cancel_count_of_target},
+ </if>
+<if test="cancel_amount_of_target != null and cancel_amount_of_target != ''">
+#{cancel_amount_of_target},
+ </if>
+<if test="complete_count_of_target != null and complete_count_of_target != ''">
+#{complete_count_of_target},
+ </if>
+<if test="complete_amount_of_target != null and complete_amount_of_target != ''">
+#{complete_amount_of_target},
+ </if>
+<if test="order_count_of_department != null and order_count_of_department != ''">
+#{order_count_of_department},
+ </if>
+<if test="order_amount_of_department != null and order_amount_of_department != ''">
+#{order_amount_of_department},
+ </if>
+<if test="cancel_count_of_department != null and cancel_count_of_department != ''">
+#{cancel_count_of_department},
+ </if>
+<if test="cancel_amount_of_department != null and cancel_amount_of_department != ''">
+#{cancel_amount_of_department},
+ </if>
+<if test="complete_count_of_department != null and complete_count_of_department != ''">
+#{complete_count_of_department},
+ </if>
+<if test="complete_amount_of_department != null and complete_amount_of_department != ''">
+#{complete_amount_of_department},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_statistic_day_of_franchise" parameterMap="param_T_u_statistic_day_of_franchise" >
+update t_u_statistic_day_of_franchise set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_statistic_day_of_franchise" parameterMap="param_T_u_statistic_day_of_franchise" >update t_u_statistic_day_of_franchise   
+
+<set>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="statistic_date != null and statistic_date != ''">
+statistic_date=#{statistic_date},
+ </if>
+<if test="target_id != null and target_id != ''">
+target_id=#{target_id},
+ </if>
+<if test="target_name != null and target_name != ''">
+target_name=#{target_name},
+ </if>
+<if test="target_identity_id != null and target_identity_id != ''">
+target_identity_id=#{target_identity_id},
+ </if>
+<if test="target_identity_name != null and target_identity_name != ''">
+target_identity_name=#{target_identity_name},
+ </if>
+<if test="city_id_of_city != null and city_id_of_city != ''">
+city_id_of_city=#{city_id_of_city},
+ </if>
+<if test="city_name_of_city != null and city_name_of_city != ''">
+city_name_of_city=#{city_name_of_city},
+ </if>
+<if test="order_count_of_target != null and order_count_of_target != ''">
+order_count_of_target=#{order_count_of_target},
+ </if>
+<if test="order_amount_of_target != null and order_amount_of_target != ''">
+order_amount_of_target=#{order_amount_of_target},
+ </if>
+<if test="cancel_count_of_target != null and cancel_count_of_target != ''">
+cancel_count_of_target=#{cancel_count_of_target},
+ </if>
+<if test="cancel_amount_of_target != null and cancel_amount_of_target != ''">
+cancel_amount_of_target=#{cancel_amount_of_target},
+ </if>
+<if test="complete_count_of_target != null and complete_count_of_target != ''">
+complete_count_of_target=#{complete_count_of_target},
+ </if>
+<if test="complete_amount_of_target != null and complete_amount_of_target != ''">
+complete_amount_of_target=#{complete_amount_of_target},
+ </if>
+<if test="order_count_of_department != null and order_count_of_department != ''">
+order_count_of_department=#{order_count_of_department},
+ </if>
+<if test="order_amount_of_department != null and order_amount_of_department != ''">
+order_amount_of_department=#{order_amount_of_department},
+ </if>
+<if test="cancel_count_of_department != null and cancel_count_of_department != ''">
+cancel_count_of_department=#{cancel_count_of_department},
+ </if>
+<if test="cancel_amount_of_department != null and cancel_amount_of_department != ''">
+cancel_amount_of_department=#{cancel_amount_of_department},
+ </if>
+<if test="complete_count_of_department != null and complete_count_of_department != ''">
+complete_count_of_department=#{complete_count_of_department},
+ </if>
+<if test="complete_amount_of_department != null and complete_amount_of_department != ''">
+complete_amount_of_department=#{complete_amount_of_department},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_statistic_day_of_franchise" parameterMap="param_T_u_statistic_day_of_franchise"  resultMap="result_T_u_statistic_day_of_franchise">
+select ID,CREATETIME,STATISTIC_DATE,TARGET_ID,TARGET_NAME,TARGET_IDENTITY_ID,TARGET_IDENTITY_NAME,CITY_ID_OF_CITY,CITY_NAME_OF_CITY,ORDER_COUNT_OF_TARGET,ORDER_AMOUNT_OF_TARGET,CANCEL_COUNT_OF_TARGET,CANCEL_AMOUNT_OF_TARGET,COMPLETE_COUNT_OF_TARGET,COMPLETE_AMOUNT_OF_TARGET,ORDER_COUNT_OF_DEPARTMENT,ORDER_AMOUNT_OF_DEPARTMENT,CANCEL_COUNT_OF_DEPARTMENT,CANCEL_AMOUNT_OF_DEPARTMENT,COMPLETE_COUNT_OF_DEPARTMENT,COMPLETE_AMOUNT_OF_DEPARTMENT
+ from t_u_statistic_day_of_franchise where 1=1 <if test="id != null and id != ''">
+ and id=#{id} 
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="statistic_date != null and statistic_date != ''">
+ and statistic_date=#{statistic_date}
+ </if>
+<if test="target_id != null and target_id != ''">
+ and target_id=#{target_id}
+ </if>
+<if test="target_name != null and target_name != ''">
+ and target_name=#{target_name}
+ </if>
+<if test="target_identity_id != null and target_identity_id != ''">
+ and target_identity_id=#{target_identity_id}
+ </if>
+<if test="target_identity_name != null and target_identity_name != ''">
+ and target_identity_name=#{target_identity_name}
+ </if>
+<if test="city_id_of_city != null and city_id_of_city != ''">
+ and city_id_of_city=#{city_id_of_city}
+ </if>
+<if test="city_name_of_city != null and city_name_of_city != ''">
+ and city_name_of_city=#{city_name_of_city}
+ </if>
+<if test="order_count_of_target != null and order_count_of_target != ''">
+ and order_count_of_target=#{order_count_of_target}
+ </if>
+<if test="order_amount_of_target != null and order_amount_of_target != ''">
+ and order_amount_of_target=#{order_amount_of_target}
+ </if>
+<if test="cancel_count_of_target != null and cancel_count_of_target != ''">
+ and cancel_count_of_target=#{cancel_count_of_target}
+ </if>
+<if test="cancel_amount_of_target != null and cancel_amount_of_target != ''">
+ and cancel_amount_of_target=#{cancel_amount_of_target}
+ </if>
+<if test="complete_count_of_target != null and complete_count_of_target != ''">
+ and complete_count_of_target=#{complete_count_of_target}
+ </if>
+<if test="complete_amount_of_target != null and complete_amount_of_target != ''">
+ and complete_amount_of_target=#{complete_amount_of_target}
+ </if>
+<if test="order_count_of_department != null and order_count_of_department != ''">
+ and order_count_of_department=#{order_count_of_department}
+ </if>
+<if test="order_amount_of_department != null and order_amount_of_department != ''">
+ and order_amount_of_department=#{order_amount_of_department}
+ </if>
+<if test="cancel_count_of_department != null and cancel_count_of_department != ''">
+ and cancel_count_of_department=#{cancel_count_of_department}
+ </if>
+<if test="cancel_amount_of_department != null and cancel_amount_of_department != ''">
+ and cancel_amount_of_department=#{cancel_amount_of_department}
+ </if>
+<if test="complete_count_of_department != null and complete_count_of_department != ''">
+ and complete_count_of_department=#{complete_count_of_department}
+ </if>
+<if test="complete_amount_of_department != null and complete_amount_of_department != ''">
+ and complete_amount_of_department=#{complete_amount_of_department}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

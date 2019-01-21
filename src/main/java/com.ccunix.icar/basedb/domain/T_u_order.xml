@@ -1,0 +1,1037 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_order_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_order" id="result_T_u_order"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_order" id="param_T_u_order"/>
+<insert id="insert_t_u_order" parameterMap="param_T_u_order" >
+
+insert into t_u_order   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="place_order_type_code != null and place_order_type_code != ''">
+place_order_type_code,
+ </if>
+<if test="place_order_type_name != null and place_order_type_name != ''">
+place_order_type_name,
+ </if>
+<if test="is_opinion != null and is_opinion != ''">
+is_opinion,
+ </if>
+<if test="worker_score != null and worker_score != ''">
+worker_score,
+ </if>
+<if test="base_service_score != null and base_service_score != ''">
+base_service_score,
+ </if>
+<if test="extend_service_score != null and extend_service_score != ''">
+extend_service_score,
+ </if>
+<if test="opinion != null and opinion != ''">
+opinion,
+ </if>
+<if test="total_score != null and total_score != ''">
+total_score,
+ </if>
+<if test="blemish_photo1_before_service != null and blemish_photo1_before_service != ''">
+blemish_photo1_before_service,
+ </if>
+<if test="belmish_photo2_before_service != null and belmish_photo2_before_service != ''">
+belmish_photo2_before_service,
+ </if>
+<if test="blemish_photo3_before_service != null and blemish_photo3_before_service != ''">
+blemish_photo3_before_service,
+ </if>
+<if test="belmish_photo4_before_service != null and belmish_photo4_before_service != ''">
+belmish_photo4_before_service,
+ </if>
+<if test="blemish_photo1_after_service != null and blemish_photo1_after_service != ''">
+blemish_photo1_after_service,
+ </if>
+<if test="belmish_photo2_after_service != null and belmish_photo2_after_service != ''">
+belmish_photo2_after_service,
+ </if>
+<if test="blemish_photo3_after_service != null and blemish_photo3_after_service != ''">
+blemish_photo3_after_service,
+ </if>
+<if test="belmish_photo4_after_service != null and belmish_photo4_after_service != ''">
+belmish_photo4_after_service,
+ </if>
+<if test="opinion_tge != null and opinion_tge != ''">
+opinion_tge,
+ </if>
+<if test="franchisee_visual_mobile != null and franchisee_visual_mobile != ''">
+franchisee_visual_mobile,
+ </if>
+<if test="member_visual_mobile != null and member_visual_mobile != ''">
+member_visual_mobile,
+ </if>
+<if test="cancel_side_code != null and cancel_side_code != ''">
+cancel_side_code,
+ </if>
+<if test="cancel_side_name != null and cancel_side_name != ''">
+cancel_side_name,
+ </if>
+<if test="cancel_order_person != null and cancel_order_person != ''">
+cancel_order_person,
+ </if>
+<if test="amount__refundment != null and amount__refundment != ''">
+amount__refundment,
+ </if>
+<if test="break_contract_state_code != null and break_contract_state_code != ''">
+break_contract_state_code,
+ </if>
+<if test="break_contract_state_name != null and break_contract_state_name != ''">
+break_contract_state_name,
+ </if>
+<if test="break_contract_reason != null and break_contract_reason != ''">
+break_contract_reason,
+ </if>
+<if test="damage_of_payment_state_code != null and damage_of_payment_state_code != ''">
+damage_of_payment_state_code,
+ </if>
+<if test="damage_of_payment_state_name != null and damage_of_payment_state_name != ''">
+damage_of_payment_state_name,
+ </if>
+<if test="total_damage != null and total_damage != ''">
+total_damage,
+ </if>
+<if test="worker_id != null and worker_id != ''">
+worker_id,
+ </if>
+<if test="worker_name != null and worker_name != ''">
+worker_name,
+ </if>
+<if test="gps_positon_of_worker != null and gps_positon_of_worker != ''">
+gps_positon_of_worker,
+ </if>
+<if test="province_id_of_service != null and province_id_of_service != ''">
+province_id_of_service,
+ </if>
+<if test="province_name_of_service != null and province_name_of_service != ''">
+province_name_of_service,
+ </if>
+<if test="city_id_of_service != null and city_id_of_service != ''">
+city_id_of_service,
+ </if>
+<if test="city_name_of_service != null and city_name_of_service != ''">
+city_name_of_service,
+ </if>
+<if test="area_id_of_service != null and area_id_of_service != ''">
+area_id_of_service,
+ </if>
+<if test="area_name_of_service != null and area_name_of_service != ''">
+area_name_of_service,
+ </if>
+<if test="street_id_of_service != null and street_id_of_service != ''">
+street_id_of_service,
+ </if>
+<if test="street_name_of_service != null and street_name_of_service != ''">
+street_name_of_service,
+ </if>
+<if test="gps_position_of_car != null and gps_position_of_car != ''">
+gps_position_of_car,
+ </if>
+<if test="timespan_of_service != null and timespan_of_service != ''">
+timespan_of_service,
+ </if>
+<if test="car_photo_front_before_service != null and car_photo_front_before_service != ''">
+car_photo_front_before_service,
+ </if>
+<if test="car_photo_after_before_service != null and car_photo_after_before_service != ''">
+car_photo_after_before_service,
+ </if>
+<if test="car_photo_left_before_service != null and car_photo_left_before_service != ''">
+car_photo_left_before_service,
+ </if>
+<if test="car_photo_right_before_service != null and car_photo_right_before_service != ''">
+car_photo_right_before_service,
+ </if>
+<if test="car_photo_front_after_servic != null and car_photo_front_after_servic != ''">
+car_photo_front_after_servic,
+ </if>
+<if test="car_photo_after_after_servic != null and car_photo_after_after_servic != ''">
+car_photo_after_after_servic,
+ </if>
+<if test="car_photo_left_after_service != null and car_photo_left_after_service != ''">
+car_photo_left_after_service,
+ </if>
+<if test="car_photo_right_after_servic != null and car_photo_right_after_servic != ''">
+car_photo_right_after_servic,
+ </if>
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+  <!-- ******* -->
+ <if test="order_send_time != null and order_send_time != ''">
+order_send_time,
+ </if>
+ 
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="order_no != null and order_no != ''">
+order_no,
+ </if>
+<if test="car_id != null and car_id != ''">
+car_id,
+ </if>
+<if test="car_no != null and car_no != ''">
+car_no,
+ </if>
+<if test="order_member_id != null and order_member_id != ''">
+order_member_id,
+ </if>
+<if test="order_time != null and order_time != ''">
+order_time,
+ </if>
+<if test="order_total != null and order_total != ''">
+order_total,
+ </if>
+<if test="order_state_code != null and order_state_code != ''">
+order_state_code,
+ </if>
+<if test="order_state_name != null and order_state_name != ''">
+order_state_name,
+ </if>
+<if test="order_over_time != null and order_over_time != ''">
+order_over_time,
+ </if>
+<if test="service_item_count_of_order != null and service_item_count_of_order != ''">
+service_item_count_of_order,
+ </if>
+<if test="pay_state_code != null and pay_state_code != ''">
+pay_state_code,
+ </if>
+<if test="pay_state_name != null and pay_state_name != ''">
+pay_state_name,
+ </if>
+<if test="payment_channel_code != null and payment_channel_code != ''">
+payment_channel_code,
+ </if>
+<if test="payment_channel_name != null and payment_channel_name != ''">
+payment_channel_name,
+ </if>
+<if test="account_of_pay != null and account_of_pay != ''">
+account_of_pay,
+ </if>
+<if test="total_payment != null and total_payment != ''">
+total_payment,
+ </if>
+<if test="time_payment != null and time_payment != ''">
+time_payment,
+ </if>
+<if test="deduction_amount != null and deduction_amount != ''">
+deduction_amount,
+ </if>
+<if test="state_code_refundment != null and state_code_refundment != ''">
+state_code_refundment,
+ </if>
+<if test="state_name_refundment != null and state_name_refundment != ''">
+state_name_refundment,
+ </if>
+<if test="time_refundment != null and time_refundment != ''">
+time_refundment,
+ </if>
+<if test="channel_code_refundment != null and channel_code_refundment != ''">
+channel_code_refundment,
+ </if>
+<if test="channel_name_refundment != null and channel_name_refundment != ''">
+channel_name_refundment,
+ </if>
+<if test="account_refundment != null and account_refundment != ''">
+account_refundment,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="place_order_type_code != null and place_order_type_code != ''">
+#{place_order_type_code},
+ </if>
+<if test="place_order_type_name != null and place_order_type_name != ''">
+#{place_order_type_name},
+ </if>
+<if test="is_opinion != null and is_opinion != ''">
+#{is_opinion},
+ </if>
+  <!-- ******* -->
+ <if test="order_send_time != null and order_send_time != ''">
+#{order_send_time},
+ </if>
+
+<if test="worker_score != null and worker_score != ''">
+#{worker_score},
+ </if>
+<if test="base_service_score != null and base_service_score != ''">
+#{base_service_score},
+ </if>
+<if test="extend_service_score != null and extend_service_score != ''">
+#{extend_service_score},
+ </if>
+<if test="opinion != null and opinion != ''">
+#{opinion},
+ </if>
+<if test="total_score != null and total_score != ''">
+#{total_score},
+ </if>
+<if test="blemish_photo1_before_service != null and blemish_photo1_before_service != ''">
+#{blemish_photo1_before_service},
+ </if>
+<if test="belmish_photo2_before_service != null and belmish_photo2_before_service != ''">
+#{belmish_photo2_before_service},
+ </if>
+<if test="blemish_photo3_before_service != null and blemish_photo3_before_service != ''">
+#{blemish_photo3_before_service},
+ </if>
+<if test="belmish_photo4_before_service != null and belmish_photo4_before_service != ''">
+#{belmish_photo4_before_service},
+ </if>
+<if test="blemish_photo1_after_service != null and blemish_photo1_after_service != ''">
+#{blemish_photo1_after_service},
+ </if>
+<if test="belmish_photo2_after_service != null and belmish_photo2_after_service != ''">
+#{belmish_photo2_after_service},
+ </if>
+<if test="blemish_photo3_after_service != null and blemish_photo3_after_service != ''">
+#{blemish_photo3_after_service},
+ </if>
+<if test="belmish_photo4_after_service != null and belmish_photo4_after_service != ''">
+#{belmish_photo4_after_service},
+ </if>
+<if test="opinion_tge != null and opinion_tge != ''">
+#{opinion_tge},
+ </if>
+<if test="franchisee_visual_mobile != null and franchisee_visual_mobile != ''">
+#{franchisee_visual_mobile},
+ </if>
+<if test="member_visual_mobile != null and member_visual_mobile != ''">
+#{member_visual_mobile},
+ </if>
+<if test="cancel_side_code != null and cancel_side_code != ''">
+#{cancel_side_code},
+ </if>
+<if test="cancel_side_name != null and cancel_side_name != ''">
+#{cancel_side_name},
+ </if>
+<if test="cancel_order_person != null and cancel_order_person != ''">
+#{cancel_order_person},
+ </if>
+<if test="amount__refundment != null and amount__refundment != ''">
+#{amount__refundment},
+ </if>
+<if test="break_contract_state_code != null and break_contract_state_code != ''">
+#{break_contract_state_code},
+ </if>
+<if test="break_contract_state_name != null and break_contract_state_name != ''">
+#{break_contract_state_name},
+ </if>
+<if test="break_contract_reason != null and break_contract_reason != ''">
+#{break_contract_reason},
+ </if>
+<if test="damage_of_payment_state_code != null and damage_of_payment_state_code != ''">
+#{damage_of_payment_state_code},
+ </if>
+<if test="damage_of_payment_state_name != null and damage_of_payment_state_name != ''">
+#{damage_of_payment_state_name},
+ </if>
+<if test="total_damage != null and total_damage != ''">
+#{total_damage},
+ </if>
+<if test="worker_id != null and worker_id != ''">
+#{worker_id},
+ </if>
+<if test="worker_name != null and worker_name != ''">
+#{worker_name},
+ </if>
+<if test="gps_positon_of_worker != null and gps_positon_of_worker != ''">
+#{gps_positon_of_worker},
+ </if>
+<if test="province_id_of_service != null and province_id_of_service != ''">
+#{province_id_of_service},
+ </if>
+<if test="province_name_of_service != null and province_name_of_service != ''">
+#{province_name_of_service},
+ </if>
+<if test="city_id_of_service != null and city_id_of_service != ''">
+#{city_id_of_service},
+ </if>
+<if test="city_name_of_service != null and city_name_of_service != ''">
+#{city_name_of_service},
+ </if>
+<if test="area_id_of_service != null and area_id_of_service != ''">
+#{area_id_of_service},
+ </if>
+<if test="area_name_of_service != null and area_name_of_service != ''">
+#{area_name_of_service},
+ </if>
+<if test="street_id_of_service != null and street_id_of_service != ''">
+#{street_id_of_service},
+ </if>
+<if test="street_name_of_service != null and street_name_of_service != ''">
+#{street_name_of_service},
+ </if>
+<if test="gps_position_of_car != null and gps_position_of_car != ''">
+#{gps_position_of_car},
+ </if>
+<if test="timespan_of_service != null and timespan_of_service != ''">
+#{timespan_of_service},
+ </if>
+<if test="car_photo_front_before_service != null and car_photo_front_before_service != ''">
+#{car_photo_front_before_service},
+ </if>
+<if test="car_photo_after_before_service != null and car_photo_after_before_service != ''">
+#{car_photo_after_before_service},
+ </if>
+<if test="car_photo_left_before_service != null and car_photo_left_before_service != ''">
+#{car_photo_left_before_service},
+ </if>
+<if test="car_photo_right_before_service != null and car_photo_right_before_service != ''">
+#{car_photo_right_before_service},
+ </if>
+<if test="car_photo_front_after_servic != null and car_photo_front_after_servic != ''">
+#{car_photo_front_after_servic},
+ </if>
+<if test="car_photo_after_after_servic != null and car_photo_after_after_servic != ''">
+#{car_photo_after_after_servic},
+ </if>
+<if test="car_photo_left_after_service != null and car_photo_left_after_service != ''">
+#{car_photo_left_after_service},
+ </if>
+<if test="car_photo_right_after_servic != null and car_photo_right_after_servic != ''">
+#{car_photo_right_after_servic},
+ </if>
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="order_no != null and order_no != ''">
+#{order_no},
+ </if>
+<if test="car_id != null and car_id != ''">
+#{car_id},
+ </if>
+<if test="car_no != null and car_no != ''">
+#{car_no},
+ </if>
+<if test="order_member_id != null and order_member_id != ''">
+#{order_member_id},
+ </if>
+<if test="order_time != null and order_time != ''">
+#{order_time},
+ </if>
+<if test="order_total != null and order_total != ''">
+#{order_total},
+ </if>
+<if test="order_state_code != null and order_state_code != ''">
+#{order_state_code},
+ </if>
+<if test="order_state_name != null and order_state_name != ''">
+#{order_state_name},
+ </if>
+<if test="order_over_time != null and order_over_time != ''">
+#{order_over_time},
+ </if>
+<if test="service_item_count_of_order != null and service_item_count_of_order != ''">
+#{service_item_count_of_order},
+ </if>
+<if test="pay_state_code != null and pay_state_code != ''">
+#{pay_state_code},
+ </if>
+<if test="pay_state_name != null and pay_state_name != ''">
+#{pay_state_name},
+ </if>
+<if test="payment_channel_code != null and payment_channel_code != ''">
+#{payment_channel_code},
+ </if>
+<if test="payment_channel_name != null and payment_channel_name != ''">
+#{payment_channel_name},
+ </if>
+<if test="account_of_pay != null and account_of_pay != ''">
+#{account_of_pay},
+ </if>
+<if test="total_payment != null and total_payment != ''">
+#{total_payment},
+ </if>
+<if test="time_payment != null and time_payment != ''">
+#{time_payment},
+ </if>
+<if test="deduction_amount != null and deduction_amount != ''">
+#{deduction_amount},
+ </if>
+<if test="state_code_refundment != null and state_code_refundment != ''">
+#{state_code_refundment},
+ </if>
+<if test="state_name_refundment != null and state_name_refundment != ''">
+#{state_name_refundment},
+ </if>
+<if test="time_refundment != null and time_refundment != ''">
+#{time_refundment},
+ </if>
+<if test="channel_code_refundment != null and channel_code_refundment != ''">
+#{channel_code_refundment},
+ </if>
+<if test="channel_name_refundment != null and channel_name_refundment != ''">
+#{channel_name_refundment},
+ </if>
+<if test="account_refundment != null and account_refundment != ''">
+#{account_refundment},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_order" parameterMap="param_T_u_order" >
+update t_u_order set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_order" parameterMap="param_T_u_order" >update t_u_order   
+
+<set>
+<if test="place_order_type_code != null and place_order_type_code != ''">
+place_order_type_code=#{place_order_type_code},
+ </if>
+  <!-- ******* -->
+ <if test="order_send_time != null and order_send_time != ''">
+order_send_time=#{order_send_time},
+ </if>
+ 
+<if test="place_order_type_name != null and place_order_type_name != ''">
+place_order_type_name=#{place_order_type_name},
+ </if>
+<if test="is_opinion != null and is_opinion != ''">
+is_opinion=#{is_opinion},
+ </if>
+<if test="worker_score != null and worker_score != ''">
+worker_score=#{worker_score},
+ </if>
+<if test="base_service_score != null and base_service_score != ''">
+base_service_score=#{base_service_score},
+ </if>
+<if test="extend_service_score != null and extend_service_score != ''">
+extend_service_score=#{extend_service_score},
+ </if>
+<if test="opinion != null and opinion != ''">
+opinion=#{opinion},
+ </if>
+<if test="total_score != null and total_score != ''">
+total_score=#{total_score},
+ </if>
+<if test="blemish_photo1_before_service != null and blemish_photo1_before_service != ''">
+blemish_photo1_before_service=#{blemish_photo1_before_service},
+ </if>
+<if test="belmish_photo2_before_service != null and belmish_photo2_before_service != ''">
+belmish_photo2_before_service=#{belmish_photo2_before_service},
+ </if>
+<if test="blemish_photo3_before_service != null and blemish_photo3_before_service != ''">
+blemish_photo3_before_service=#{blemish_photo3_before_service},
+ </if>
+<if test="belmish_photo4_before_service != null and belmish_photo4_before_service != ''">
+belmish_photo4_before_service=#{belmish_photo4_before_service},
+ </if>
+<if test="blemish_photo1_after_service != null and blemish_photo1_after_service != ''">
+blemish_photo1_after_service=#{blemish_photo1_after_service},
+ </if>
+<if test="belmish_photo2_after_service != null and belmish_photo2_after_service != ''">
+belmish_photo2_after_service=#{belmish_photo2_after_service},
+ </if>
+<if test="blemish_photo3_after_service != null and blemish_photo3_after_service != ''">
+blemish_photo3_after_service=#{blemish_photo3_after_service},
+ </if>
+<if test="belmish_photo4_after_service != null and belmish_photo4_after_service != ''">
+belmish_photo4_after_service=#{belmish_photo4_after_service},
+ </if>
+<if test="opinion_tge != null and opinion_tge != ''">
+opinion_tge=#{opinion_tge},
+ </if>
+<if test="franchisee_visual_mobile != null and franchisee_visual_mobile != ''">
+franchisee_visual_mobile=#{franchisee_visual_mobile},
+ </if>
+<if test="member_visual_mobile != null and member_visual_mobile != ''">
+member_visual_mobile=#{member_visual_mobile},
+ </if>
+<if test="cancel_side_code != null and cancel_side_code != ''">
+cancel_side_code=#{cancel_side_code},
+ </if>
+<if test="cancel_side_name != null and cancel_side_name != ''">
+cancel_side_name=#{cancel_side_name},
+ </if>
+<if test="cancel_order_person != null and cancel_order_person != ''">
+cancel_order_person=#{cancel_order_person},
+ </if>
+<if test="amount__refundment != null and amount__refundment != ''">
+amount__refundment=#{amount__refundment},
+ </if>
+<if test="break_contract_state_code != null and break_contract_state_code != ''">
+break_contract_state_code=#{break_contract_state_code},
+ </if>
+<if test="break_contract_state_name != null and break_contract_state_name != ''">
+break_contract_state_name=#{break_contract_state_name},
+ </if>
+<if test="break_contract_reason != null and break_contract_reason != ''">
+break_contract_reason=#{break_contract_reason},
+ </if>
+<if test="damage_of_payment_state_code != null and damage_of_payment_state_code != ''">
+damage_of_payment_state_code=#{damage_of_payment_state_code},
+ </if>
+<if test="damage_of_payment_state_name != null and damage_of_payment_state_name != ''">
+damage_of_payment_state_name=#{damage_of_payment_state_name},
+ </if>
+<if test="total_damage != null and total_damage != ''">
+total_damage=#{total_damage},
+ </if>
+<if test="worker_id != null and worker_id != ''">
+worker_id=#{worker_id},
+ </if>
+<if test="worker_name != null and worker_name != ''">
+worker_name=#{worker_name},
+ </if>
+<if test="gps_positon_of_worker != null and gps_positon_of_worker != ''">
+gps_positon_of_worker=#{gps_positon_of_worker},
+ </if>
+<if test="province_id_of_service != null and province_id_of_service != ''">
+province_id_of_service=#{province_id_of_service},
+ </if>
+<if test="province_name_of_service != null and province_name_of_service != ''">
+province_name_of_service=#{province_name_of_service},
+ </if>
+<if test="city_id_of_service != null and city_id_of_service != ''">
+city_id_of_service=#{city_id_of_service},
+ </if>
+<if test="city_name_of_service != null and city_name_of_service != ''">
+city_name_of_service=#{city_name_of_service},
+ </if>
+<if test="area_id_of_service != null and area_id_of_service != ''">
+area_id_of_service=#{area_id_of_service},
+ </if>
+<if test="area_name_of_service != null and area_name_of_service != ''">
+area_name_of_service=#{area_name_of_service},
+ </if>
+<if test="street_id_of_service != null and street_id_of_service != ''">
+street_id_of_service=#{street_id_of_service},
+ </if>
+<if test="street_name_of_service != null and street_name_of_service != ''">
+street_name_of_service=#{street_name_of_service},
+ </if>
+<if test="gps_position_of_car != null and gps_position_of_car != ''">
+gps_position_of_car=#{gps_position_of_car},
+ </if>
+<if test="timespan_of_service != null and timespan_of_service != ''">
+timespan_of_service=#{timespan_of_service},
+ </if>
+<if test="car_photo_front_before_service != null and car_photo_front_before_service != ''">
+car_photo_front_before_service=#{car_photo_front_before_service},
+ </if>
+<if test="car_photo_after_before_service != null and car_photo_after_before_service != ''">
+car_photo_after_before_service=#{car_photo_after_before_service},
+ </if>
+<if test="car_photo_left_before_service != null and car_photo_left_before_service != ''">
+car_photo_left_before_service=#{car_photo_left_before_service},
+ </if>
+<if test="car_photo_right_before_service != null and car_photo_right_before_service != ''">
+car_photo_right_before_service=#{car_photo_right_before_service},
+ </if>
+<if test="car_photo_front_after_servic != null and car_photo_front_after_servic != ''">
+car_photo_front_after_servic=#{car_photo_front_after_servic},
+ </if>
+<if test="car_photo_after_after_servic != null and car_photo_after_after_servic != ''">
+car_photo_after_after_servic=#{car_photo_after_after_servic},
+ </if>
+<if test="car_photo_left_after_service != null and car_photo_left_after_service != ''">
+car_photo_left_after_service=#{car_photo_left_after_service},
+ </if>
+<if test="car_photo_right_after_servic != null and car_photo_right_after_servic != ''">
+car_photo_right_after_servic=#{car_photo_right_after_servic},
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="order_no != null and order_no != ''">
+order_no=#{order_no},
+ </if>
+<if test="car_id != null and car_id != ''">
+car_id=#{car_id},
+ </if>
+<if test="car_no != null and car_no != ''">
+car_no=#{car_no},
+ </if>
+<if test="order_member_id != null and order_member_id != ''">
+order_member_id=#{order_member_id},
+ </if>
+<if test="order_time != null and order_time != ''">
+order_time=#{order_time},
+ </if>
+<if test="order_total != null and order_total != ''">
+order_total=#{order_total},
+ </if>
+<if test="order_state_code != null and order_state_code != ''">
+order_state_code=#{order_state_code},
+ </if>
+<if test="order_state_name != null and order_state_name != ''">
+order_state_name=#{order_state_name},
+ </if>
+<if test="order_over_time != null and order_over_time != ''">
+order_over_time=#{order_over_time},
+ </if>
+<if test="service_item_count_of_order != null and service_item_count_of_order != ''">
+service_item_count_of_order=#{service_item_count_of_order},
+ </if>
+<if test="pay_state_code != null and pay_state_code != ''">
+pay_state_code=#{pay_state_code},
+ </if>
+<if test="pay_state_name != null and pay_state_name != ''">
+pay_state_name=#{pay_state_name},
+ </if>
+<if test="payment_channel_code != null and payment_channel_code != ''">
+payment_channel_code=#{payment_channel_code},
+ </if>
+<if test="payment_channel_name != null and payment_channel_name != ''">
+payment_channel_name=#{payment_channel_name},
+ </if>
+<if test="account_of_pay != null and account_of_pay != ''">
+account_of_pay=#{account_of_pay},
+ </if>
+<if test="total_payment != null and total_payment != ''">
+total_payment=#{total_payment},
+</if>
+<if test="time_payment != null and time_payment != ''">
+time_payment=#{time_payment},
+ </if>
+<if test="deduction_amount != null and deduction_amount != ''">
+deduction_amount=#{deduction_amount},
+ </if>
+<if test="state_code_refundment != null and state_code_refundment != ''">
+state_code_refundment=#{state_code_refundment},
+ </if>
+<if test="state_name_refundment != null and state_name_refundment != ''">
+state_name_refundment=#{state_name_refundment},
+ </if>
+<if test="time_refundment != null and time_refundment != ''">
+time_refundment=#{time_refundment},
+ </if>
+<if test="channel_code_refundment != null and channel_code_refundment != ''">
+channel_code_refundment=#{channel_code_refundment},
+ </if>
+<if test="channel_name_refundment != null and channel_name_refundment != ''">
+channel_name_refundment=#{channel_name_refundment},
+ </if>
+<if test="account_refundment != null and account_refundment != ''">
+account_refundment=#{account_refundment},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_order" parameterMap="param_T_u_order"  resultMap="result_T_u_order">
+select PLACE_ORDER_TYPE_CODE,PLACE_ORDER_TYPE_NAME,IS_OPINION,WORKER_SCORE,BASE_SERVICE_SCORE,EXTEND_SERVICE_SCORE,OPINION,TOTAL_SCORE,BLEMISH_PHOTO1_BEFORE_SERVICE,BELMISH_PHOTO2_BEFORE_SERVICE,BLEMISH_PHOTO3_BEFORE_SERVICE,BELMISH_PHOTO4_BEFORE_SERVICE,BLEMISH_PHOTO1_AFTER_SERVICE,BELMISH_PHOTO2_AFTER_SERVICE,BLEMISH_PHOTO3_AFTER_SERVICE,BELMISH_PHOTO4_AFTER_SERVICE,OPINION_TGE,FRANCHISEE_VISUAL_MOBILE,MEMBER_VISUAL_MOBILE,CANCEL_SIDE_CODE,CANCEL_SIDE_NAME,CANCEL_ORDER_PERSON,AMOUNT__REFUNDMENT,BREAK_CONTRACT_STATE_CODE,BREAK_CONTRACT_STATE_NAME,BREAK_CONTRACT_REASON,DAMAGE_OF_PAYMENT_STATE_CODE,DAMAGE_OF_PAYMENT_STATE_NAME,TOTAL_DAMAGE,WORKER_ID,WORKER_NAME,GPS_POSITON_OF_WORKER,PROVINCE_ID_OF_SERVICE,PROVINCE_NAME_OF_SERVICE,CITY_ID_OF_SERVICE,CITY_NAME_OF_SERVICE,AREA_ID_OF_SERVICE,AREA_NAME_OF_SERVICE,STREET_ID_OF_SERVICE,STREET_NAME_OF_SERVICE,GPS_POSITION_OF_CAR,TIMESPAN_OF_SERVICE,CAR_PHOTO_FRONT_BEFORE_SERVICE,CAR_PHOTO_AFTER_BEFORE_SERVICE,CAR_PHOTO_LEFT_BEFORE_SERVICE,CAR_PHOTO_RIGHT_BEFORE_SERVICE,CAR_PHOTO_FRONT_AFTER_SERVIC,CAR_PHOTO_AFTER_AFTER_SERVIC,CAR_PHOTO_LEFT_AFTER_SERVICE,CAR_PHOTO_RIGHT_AFTER_SERVIC,ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,ORDER_NO,CAR_ID,CAR_NO,ORDER_MEMBER_ID,ORDER_TIME,ORDER_TOTAL,ORDER_STATE_CODE,ORDER_STATE_NAME,ORDER_OVER_TIME,SERVICE_ITEM_COUNT_OF_ORDER,PAY_STATE_CODE,PAY_STATE_NAME,PAYMENT_CHANNEL_CODE,PAYMENT_CHANNEL_NAME,ACCOUNT_OF_PAY,TOTAL_PAYMENT,TIME_PAYMENT,DEDUCTION_AMOUNT,STATE_CODE_REFUNDMENT,STATE_NAME_REFUNDMENT,TIME_REFUNDMENT,CHANNEL_CODE_REFUNDMENT,CHANNEL_NAME_REFUNDMENT,ACCOUNT_REFUNDMENT
+ from t_u_order where is_delete != 1<if test="place_order_type_code != null and place_order_type_code != ''">
+ and place_order_type_code=#{place_order_type_code}
+ </if>
+<if test="place_order_type_name != null and place_order_type_name != ''">
+ and place_order_type_name=#{place_order_type_name}
+ </if>
+ <!-- ******* -->
+ <if test="order_send_time != null and order_send_time != ''">
+ and order_send_time=#{order_send_time}
+ </if>
+<if test="is_opinion != null and is_opinion != ''">
+ and is_opinion=#{is_opinion}
+ </if>
+<if test="worker_score != null and worker_score != ''">
+ and worker_score=#{worker_score}
+ </if>
+<if test="base_service_score != null and base_service_score != ''">
+ and base_service_score=#{base_service_score}
+ </if>
+<if test="extend_service_score != null and extend_service_score != ''">
+ and extend_service_score=#{extend_service_score}
+ </if>
+<if test="opinion != null and opinion != ''">
+ and opinion=#{opinion}
+ </if>
+<if test="total_score != null and total_score != ''">
+ and total_score=#{total_score}
+ </if>
+<if test="blemish_photo1_before_service != null and blemish_photo1_before_service != ''">
+ and blemish_photo1_before_service=#{blemish_photo1_before_service}
+ </if>
+<if test="belmish_photo2_before_service != null and belmish_photo2_before_service != ''">
+ and belmish_photo2_before_service=#{belmish_photo2_before_service}
+ </if>
+<if test="blemish_photo3_before_service != null and blemish_photo3_before_service != ''">
+ and blemish_photo3_before_service=#{blemish_photo3_before_service}
+ </if>
+<if test="belmish_photo4_before_service != null and belmish_photo4_before_service != ''">
+ and belmish_photo4_before_service=#{belmish_photo4_before_service}
+ </if>
+<if test="blemish_photo1_after_service != null and blemish_photo1_after_service != ''">
+ and blemish_photo1_after_service=#{blemish_photo1_after_service}
+ </if>
+<if test="belmish_photo2_after_service != null and belmish_photo2_after_service != ''">
+ and belmish_photo2_after_service=#{belmish_photo2_after_service}
+ </if>
+<if test="blemish_photo3_after_service != null and blemish_photo3_after_service != ''">
+ and blemish_photo3_after_service=#{blemish_photo3_after_service}
+ </if>
+<if test="belmish_photo4_after_service != null and belmish_photo4_after_service != ''">
+ and belmish_photo4_after_service=#{belmish_photo4_after_service}
+ </if>
+<if test="opinion_tge != null and opinion_tge != ''">
+ and opinion_tge=#{opinion_tge}
+ </if>
+<if test="franchisee_visual_mobile != null and franchisee_visual_mobile != ''">
+ and franchisee_visual_mobile=#{franchisee_visual_mobile}
+ </if>
+<if test="member_visual_mobile != null and member_visual_mobile != ''">
+ and member_visual_mobile=#{member_visual_mobile}
+ </if>
+<if test="cancel_side_code != null and cancel_side_code != ''">
+ and cancel_side_code=#{cancel_side_code}
+ </if>
+<if test="cancel_side_name != null and cancel_side_name != ''">
+ and cancel_side_name=#{cancel_side_name}
+ </if>
+<if test="cancel_order_person != null and cancel_order_person != ''">
+ and cancel_order_person=#{cancel_order_person}
+ </if>
+<if test="amount__refundment != null and amount__refundment != ''">
+ and amount__refundment=#{amount__refundment}
+ </if>
+<if test="break_contract_state_code != null and break_contract_state_code != ''">
+ and break_contract_state_code=#{break_contract_state_code}
+ </if>
+<if test="break_contract_state_name != null and break_contract_state_name != ''">
+ and break_contract_state_name=#{break_contract_state_name}
+ </if>
+<if test="break_contract_reason != null and break_contract_reason != ''">
+ and break_contract_reason=#{break_contract_reason}
+ </if>
+<if test="damage_of_payment_state_code != null and damage_of_payment_state_code != ''">
+ and damage_of_payment_state_code=#{damage_of_payment_state_code}
+ </if>
+<if test="damage_of_payment_state_name != null and damage_of_payment_state_name != ''">
+ and damage_of_payment_state_name=#{damage_of_payment_state_name}
+ </if>
+<if test="total_damage != null and total_damage != ''">
+ and total_damage=#{total_damage}
+ </if>
+<if test="worker_id != null and worker_id != ''">
+ and worker_id=#{worker_id}
+ </if>
+<if test="worker_name != null and worker_name != ''">
+ and worker_name=#{worker_name}
+ </if>
+<if test="gps_positon_of_worker != null and gps_positon_of_worker != ''">
+ and gps_positon_of_worker=#{gps_positon_of_worker}
+ </if>
+<if test="province_id_of_service != null and province_id_of_service != ''">
+ and province_id_of_service=#{province_id_of_service}
+ </if>
+<if test="province_name_of_service != null and province_name_of_service != ''">
+ and province_name_of_service=#{province_name_of_service}
+ </if>
+<if test="city_id_of_service != null and city_id_of_service != ''">
+ and city_id_of_service=#{city_id_of_service}
+ </if>
+<if test="city_name_of_service != null and city_name_of_service != ''">
+ and city_name_of_service=#{city_name_of_service}
+ </if>
+<if test="area_id_of_service != null and area_id_of_service != ''">
+ and area_id_of_service=#{area_id_of_service}
+ </if>
+<if test="area_name_of_service != null and area_name_of_service != ''">
+ and area_name_of_service=#{area_name_of_service}
+ </if>
+<if test="street_id_of_service != null and street_id_of_service != ''">
+ and street_id_of_service=#{street_id_of_service}
+ </if>
+<if test="street_name_of_service != null and street_name_of_service != ''">
+ and street_name_of_service=#{street_name_of_service}
+ </if>
+<if test="gps_position_of_car != null and gps_position_of_car != ''">
+ and gps_position_of_car=#{gps_position_of_car}
+ </if>
+<if test="timespan_of_service != null and timespan_of_service != ''">
+ and timespan_of_service=#{timespan_of_service}
+ </if>
+<if test="car_photo_front_before_service != null and car_photo_front_before_service != ''">
+ and car_photo_front_before_service=#{car_photo_front_before_service}
+ </if>
+<if test="car_photo_after_before_service != null and car_photo_after_before_service != ''">
+ and car_photo_after_before_service=#{car_photo_after_before_service}
+ </if>
+<if test="car_photo_left_before_service != null and car_photo_left_before_service != ''">
+ and car_photo_left_before_service=#{car_photo_left_before_service}
+ </if>
+<if test="car_photo_right_before_service != null and car_photo_right_before_service != ''">
+ and car_photo_right_before_service=#{car_photo_right_before_service}
+ </if>
+<if test="car_photo_front_after_servic != null and car_photo_front_after_servic != ''">
+ and car_photo_front_after_servic=#{car_photo_front_after_servic}
+ </if>
+<if test="car_photo_after_after_servic != null and car_photo_after_after_servic != ''">
+ and car_photo_after_after_servic=#{car_photo_after_after_servic}
+ </if>
+<if test="car_photo_left_after_service != null and car_photo_left_after_service != ''">
+ and car_photo_left_after_service=#{car_photo_left_after_service}
+ </if>
+<if test="car_photo_right_after_servic != null and car_photo_right_after_servic != ''">
+ and car_photo_right_after_servic=#{car_photo_right_after_servic}
+ </if>
+<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="order_no != null and order_no != ''">
+ and order_no=#{order_no}
+ </if>
+<if test="car_id != null and car_id != ''">
+ and car_id=#{car_id}
+ </if>
+<if test="car_no != null and car_no != ''">
+ and car_no=#{car_no}
+ </if>
+<if test="order_member_id != null and order_member_id != ''">
+ and order_member_id=#{order_member_id}
+ </if>
+<if test="order_time != null and order_time != ''">
+ and order_time=#{order_time}
+ </if>
+<if test="order_total != null and order_total != ''">
+ and order_total=#{order_total}
+ </if>
+<if test="order_state_code != null and order_state_code != ''">
+ and order_state_code=#{order_state_code}
+ </if>
+<if test="order_state_name != null and order_state_name != ''">
+ and order_state_name=#{order_state_name}
+ </if>
+<if test="order_over_time != null and order_over_time != ''">
+ and order_over_time=#{order_over_time}
+ </if>
+<if test="service_item_count_of_order != null and service_item_count_of_order != ''">
+ and service_item_count_of_order=#{service_item_count_of_order}
+ </if>
+<if test="pay_state_code != null and pay_state_code != ''">
+ and pay_state_code=#{pay_state_code}
+ </if>
+<if test="pay_state_name != null and pay_state_name != ''">
+ and pay_state_name=#{pay_state_name}
+ </if>
+<if test="payment_channel_code != null and payment_channel_code != ''">
+ and payment_channel_code=#{payment_channel_code}
+ </if>
+<if test="payment_channel_name != null and payment_channel_name != ''">
+ and payment_channel_name=#{payment_channel_name}
+ </if>
+<if test="account_of_pay != null and account_of_pay != ''">
+ and account_of_pay=#{account_of_pay}
+ </if>
+<if test="total_payment != null and total_payment != ''">
+ and total_payment=#{total_payment}
+ </if>
+<if test="time_payment != null and time_payment != ''">
+ and time_payment=#{time_payment}
+ </if>
+<if test="deduction_amount != null and deduction_amount != ''">
+ and deduction_amount=#{deduction_amount}
+ </if>
+<if test="state_code_refundment != null and state_code_refundment != ''">
+ and state_code_refundment=#{state_code_refundment}
+ </if>
+<if test="state_name_refundment != null and state_name_refundment != ''">
+ and state_name_refundment=#{state_name_refundment}
+ </if>
+<if test="time_refundment != null and time_refundment != ''">
+ and time_refundment=#{time_refundment}
+ </if>
+<if test="channel_code_refundment != null and channel_code_refundment != ''">
+ and channel_code_refundment=#{channel_code_refundment}
+ </if>
+<if test="channel_name_refundment != null and channel_name_refundment != ''">
+ and channel_name_refundment=#{channel_name_refundment}
+ </if>
+<if test="account_refundment != null and account_refundment != ''">
+ and account_refundment=#{account_refundment}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

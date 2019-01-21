@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_coupon_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_coupon" id="result_T_u_coupon"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_coupon" id="param_T_u_coupon"/>
+<insert id="insert_t_u_coupon" parameterMap="param_T_u_coupon" >
+
+insert into t_u_coupon   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+ <if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="is_disable != null and is_disable != ''">
+is_disable,
+ </if>
+<if test="descr != null and descr != ''">
+descr,
+ </if>
+<if test="name != null and name != ''">
+name,
+ </if>
+<if test="generate_operator_id != null and generate_operator_id != ''">
+generate_operator_id,
+ </if>
+<if test="generate_operator_name != null and generate_operator_name != ''">
+generate_operator_name,
+ </if>
+<if test="photo != null and photo != ''">
+photo,
+ </if>
+<if test="id != null and id != ''">
+id,
+ </if>
+ <if test="code != null and code != ''">
+code,
+ </if>
+<if test="receive_code != null and receive_code != ''">
+receive_code,
+ </if>
+<if test="type_code != null and type_code != ''">
+type_code,
+ </if>
+<if test="type_name != null and type_name != ''">
+type_name,
+ </if>
+<if test="amount != null and amount != '' or amount==0.0">
+amount,
+ </if>
+<if test="receive_limit_start != null and receive_limit_start != ''">
+receive_limit_start,
+ </if>
+<if test="receive_limit_end != null and receive_limit_end != ''">
+receive_limit_end,
+ </if>
+<if test="use_limit_start != null and use_limit_start != ''">
+use_limit_start,
+ </if>
+<if test="use_limit_end != null and use_limit_end != ''">
+use_limit_end,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+ <if test="createtime != null and createtime != ''">
+#{createtime},  
+ </if>
+<if test="is_disable != null and is_disable != ''">
+#{is_disable},
+ </if>
+<if test="descr != null and descr != ''">
+#{descr},
+ </if>
+<if test="name != null and name != ''">
+#{name},
+ </if>
+<if test="generate_operator_id != null and generate_operator_id != ''">
+#{generate_operator_id},
+ </if>
+<if test="generate_operator_name != null and generate_operator_name != ''">
+#{generate_operator_name},
+ </if>
+<if test="photo != null and photo != ''">
+#{photo},
+ </if>
+<if test="id != null and id != ''">
+#{id},
+ </if>
+ <if test="code != null and code != ''">
+#{code},
+ </if>
+<if test="receive_code != null and receive_code != ''">
+#{receive_code},
+ </if>
+<if test="type_code != null and type_code != ''">
+#{type_code},
+ </if>
+<if test="type_name != null and type_name != ''">
+#{type_name},
+ </if>
+<if test="amount != null and amount != '' or amount==0.0">
+#{amount},
+ </if>
+<if test="receive_limit_start != null and receive_limit_start != ''">
+#{receive_limit_start},
+ </if>
+<if test="receive_limit_end != null and receive_limit_end != ''">
+#{receive_limit_end},
+ </if>
+<if test="use_limit_start != null and use_limit_start != ''">
+#{use_limit_start},
+ </if>
+<if test="use_limit_end != null and use_limit_end != ''">
+#{use_limit_end},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_coupon" parameterMap="param_T_u_coupon" >
+update t_u_coupon set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_coupon" parameterMap="param_T_u_coupon" >update t_u_coupon   
+
+<set>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="is_disable != null and is_disable != ''">
+is_disable=#{is_disable},
+ </if>
+<if test="descr != null and descr != ''">
+descr=#{descr},
+ </if>
+<if test="name != null and name != ''">
+name=#{name},
+ </if>
+<if test="generate_operator_id != null and generate_operator_id != ''">
+generate_operator_id=#{generate_operator_id},
+ </if>
+<if test="generate_operator_name != null and generate_operator_name != ''">
+generate_operator_name=#{generate_operator_name},
+ </if>
+<if test="photo != null and photo != ''">
+photo=#{photo},
+ </if>
+<if test="code != null and code != ''">
+code=#{code},
+ </if>
+<if test="receive_code != null and receive_code != ''">
+receive_code=#{receive_code},
+ </if>
+<if test="type_code != null and type_code != ''">
+type_code=#{type_code},
+ </if>
+<if test="type_name != null and type_name != ''">
+type_name=#{type_name},
+ </if>
+<if test="amount != null and amount != ''">
+amount=#{amount},
+ </if>
+<if test="receive_limit_start != null and receive_limit_start != ''">
+receive_limit_start=#{receive_limit_start},
+ </if>
+<if test="receive_limit_end != null and receive_limit_end != ''">
+receive_limit_end=#{receive_limit_end},
+ </if>
+<if test="use_limit_start != null and use_limit_start != ''">
+use_limit_start=#{use_limit_start},
+ </if>
+<if test="use_limit_end != null and use_limit_end != ''">
+use_limit_end=#{use_limit_end},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_coupon" parameterMap="param_T_u_coupon"  resultMap="result_T_u_coupon">
+select UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,CREATETIME,IS_DISABLE,DESCR,NAME,GENERATE_OPERATOR_ID,GENERATE_OPERATOR_NAME,PHOTO,ID,CODE,RECEIVE_CODE,TYPE_CODE,TYPE_NAME,AMOUNT,RECEIVE_LIMIT_START,RECEIVE_LIMIT_END,USE_LIMIT_START,USE_LIMIT_END
+ from t_u_coupon where is_delete != 1<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="is_disable != null and is_disable != '' or is_disable == 0">
+ and is_disable=#{is_disable}
+ </if>
+<if test="descr != null and descr != ''">
+ and descr=#{descr}
+ </if>
+<if test="name != null and name != ''">
+ and name=#{name}
+ </if>
+<if test="generate_operator_id != null and generate_operator_id != ''">
+ and generate_operator_id=#{generate_operator_id}
+ </if>
+<if test="generate_operator_name != null and generate_operator_name != ''">
+ and generate_operator_name=#{generate_operator_name}
+ </if>
+<if test="photo != null and photo != ''">
+ and photo=#{photo}
+ </if>
+<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="code != null and code != ''">
+ and code=#{code}
+ </if>
+<if test="receive_code != null and receive_code != ''">
+ and receive_code=#{receive_code}
+ </if>
+<if test="type_code != null and type_code != ''">
+ and type_code=#{type_code}
+ </if>
+<if test="type_name != null and type_name != ''">
+ and type_name=#{type_name}
+ </if>
+<if test="amount != null and amount != ''">
+ and amount=#{amount}
+ </if>
+<if test="receive_limit_start != null and receive_limit_start != ''">
+ and receive_limit_start=#{receive_limit_start}
+ </if>
+<if test="receive_limit_end != null and receive_limit_end != ''">
+ and receive_limit_end=#{receive_limit_end}
+ </if>
+<if test="use_limit_start != null and use_limit_start != ''">
+ and use_limit_start=#{use_limit_start}
+ </if>
+<if test="use_limit_end != null and use_limit_end != ''">
+ and use_limit_end=#{use_limit_end}
+ </if>
+ order by to_number(code) desc
+</select>
+
+
+
+
+
+</mapper>

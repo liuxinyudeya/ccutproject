@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_member_self_recommendation_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_member_self_recommendation" id="result_T_u_member_self_recommendation"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_member_self_recommendation" id="param_T_u_member_self_recommendation"/>
+<insert id="insert_t_u_member_self_recommendation" parameterMap="param_T_u_member_self_recommendation" >
+
+insert into t_u_member_self_recommendation   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="apply_job != null and apply_job != ''">
+apply_job,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="applicant_id != null and applicant_id != ''">
+applicant_id,
+ </if>
+<if test="applicant_name != null and applicant_name != ''">
+applicant_name,
+ </if>
+<if test="applicant_sex != null and applicant_sex != ''">
+applicant_sex,
+ </if>
+<if test="mobile != null and mobile != ''">
+mobile,
+ </if>
+<if test="idcard_no != null and idcard_no != ''">
+idcard_no,
+ </if>
+<if test="province_id_work != null and province_id_work != ''">
+province_id_work,
+ </if>
+<if test="province_name_work != null and province_name_work != ''">
+province_name_work,
+ </if>
+<if test="city_id_work != null and city_id_work != ''">
+city_id_work,
+ </if>
+<if test="city_name_work != null and city_name_work != ''">
+city_name_work,
+ </if>
+<if test="area_work != null and area_work != ''">
+area_work,
+ </if>
+<if test="experience != null and experience != ''">
+experience,
+ </if>
+<if test="join_type != null and join_type != ''">
+join_type,
+ </if>
+<if test="idcard_front_url != null and idcard_front_url != ''">
+idcard_front_url,
+ </if>
+<if test="idcard_back_url != null and idcard_back_url != ''">
+idcard_back_url,
+ </if>
+<if test="driving_license != null and driving_license != ''">
+driving_license,
+ </if>
+<if test="is_csstaff_response != null and is_csstaff_response != ''">
+is_csstaff_response,
+ </if>
+<if test="responder_name != null and responder_name != ''">
+responder_name,
+ </if>
+<if test="response_time != null and response_time != ''">
+response_time,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="apply_job != null and apply_job != ''">
+#{apply_job},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="applicant_id != null and applicant_id != ''">
+#{applicant_id},
+ </if>
+<if test="applicant_name != null and applicant_name != ''">
+#{applicant_name},
+ </if>
+<if test="applicant_sex != null and applicant_sex != ''">
+#{applicant_sex},
+ </if>
+<if test="mobile != null and mobile != ''">
+#{mobile},
+ </if>
+<if test="idcard_no != null and idcard_no != ''">
+#{idcard_no},
+ </if>
+<if test="province_id_work != null and province_id_work != ''">
+#{province_id_work},
+ </if>
+<if test="province_name_work != null and province_name_work != ''">
+#{province_name_work},
+ </if>
+<if test="city_id_work != null and city_id_work != ''">
+#{city_id_work},
+ </if>
+<if test="city_name_work != null and city_name_work != ''">
+#{city_name_work},
+ </if>
+<if test="area_work != null and area_work != ''">
+#{area_work},
+ </if>
+<if test="experience != null and experience != ''">
+#{experience},
+ </if>
+<if test="join_type != null and join_type != ''">
+#{join_type},
+ </if>
+<if test="idcard_front_url != null and idcard_front_url != ''">
+#{idcard_front_url},
+ </if>
+<if test="idcard_back_url != null and idcard_back_url != ''">
+#{idcard_back_url},
+ </if>
+<if test="driving_license != null and driving_license != ''">
+#{driving_license},
+ </if>
+<if test="is_csstaff_response != null and is_csstaff_response != ''">
+#{is_csstaff_response},
+ </if>
+<if test="responder_name != null and responder_name != ''">
+#{responder_name},
+ </if>
+<if test="response_time != null and response_time != ''">
+#{response_time},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_member_self_recommendation" parameterMap="param_T_u_member_self_recommendation" >
+update t_u_member_self_recommendation set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_member_self_recommendation" parameterMap="param_T_u_member_self_recommendation" >update t_u_member_self_recommendation   
+
+<set>
+<if test="apply_job != null and apply_job != ''">
+apply_job=#{apply_job},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="applicant_id != null and applicant_id != ''">
+applicant_id=#{applicant_id},
+ </if>
+<if test="applicant_name != null and applicant_name != ''">
+applicant_name=#{applicant_name},
+ </if>
+<if test="applicant_sex != null and applicant_sex != ''">
+applicant_sex=#{applicant_sex},
+ </if>
+<if test="mobile != null and mobile != ''">
+mobile=#{mobile},
+ </if>
+<if test="idcard_no != null and idcard_no != ''">
+idcard_no=#{idcard_no},
+ </if>
+<if test="province_id_work != null and province_id_work != ''">
+province_id_work=#{province_id_work},
+ </if>
+<if test="province_name_work != null and province_name_work != ''">
+province_name_work=#{province_name_work},
+ </if>
+<if test="city_id_work != null and city_id_work != ''">
+city_id_work=#{city_id_work},
+ </if>
+<if test="city_name_work != null and city_name_work != ''">
+city_name_work=#{city_name_work},
+ </if>
+<if test="area_work != null and area_work != ''">
+area_work=#{area_work},
+ </if>
+<if test="experience != null and experience != ''">
+experience=#{experience},
+ </if>
+<if test="join_type != null and join_type != ''">
+join_type=#{join_type},
+ </if>
+<if test="idcard_front_url != null and idcard_front_url != ''">
+idcard_front_url=#{idcard_front_url},
+ </if>
+<if test="idcard_back_url != null and idcard_back_url != ''">
+idcard_back_url=#{idcard_back_url},
+ </if>
+<if test="driving_license != null and driving_license != ''">
+driving_license=#{driving_license},
+ </if>
+<if test="is_csstaff_response != null and is_csstaff_response != ''">
+is_csstaff_response=#{is_csstaff_response},
+ </if>
+<if test="responder_name != null and responder_name != ''">
+responder_name=#{responder_name},
+ </if>
+<if test="response_time != null and response_time != ''">
+response_time=#{response_time},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_member_self_recommendation" parameterMap="param_T_u_member_self_recommendation"  resultMap="result_T_u_member_self_recommendation">
+select APPLY_JOB,DELETETIME,ID,CREATETIME,UPDATETIME,IS_DELETE,CREATOR,UPDATER,DELETE_USER,APPLICANT_ID,APPLICANT_NAME,APPLICANT_SEX,MOBILE,IDCARD_NO,PROVINCE_ID_WORK,PROVINCE_NAME_WORK,CITY_ID_WORK,CITY_NAME_WORK,AREA_WORK,EXPERIENCE,JOIN_TYPE,IDCARD_FRONT_URL,IDCARD_BACK_URL,DRIVING_LICENSE,IS_CSSTAFF_RESPONSE,RESPONDER_NAME,RESPONSE_TIME
+ from t_u_member_self_recommendation where is_delete != 1<if test="apply_job != null and apply_job != ''">
+ and apply_job=#{apply_job}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="applicant_id != null and applicant_id != ''">
+ and applicant_id=#{applicant_id}
+ </if>
+<if test="applicant_name != null and applicant_name != ''">
+ and applicant_name=#{applicant_name}
+ </if>
+<if test="applicant_sex != null and applicant_sex != ''">
+ and applicant_sex=#{applicant_sex}
+ </if>
+<if test="mobile != null and mobile != ''">
+ and mobile=#{mobile}
+ </if>
+<if test="idcard_no != null and idcard_no != ''">
+ and idcard_no=#{idcard_no}
+ </if>
+<if test="province_id_work != null and province_id_work != ''">
+ and province_id_work=#{province_id_work}
+ </if>
+<if test="province_name_work != null and province_name_work != ''">
+ and province_name_work=#{province_name_work}
+ </if>
+<if test="city_id_work != null and city_id_work != ''">
+ and city_id_work=#{city_id_work}
+ </if>
+<if test="city_name_work != null and city_name_work != ''">
+ and city_name_work=#{city_name_work}
+ </if>
+<if test="area_work != null and area_work != ''">
+ and area_work=#{area_work}
+ </if>
+<if test="experience != null and experience != ''">
+ and experience=#{experience}
+ </if>
+<if test="join_type != null and join_type != ''">
+ and join_type=#{join_type}
+ </if>
+<if test="idcard_front_url != null and idcard_front_url != ''">
+ and idcard_front_url=#{idcard_front_url}
+ </if>
+<if test="idcard_back_url != null and idcard_back_url != ''">
+ and idcard_back_url=#{idcard_back_url}
+ </if>
+<if test="driving_license != null and driving_license != ''">
+ and driving_license=#{driving_license}
+ </if>
+<if test="is_csstaff_response != null and is_csstaff_response != ''">
+ and is_csstaff_response=#{is_csstaff_response}
+ </if>
+<if test="responder_name != null and responder_name != ''">
+ and responder_name=#{responder_name}
+ </if>
+<if test="response_time != null and response_time != ''">
+ and response_time=#{response_time}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

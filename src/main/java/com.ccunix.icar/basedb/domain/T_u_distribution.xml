@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_distribution_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_distribution" id="result_T_u_distribution"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_distribution" id="param_T_u_distribution"/>
+<insert id="insert_t_u_distribution" parameterMap="param_T_u_distribution" >
+
+insert into t_u_distribution   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="order_id != null and order_id != ''">
+order_id,
+ </if>
+<if test="order_state_code != null and order_state_code != ''">
+order_state_code,
+ </if>
+<if test="order_state_name != null and order_state_name != ''">
+order_state_name,
+ </if>
+<if test="distribution_state_code != null and distribution_state_code != ''">
+distribution_state_code,
+ </if>
+<if test="distribution_state_name != null and distribution_state_name != ''">
+distribution_state_name,
+ </if>
+<if test="start_time_of_distribution != null and start_time_of_distribution != ''">
+start_time_of_distribution,
+ </if>
+<if test="end_time_of_distribution != null and end_time_of_distribution != ''">
+end_time_of_distribution,
+ </if>
+<if test="order_owner_id != null and order_owner_id != ''">
+order_owner_id,
+ </if>
+<if test="order_owner_name != null and order_owner_name != ''">
+order_owner_name,
+ </if>
+<if test="city_id_of_service != null and city_id_of_service != ''">
+city_id_of_service,
+ </if>
+<if test="city_name_of_service != null and city_name_of_service != ''">
+city_name_of_service,
+ </if>
+<if test="order_amount != null and order_amount != ''">
+order_amount,
+ </if>
+<if test="distribution_admount != null and distribution_admount != ''">
+distribution_admount,
+ </if>
+<if test="account_id_of_ours != null and account_id_of_ours != ''">
+account_id_of_ours,
+ </if>
+<if test="percentage_of_ours != null and percentage_of_ours != ''">
+percentage_of_ours,
+ </if>
+<if test="amount_of_ours != null and amount_of_ours != ''">
+amount_of_ours,
+ </if>
+<if test="agent_id != null and agent_id != ''">
+agent_id,
+ </if>
+<if test="agent_name != null and agent_name != ''">
+agent_name,
+ </if>
+<if test="city_id_agent != null and city_id_agent != ''">
+city_id_agent,
+ </if>
+<if test="city_name_agent != null and city_name_agent != ''">
+city_name_agent,
+ </if>
+<if test="percentage_of_agent != null and percentage_of_agent != ''">
+percentage_of_agent,
+ </if>
+<if test="amount_of_agent != null and amount_of_agent != ''">
+amount_of_agent,
+ </if>
+<if test="team_leader_id != null and team_leader_id != ''">
+team_leader_id,
+ </if>
+<if test="team_leader_name != null and team_leader_name != ''">
+team_leader_name,
+ </if>
+<if test="city_id_of_team_leader != null and city_id_of_team_leader != ''">
+city_id_of_team_leader,
+ </if>
+<if test="city_name_of_team_leader != null and city_name_of_team_leader != ''">
+city_name_of_team_leader,
+ </if>
+<if test="percentage_of_team_leader != null and percentage_of_team_leader != ''">
+percentage_of_team_leader,
+ </if>
+<if test="amount_of_team_leader != null and amount_of_team_leader != ''">
+amount_of_team_leader,
+ </if>
+<if test="worker_id != null and worker_id != ''">
+worker_id,
+ </if>
+<if test="worker_name != null and worker_name != ''">
+worker_name,
+ </if>
+<if test="city_id_of_worker != null and city_id_of_worker != ''">
+city_id_of_worker,
+ </if>
+<if test="city_name_of_worker != null and city_name_of_worker != ''">
+city_name_of_worker,
+ </if>
+<if test="percentage_of_worker != null and percentage_of_worker != ''">
+percentage_of_worker,
+ </if>
+<if test="amount_of_worker != null and amount_of_worker != ''">
+amount_of_worker,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="order_id != null and order_id != ''">
+#{order_id},
+ </if>
+<if test="order_state_code != null and order_state_code != ''">
+#{order_state_code},
+ </if>
+<if test="order_state_name != null and order_state_name != ''">
+#{order_state_name},
+ </if>
+<if test="distribution_state_code != null and distribution_state_code != ''">
+#{distribution_state_code},
+ </if>
+<if test="distribution_state_name != null and distribution_state_name != ''">
+#{distribution_state_name},
+ </if>
+<if test="start_time_of_distribution != null and start_time_of_distribution != ''">
+#{start_time_of_distribution},
+ </if>
+<if test="end_time_of_distribution != null and end_time_of_distribution != ''">
+#{end_time_of_distribution},
+ </if>
+<if test="order_owner_id != null and order_owner_id != ''">
+#{order_owner_id},
+ </if>
+<if test="order_owner_name != null and order_owner_name != ''">
+#{order_owner_name},
+ </if>
+<if test="city_id_of_service != null and city_id_of_service != ''">
+#{city_id_of_service},
+ </if>
+<if test="city_name_of_service != null and city_name_of_service != ''">
+#{city_name_of_service},
+ </if>
+<if test="order_amount != null and order_amount != ''">
+#{order_amount},
+ </if>
+<if test="distribution_admount != null and distribution_admount != ''">
+#{distribution_admount},
+ </if>
+<if test="account_id_of_ours != null and account_id_of_ours != ''">
+#{account_id_of_ours},
+ </if>
+<if test="percentage_of_ours != null and percentage_of_ours != ''">
+#{percentage_of_ours},
+ </if>
+<if test="amount_of_ours != null and amount_of_ours != ''">
+#{amount_of_ours},
+ </if>
+<if test="agent_id != null and agent_id != ''">
+#{agent_id},
+ </if>
+<if test="agent_name != null and agent_name != ''">
+#{agent_name},
+ </if>
+<if test="city_id_agent != null and city_id_agent != ''">
+#{city_id_agent},
+ </if>
+<if test="city_name_agent != null and city_name_agent != ''">
+#{city_name_agent},
+ </if>
+<if test="percentage_of_agent != null and percentage_of_agent != ''">
+#{percentage_of_agent},
+ </if>
+<if test="amount_of_agent != null and amount_of_agent != ''">
+#{amount_of_agent},
+ </if>
+<if test="team_leader_id != null and team_leader_id != ''">
+#{team_leader_id},
+ </if>
+<if test="team_leader_name != null and team_leader_name != ''">
+#{team_leader_name},
+ </if>
+<if test="city_id_of_team_leader != null and city_id_of_team_leader != ''">
+#{city_id_of_team_leader},
+ </if>
+<if test="city_name_of_team_leader != null and city_name_of_team_leader != ''">
+#{city_name_of_team_leader},
+ </if>
+<if test="percentage_of_team_leader != null and percentage_of_team_leader != ''">
+#{percentage_of_team_leader},
+ </if>
+<if test="amount_of_team_leader != null and amount_of_team_leader != ''">
+#{amount_of_team_leader},
+ </if>
+<if test="worker_id != null and worker_id != ''">
+#{worker_id},
+ </if>
+<if test="worker_name != null and worker_name != ''">
+#{worker_name},
+ </if>
+<if test="city_id_of_worker != null and city_id_of_worker != ''">
+#{city_id_of_worker},
+ </if>
+<if test="city_name_of_worker != null and city_name_of_worker != ''">
+#{city_name_of_worker},
+ </if>
+<if test="percentage_of_worker != null and percentage_of_worker != ''">
+#{percentage_of_worker},
+ </if>
+<if test="amount_of_worker != null and amount_of_worker != ''">
+#{amount_of_worker},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_distribution" parameterMap="param_T_u_distribution" >
+update t_u_distribution set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_distribution" parameterMap="param_T_u_distribution" >update t_u_distribution   
+
+<set>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="order_id != null and order_id != ''">
+order_id=#{order_id},
+ </if>
+<if test="order_state_code != null and order_state_code != ''">
+order_state_code=#{order_state_code},
+ </if>
+<if test="order_state_name != null and order_state_name != ''">
+order_state_name=#{order_state_name},
+ </if>
+<if test="distribution_state_code != null and distribution_state_code != ''">
+distribution_state_code=#{distribution_state_code},
+ </if>
+<if test="distribution_state_name != null and distribution_state_name != ''">
+distribution_state_name=#{distribution_state_name},
+ </if>
+<if test="start_time_of_distribution != null and start_time_of_distribution != ''">
+start_time_of_distribution=#{start_time_of_distribution},
+ </if>
+<if test="end_time_of_distribution != null and end_time_of_distribution != ''">
+end_time_of_distribution=#{end_time_of_distribution},
+ </if>
+<if test="order_owner_id != null and order_owner_id != ''">
+order_owner_id=#{order_owner_id},
+ </if>
+<if test="order_owner_name != null and order_owner_name != ''">
+order_owner_name=#{order_owner_name},
+ </if>
+<if test="city_id_of_service != null and city_id_of_service != ''">
+city_id_of_service=#{city_id_of_service},
+ </if>
+<if test="city_name_of_service != null and city_name_of_service != ''">
+city_name_of_service=#{city_name_of_service},
+ </if>
+<if test="order_amount != null and order_amount != ''">
+order_amount=#{order_amount},
+ </if>
+<if test="distribution_admount != null and distribution_admount != ''">
+distribution_admount=#{distribution_admount},
+ </if>
+<if test="account_id_of_ours != null and account_id_of_ours != ''">
+account_id_of_ours=#{account_id_of_ours},
+ </if>
+<if test="percentage_of_ours != null and percentage_of_ours != ''">
+percentage_of_ours=#{percentage_of_ours},
+ </if>
+<if test="amount_of_ours != null and amount_of_ours != ''">
+amount_of_ours=#{amount_of_ours},
+ </if>
+<if test="agent_id != null and agent_id != ''">
+agent_id=#{agent_id},
+ </if>
+<if test="agent_name != null and agent_name != ''">
+agent_name=#{agent_name},
+ </if>
+<if test="city_id_agent != null and city_id_agent != ''">
+city_id_agent=#{city_id_agent},
+ </if>
+<if test="city_name_agent != null and city_name_agent != ''">
+city_name_agent=#{city_name_agent},
+ </if>
+<if test="percentage_of_agent != null and percentage_of_agent != ''">
+percentage_of_agent=#{percentage_of_agent},
+ </if>
+<if test="amount_of_agent != null and amount_of_agent != ''">
+amount_of_agent=#{amount_of_agent},
+ </if>
+<if test="team_leader_id != null and team_leader_id != ''">
+team_leader_id=#{team_leader_id},
+ </if>
+<if test="team_leader_name != null and team_leader_name != ''">
+team_leader_name=#{team_leader_name},
+ </if>
+<if test="city_id_of_team_leader != null and city_id_of_team_leader != ''">
+city_id_of_team_leader=#{city_id_of_team_leader},
+ </if>
+<if test="city_name_of_team_leader != null and city_name_of_team_leader != ''">
+city_name_of_team_leader=#{city_name_of_team_leader},
+ </if>
+<if test="percentage_of_team_leader != null and percentage_of_team_leader != ''">
+percentage_of_team_leader=#{percentage_of_team_leader},
+ </if>
+<if test="amount_of_team_leader != null and amount_of_team_leader != ''">
+amount_of_team_leader=#{amount_of_team_leader},
+ </if>
+<if test="worker_id != null and worker_id != ''">
+worker_id=#{worker_id},
+ </if>
+<if test="worker_name != null and worker_name != ''">
+worker_name=#{worker_name},
+ </if>
+<if test="city_id_of_worker != null and city_id_of_worker != ''">
+city_id_of_worker=#{city_id_of_worker},
+ </if>
+<if test="city_name_of_worker != null and city_name_of_worker != ''">
+city_name_of_worker=#{city_name_of_worker},
+ </if>
+<if test="percentage_of_worker != null and percentage_of_worker != ''">
+percentage_of_worker=#{percentage_of_worker},
+ </if>
+<if test="amount_of_worker != null and amount_of_worker != ''">
+amount_of_worker=#{amount_of_worker},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_distribution" parameterMap="param_T_u_distribution"  resultMap="result_T_u_distribution">
+select ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,ORDER_ID,ORDER_STATE_CODE,ORDER_STATE_NAME,DISTRIBUTION_STATE_CODE,DISTRIBUTION_STATE_NAME,START_TIME_OF_DISTRIBUTION,END_TIME_OF_DISTRIBUTION,ORDER_OWNER_ID,ORDER_OWNER_NAME,CITY_ID_OF_SERVICE,CITY_NAME_OF_SERVICE,ORDER_AMOUNT,DISTRIBUTION_ADMOUNT,ACCOUNT_ID_OF_OURS,PERCENTAGE_OF_OURS,AMOUNT_OF_OURS,AGENT_ID,AGENT_NAME,CITY_ID_AGENT,CITY_NAME_AGENT,PERCENTAGE_OF_AGENT,AMOUNT_OF_AGENT,TEAM_LEADER_ID,TEAM_LEADER_NAME,CITY_ID_OF_TEAM_LEADER,CITY_NAME_OF_TEAM_LEADER,PERCENTAGE_OF_TEAM_LEADER,AMOUNT_OF_TEAM_LEADER,WORKER_ID,WORKER_NAME,CITY_ID_OF_WORKER,CITY_NAME_OF_WORKER,PERCENTAGE_OF_WORKER,AMOUNT_OF_WORKER
+ from t_u_distribution where is_delete != 1<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="order_id != null and order_id != ''">
+ and order_id=#{order_id}
+ </if>
+<if test="order_state_code != null and order_state_code != ''">
+ and order_state_code=#{order_state_code}
+ </if>
+<if test="order_state_name != null and order_state_name != ''">
+ and order_state_name=#{order_state_name}
+ </if>
+<if test="distribution_state_code != null and distribution_state_code != ''">
+ and distribution_state_code=#{distribution_state_code}
+ </if>
+<if test="distribution_state_name != null and distribution_state_name != ''">
+ and distribution_state_name=#{distribution_state_name}
+ </if>
+<if test="start_time_of_distribution != null and start_time_of_distribution != ''">
+ and start_time_of_distribution=#{start_time_of_distribution}
+ </if>
+<if test="end_time_of_distribution != null and end_time_of_distribution != ''">
+ and end_time_of_distribution=#{end_time_of_distribution}
+ </if>
+<if test="order_owner_id != null and order_owner_id != ''">
+ and order_owner_id=#{order_owner_id}
+ </if>
+<if test="order_owner_name != null and order_owner_name != ''">
+ and order_owner_name=#{order_owner_name}
+ </if>
+<if test="city_id_of_service != null and city_id_of_service != ''">
+ and city_id_of_service=#{city_id_of_service}
+ </if>
+<if test="city_name_of_service != null and city_name_of_service != ''">
+ and city_name_of_service=#{city_name_of_service}
+ </if>
+<if test="order_amount != null and order_amount != ''">
+ and order_amount=#{order_amount}
+ </if>
+<if test="distribution_admount != null and distribution_admount != ''">
+ and distribution_admount=#{distribution_admount}
+ </if>
+<if test="account_id_of_ours != null and account_id_of_ours != ''">
+ and account_id_of_ours=#{account_id_of_ours}
+ </if>
+<if test="percentage_of_ours != null and percentage_of_ours != ''">
+ and percentage_of_ours=#{percentage_of_ours}
+ </if>
+<if test="amount_of_ours != null and amount_of_ours != ''">
+ and amount_of_ours=#{amount_of_ours}
+ </if>
+<if test="agent_id != null and agent_id != ''">
+ and agent_id=#{agent_id}
+ </if>
+<if test="agent_name != null and agent_name != ''">
+ and agent_name=#{agent_name}
+ </if>
+<if test="city_id_agent != null and city_id_agent != ''">
+ and city_id_agent=#{city_id_agent}
+ </if>
+<if test="city_name_agent != null and city_name_agent != ''">
+ and city_name_agent=#{city_name_agent}
+ </if>
+<if test="percentage_of_agent != null and percentage_of_agent != ''">
+ and percentage_of_agent=#{percentage_of_agent}
+ </if>
+<if test="amount_of_agent != null and amount_of_agent != ''">
+ and amount_of_agent=#{amount_of_agent}
+ </if>
+<if test="team_leader_id != null and team_leader_id != ''">
+ and team_leader_id=#{team_leader_id}
+ </if>
+<if test="team_leader_name != null and team_leader_name != ''">
+ and team_leader_name=#{team_leader_name}
+ </if>
+<if test="city_id_of_team_leader != null and city_id_of_team_leader != ''">
+ and city_id_of_team_leader=#{city_id_of_team_leader}
+ </if>
+<if test="city_name_of_team_leader != null and city_name_of_team_leader != ''">
+ and city_name_of_team_leader=#{city_name_of_team_leader}
+ </if>
+<if test="percentage_of_team_leader != null and percentage_of_team_leader != ''">
+ and percentage_of_team_leader=#{percentage_of_team_leader}
+ </if>
+<if test="amount_of_team_leader != null and amount_of_team_leader != ''">
+ and amount_of_team_leader=#{amount_of_team_leader}
+ </if>
+<if test="worker_id != null and worker_id != ''">
+ and worker_id=#{worker_id}
+ </if>
+<if test="worker_name != null and worker_name != ''">
+ and worker_name=#{worker_name}
+ </if>
+<if test="city_id_of_worker != null and city_id_of_worker != ''">
+ and city_id_of_worker=#{city_id_of_worker}
+ </if>
+<if test="city_name_of_worker != null and city_name_of_worker != ''">
+ and city_name_of_worker=#{city_name_of_worker}
+ </if>
+<if test="percentage_of_worker != null and percentage_of_worker != ''">
+ and percentage_of_worker=#{percentage_of_worker}
+ </if>
+<if test="amount_of_worker != null and amount_of_worker != ''">
+ and amount_of_worker=#{amount_of_worker}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

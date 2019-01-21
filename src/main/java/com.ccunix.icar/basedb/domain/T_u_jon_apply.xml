@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_jon_apply_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_jon_apply" id="result_T_u_jon_apply"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_jon_apply" id="param_T_u_jon_apply"/>
+<insert id="insert_t_u_jon_apply" parameterMap="param_T_u_jon_apply" >
+
+insert into t_u_jon_apply   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="cardphotoa != null and cardphotoa != ''">
+cardphotoa,
+ </if>
+<if test="cardphotob != null and cardphotob != ''">
+cardphotob,
+ </if>
+<if test="carphoto != null and carphoto != ''">
+carphoto,
+ </if>
+<if test="audit_result_name != null and audit_result_name != ''">
+audit_result_name,
+ </if>
+<if test="audit_reason != null and audit_reason != ''">
+audit_reason,
+ </if>
+<if test="applicant_joinway != null and applicant_joinway != ''">
+applicant_joinway,
+ </if>
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="agent_id != null and agent_id != ''">
+agent_id,
+ </if>
+<if test="agent_name != null and agent_name != ''">
+agent_name,
+ </if>
+<if test="city_id_agent != null and city_id_agent != ''">
+city_id_agent,
+ </if>
+<if test="city_name_agent != null and city_name_agent != ''">
+city_name_agent,
+ </if>
+<if test="area_agent != null and area_agent != ''">
+area_agent,
+ </if>
+<if test="apply_time != null and apply_time != ''">
+apply_time,
+ </if>
+<if test="applicant_name != null and applicant_name != ''">
+applicant_name,
+ </if>
+<if test="applicant_sex_code != null and applicant_sex_code != ''">
+applicant_sex_code,
+ </if>
+<if test="applicant_sex_name != null and applicant_sex_name != ''">
+applicant_sex_name,
+ </if>
+<if test="applicant_nation != null and applicant_nation != ''">
+applicant_nation,
+ </if>
+<if test="applicant_native_place != null and applicant_native_place != ''">
+applicant_native_place,
+ </if>
+<if test="applicant_height != null and applicant_height != ''">
+applicant_height,
+ </if>
+<if test="applicant_weight != null and applicant_weight != ''">
+applicant_weight,
+ </if>
+<if test="applicant_idcard_no != null and applicant_idcard_no != ''">
+applicant_idcard_no,
+ </if>
+<if test="applicant_address != null and applicant_address != ''">
+applicant_address,
+ </if>
+<if test="applicant_mobile != null and applicant_mobile != ''">
+applicant_mobile,
+ </if>
+<if test="applicant_experience_code != null and applicant_experience_code != ''">
+applicant_experience_code,
+ </if>
+<if test="applicant_experience_name != null and applicant_experience_name != ''">
+applicant_experience_name,
+ </if>
+<if test="workder_mobile != null and workder_mobile != ''">
+workder_mobile,
+ </if>
+<if test="driving_license_url != null and driving_license_url != ''">
+driving_license_url,
+ </if>
+<if test="auditor_id != null and auditor_id != ''">
+auditor_id,
+ </if>
+<if test="auditor_name != null and auditor_name != ''">
+auditor_name,
+ </if>
+<if test="auditor_time != null and auditor_time != ''">
+auditor_time,
+ </if>
+<if test="audit_result_code != null and audit_result_code != ''">
+audit_result_code,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="cardphotoa != null and cardphotoa != ''">
+#{cardphotoa},
+ </if>
+<if test="cardphotob != null and cardphotob != ''">
+#{cardphotob},
+ </if>
+<if test="carphoto != null and carphoto != ''">
+#{carphoto},
+ </if>
+<if test="audit_result_name != null and audit_result_name != ''">
+#{audit_result_name},
+ </if>
+<if test="audit_reason != null and audit_reason != ''">
+#{audit_reason},
+ </if>
+<if test="applicant_joinway != null and applicant_joinway != ''">
+#{applicant_joinway},
+ </if>
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="agent_id != null and agent_id != ''">
+#{agent_id},
+ </if>
+<if test="agent_name != null and agent_name != ''">
+#{agent_name},
+ </if>
+<if test="city_id_agent != null and city_id_agent != ''">
+#{city_id_agent},
+ </if>
+<if test="city_name_agent != null and city_name_agent != ''">
+#{city_name_agent},
+ </if>
+<if test="area_agent != null and area_agent != ''">
+#{area_agent},
+ </if>
+<if test="apply_time != null and apply_time != ''">
+#{apply_time},
+ </if>
+<if test="applicant_name != null and applicant_name != ''">
+#{applicant_name},
+ </if>
+<if test="applicant_sex_code != null and applicant_sex_code != ''">
+#{applicant_sex_code},
+ </if>
+<if test="applicant_sex_name != null and applicant_sex_name != ''">
+#{applicant_sex_name},
+ </if>
+<if test="applicant_nation != null and applicant_nation != ''">
+#{applicant_nation},
+ </if>
+<if test="applicant_native_place != null and applicant_native_place != ''">
+#{applicant_native_place},
+ </if>
+<if test="applicant_height != null and applicant_height != ''">
+#{applicant_height},
+ </if>
+<if test="applicant_weight != null and applicant_weight != ''">
+#{applicant_weight},
+ </if>
+<if test="applicant_idcard_no != null and applicant_idcard_no != ''">
+#{applicant_idcard_no},
+ </if>
+<if test="applicant_address != null and applicant_address != ''">
+#{applicant_address},
+ </if>
+<if test="applicant_mobile != null and applicant_mobile != ''">
+#{applicant_mobile},
+ </if>
+<if test="applicant_experience_code != null and applicant_experience_code != ''">
+#{applicant_experience_code},
+ </if>
+<if test="applicant_experience_name != null and applicant_experience_name != ''">
+#{applicant_experience_name},
+ </if>
+<if test="workder_mobile != null and workder_mobile != ''">
+#{workder_mobile},
+ </if>
+<if test="driving_license_url != null and driving_license_url != ''">
+#{driving_license_url},
+ </if>
+<if test="auditor_id != null and auditor_id != ''">
+#{auditor_id},
+ </if>
+<if test="auditor_name != null and auditor_name != ''">
+#{auditor_name},
+ </if>
+<if test="auditor_time != null and auditor_time != ''">
+#{auditor_time},
+ </if>
+<if test="audit_result_code != null and audit_result_code != ''">
+#{audit_result_code},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_jon_apply" parameterMap="param_T_u_jon_apply" >
+update t_u_jon_apply set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_jon_apply" parameterMap="param_T_u_jon_apply" >update t_u_jon_apply   
+
+<set>
+<if test="cardphotoa != null and cardphotoa != ''">
+cardphotoa=#{cardphotoa},
+ </if>
+<if test="cardphotob != null and cardphotob != ''">
+cardphotob=#{cardphotob},
+ </if>
+<if test="carphoto != null and carphoto != ''">
+carphoto=#{carphoto},
+ </if>
+<if test="audit_result_name != null and audit_result_name != ''">
+audit_result_name=#{audit_result_name},
+ </if>
+<if test="audit_reason != null and audit_reason != ''">
+audit_reason=#{audit_reason},
+ </if>
+<if test="applicant_joinway != null and applicant_joinway != ''">
+applicant_joinway=#{applicant_joinway},
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="agent_id != null and agent_id != ''">
+agent_id=#{agent_id},
+ </if>
+<if test="agent_name != null and agent_name != ''">
+agent_name=#{agent_name},
+ </if>
+<if test="city_id_agent != null and city_id_agent != ''">
+city_id_agent=#{city_id_agent},
+ </if>
+<if test="city_name_agent != null and city_name_agent != ''">
+city_name_agent=#{city_name_agent},
+ </if>
+<if test="area_agent != null and area_agent != ''">
+area_agent=#{area_agent},
+ </if>
+<if test="apply_time != null and apply_time != ''">
+apply_time=#{apply_time},
+ </if>
+<if test="applicant_name != null and applicant_name != ''">
+applicant_name=#{applicant_name},
+ </if>
+<if test="applicant_sex_code != null and applicant_sex_code != ''">
+applicant_sex_code=#{applicant_sex_code},
+ </if>
+<if test="applicant_sex_name != null and applicant_sex_name != ''">
+applicant_sex_name=#{applicant_sex_name},
+ </if>
+<if test="applicant_nation != null and applicant_nation != ''">
+applicant_nation=#{applicant_nation},
+ </if>
+<if test="applicant_native_place != null and applicant_native_place != ''">
+applicant_native_place=#{applicant_native_place},
+ </if>
+<if test="applicant_height != null and applicant_height != ''">
+applicant_height=#{applicant_height},
+ </if>
+<if test="applicant_weight != null and applicant_weight != ''">
+applicant_weight=#{applicant_weight},
+ </if>
+<if test="applicant_idcard_no != null and applicant_idcard_no != ''">
+applicant_idcard_no=#{applicant_idcard_no},
+ </if>
+<if test="applicant_address != null and applicant_address != ''">
+applicant_address=#{applicant_address},
+ </if>
+<if test="applicant_mobile != null and applicant_mobile != ''">
+applicant_mobile=#{applicant_mobile},
+ </if>
+<if test="applicant_experience_code != null and applicant_experience_code != ''">
+applicant_experience_code=#{applicant_experience_code},
+ </if>
+<if test="applicant_experience_name != null and applicant_experience_name != ''">
+applicant_experience_name=#{applicant_experience_name},
+ </if>
+<if test="workder_mobile != null and workder_mobile != ''">
+workder_mobile=#{workder_mobile},
+ </if>
+<if test="driving_license_url != null and driving_license_url != ''">
+driving_license_url=#{driving_license_url},
+ </if>
+<if test="auditor_id != null and auditor_id != ''">
+auditor_id=#{auditor_id},
+ </if>
+<if test="auditor_name != null and auditor_name != ''">
+auditor_name=#{auditor_name},
+ </if>
+<if test="auditor_time != null and auditor_time != ''">
+auditor_time=#{auditor_time},
+ </if>
+<if test="audit_result_code != null and audit_result_code != ''">
+audit_result_code=#{audit_result_code},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_jon_apply" parameterMap="param_T_u_jon_apply"  resultMap="result_T_u_jon_apply">
+select CARDPHOTOA,CARDPHOTOB,CARPHOTO,AUDIT_RESULT_NAME,AUDIT_REASON,APPLICANT_JOINWAY,ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,AGENT_ID,AGENT_NAME,CITY_ID_AGENT,CITY_NAME_AGENT,AREA_AGENT,APPLY_TIME,APPLICANT_NAME,APPLICANT_SEX_CODE,APPLICANT_SEX_NAME,APPLICANT_NATION,APPLICANT_NATIVE_PLACE,APPLICANT_HEIGHT,APPLICANT_WEIGHT,APPLICANT_IDCARD_NO,APPLICANT_ADDRESS,APPLICANT_MOBILE,APPLICANT_EXPERIENCE_CODE,APPLICANT_EXPERIENCE_NAME,WORKDER_MOBILE,DRIVING_LICENSE_URL,AUDITOR_ID,AUDITOR_NAME,AUDITOR_TIME,AUDIT_RESULT_CODE
+ from t_u_jon_apply where is_delete != 1<if test="cardphotoa != null and cardphotoa != ''">
+ and cardphotoa=#{cardphotoa}
+ </if>
+<if test="cardphotob != null and cardphotob != ''">
+ and cardphotob=#{cardphotob}
+ </if>
+<if test="carphoto != null and carphoto != ''">
+ and carphoto=#{carphoto}
+ </if>
+<if test="audit_result_name != null and audit_result_name != ''">
+ and audit_result_name=#{audit_result_name}
+ </if>
+<if test="audit_reason != null and audit_reason != ''">
+ and audit_reason=#{audit_reason}
+ </if>
+<if test="applicant_joinway != null and applicant_joinway != ''">
+ and applicant_joinway=#{applicant_joinway}
+ </if>
+<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="agent_id != null and agent_id != ''">
+ and agent_id=#{agent_id}
+ </if>
+<if test="agent_name != null and agent_name != ''">
+ and agent_name=#{agent_name}
+ </if>
+<if test="city_id_agent != null and city_id_agent != ''">
+ and city_id_agent=#{city_id_agent}
+ </if>
+<if test="city_name_agent != null and city_name_agent != ''">
+ and city_name_agent=#{city_name_agent}
+ </if>
+<if test="area_agent != null and area_agent != ''">
+ and area_agent=#{area_agent}
+ </if>
+<if test="apply_time != null and apply_time != ''">
+ and apply_time=#{apply_time}
+ </if>
+<if test="applicant_name != null and applicant_name != ''">
+ and applicant_name=#{applicant_name}
+ </if>
+<if test="applicant_sex_code != null and applicant_sex_code != ''">
+ and applicant_sex_code=#{applicant_sex_code}
+ </if>
+<if test="applicant_sex_name != null and applicant_sex_name != ''">
+ and applicant_sex_name=#{applicant_sex_name}
+ </if>
+<if test="applicant_nation != null and applicant_nation != ''">
+ and applicant_nation=#{applicant_nation}
+ </if>
+<if test="applicant_native_place != null and applicant_native_place != ''">
+ and applicant_native_place=#{applicant_native_place}
+ </if>
+<if test="applicant_height != null and applicant_height != ''">
+ and applicant_height=#{applicant_height}
+ </if>
+<if test="applicant_weight != null and applicant_weight != ''">
+ and applicant_weight=#{applicant_weight}
+ </if>
+<if test="applicant_idcard_no != null and applicant_idcard_no != ''">
+ and applicant_idcard_no=#{applicant_idcard_no}
+ </if>
+<if test="applicant_address != null and applicant_address != ''">
+ and applicant_address=#{applicant_address}
+ </if>
+<if test="applicant_mobile != null and applicant_mobile != ''">
+ and applicant_mobile=#{applicant_mobile}
+ </if>
+<if test="applicant_experience_code != null and applicant_experience_code != ''">
+ and applicant_experience_code=#{applicant_experience_code}
+ </if>
+<if test="applicant_experience_name != null and applicant_experience_name != ''">
+ and applicant_experience_name=#{applicant_experience_name}
+ </if>
+<if test="workder_mobile != null and workder_mobile != ''">
+ and workder_mobile=#{workder_mobile}
+ </if>
+<if test="driving_license_url != null and driving_license_url != ''">
+ and driving_license_url=#{driving_license_url}
+ </if>
+<if test="auditor_id != null and auditor_id != ''">
+ and auditor_id=#{auditor_id}
+ </if>
+<if test="auditor_name != null and auditor_name != ''">
+ and auditor_name=#{auditor_name}
+ </if>
+<if test="auditor_time != null and auditor_time != ''">
+ and auditor_time=#{auditor_time}
+ </if>
+<if test="audit_result_code != null and audit_result_code != ''">
+ and audit_result_code=#{audit_result_code}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

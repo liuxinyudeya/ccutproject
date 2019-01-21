@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_manager_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_manager" id="result_T_u_manager"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_manager" id="param_T_u_manager"/>
+<insert id="insert_t_u_manager" parameterMap="param_T_u_manager" >
+
+insert into t_u_manager   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="name != null and name != ''">
+name,
+ </if>
+<if test="sex_type_code != null and sex_type_code != ''">
+sex_type_code,
+ </if>
+<if test="sex_type_name != null and sex_type_name != ''">
+sex_type_name,
+ </if>
+<if test="mobile != null and mobile != ''">
+mobile,
+ </if>
+<if test="idcard_no != null and idcard_no != ''">
+idcard_no,
+ </if>
+<if test="role_id != null and role_id != ''">
+role_id,
+ </if>
+<if test="role_name != null and role_name != ''">
+role_name,
+ </if>
+<if test="can_login != null and can_login != ''">
+can_login,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="name != null and name != ''">
+#{name},
+ </if>
+<if test="sex_type_code != null and sex_type_code != ''">
+#{sex_type_code},
+ </if>
+<if test="sex_type_name != null and sex_type_name != ''">
+#{sex_type_name},
+ </if>
+<if test="mobile != null and mobile != ''">
+#{mobile},
+ </if>
+<if test="idcard_no != null and idcard_no != ''">
+#{idcard_no},
+ </if>
+<if test="role_id != null and role_id != ''">
+#{role_id},
+ </if>
+<if test="role_name != null and role_name != ''">
+#{role_name},
+ </if>
+<if test="can_login != null and can_login != ''">
+#{can_login},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_manager" parameterMap="param_T_u_manager" >
+update t_u_manager set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_manager" parameterMap="param_T_u_manager" >update t_u_manager   
+
+<set>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="name != null and name != ''">
+name=#{name},
+ </if>
+<if test="sex_type_code != null and sex_type_code != ''">
+sex_type_code=#{sex_type_code},
+ </if>
+<if test="sex_type_name != null and sex_type_name != ''">
+sex_type_name=#{sex_type_name},
+ </if>
+<if test="mobile != null and mobile != ''">
+mobile=#{mobile},
+ </if>
+<if test="idcard_no != null and idcard_no != ''">
+idcard_no=#{idcard_no},
+ </if>
+<if test="role_id != null and role_id != ''">
+role_id=#{role_id},
+ </if>
+<if test="role_name != null and role_name != ''">
+role_name=#{role_name},
+ </if>
+<if test="can_login != null and can_login != ''">
+can_login=#{can_login},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_manager" parameterMap="param_T_u_manager"  resultMap="result_T_u_manager">
+select ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,NAME,SEX_TYPE_CODE,SEX_TYPE_NAME,MOBILE,IDCARD_NO,ROLE_ID,ROLE_NAME,CAN_LOGIN
+ from t_u_manager where is_delete != 1<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="name != null and name != ''">
+ and name=#{name}
+ </if>
+<if test="sex_type_code != null and sex_type_code != ''">
+ and sex_type_code=#{sex_type_code}
+ </if>
+<if test="sex_type_name != null and sex_type_name != ''">
+ and sex_type_name=#{sex_type_name}
+ </if>
+<if test="mobile != null and mobile != ''">
+ and mobile=#{mobile}
+ </if>
+<if test="idcard_no != null and idcard_no != ''">
+ and idcard_no=#{idcard_no}
+ </if>
+<if test="role_id != null and role_id != ''">
+ and role_id=#{role_id}
+ </if>
+<if test="role_name != null and role_name != ''">
+ and role_name=#{role_name}
+ </if>
+<if test="can_login != null and can_login != ''">
+ and can_login=#{can_login}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

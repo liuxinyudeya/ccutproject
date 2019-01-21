@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_log_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_log" id="result_T_u_log"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_log" id="param_T_u_log"/>
+<insert id="insert_t_u_log" parameterMap="param_T_u_log" >
+
+insert into t_u_log   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="log_level != null and log_level != ''">
+log_level,
+ </if>
+<if test="title != null and title != ''">
+title,
+ </if>
+<if test="log_content != null and log_content != ''">
+log_content,
+ </if>
+<if test="parameter != null and parameter != ''">
+parameter,
+ </if>
+<if test="tag != null and tag != ''">
+tag,
+ </if>
+<if test="happen_time != null and happen_time != ''">
+happen_time,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="log_level != null and log_level != ''">
+#{log_level},
+ </if>
+<if test="title != null and title != ''">
+#{title},
+ </if>
+<if test="log_content != null and log_content != ''">
+#{log_content},
+ </if>
+<if test="parameter != null and parameter != ''">
+#{parameter},
+ </if>
+<if test="tag != null and tag != ''">
+#{tag},
+ </if>
+<if test="happen_time != null and happen_time != ''">
+#{happen_time},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_log" parameterMap="param_T_u_log" >
+update t_u_log set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_log" parameterMap="param_T_u_log" >update t_u_log   
+
+<set>
+<if test="log_level != null and log_level != ''">
+log_level=#{log_level},
+ </if>
+<if test="title != null and title != ''">
+title=#{title},
+ </if>
+<if test="log_content != null and log_content != ''">
+log_content=#{log_content},
+ </if>
+<if test="parameter != null and parameter != ''">
+parameter=#{parameter},
+ </if>
+<if test="tag != null and tag != ''">
+tag=#{tag},
+ </if>
+<if test="happen_time != null and happen_time != ''">
+happen_time=#{happen_time},
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_log" parameterMap="param_T_u_log"  resultMap="result_T_u_log">
+select ID,LOG_LEVEL,TITLE,LOG_CONTENT,PARAMETER,TAG,HAPPEN_TIME,CREATETIME,CREATOR
+ from t_u_log where is_delete != 1<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="log_level != null and log_level != ''">
+ and log_level=#{log_level}
+ </if>
+<if test="title != null and title != ''">
+ and title=#{title}
+ </if>
+<if test="log_content != null and log_content != ''">
+ and log_content=#{log_content}
+ </if>
+<if test="parameter != null and parameter != ''">
+ and parameter=#{parameter}
+ </if>
+<if test="tag != null and tag != ''">
+ and tag=#{tag}
+ </if>
+<if test="happen_time != null and happen_time != ''">
+ and happen_time=#{happen_time}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

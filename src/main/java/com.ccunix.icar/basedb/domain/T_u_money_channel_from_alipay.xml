@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_money_channel_from_alipay_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_money_channel_from_alipay" id="result_T_u_money_channel_from_alipay"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_money_channel_from_alipay" id="param_T_u_money_channel_from_alipay"/>
+<insert id="insert_t_u_money_channel_from_alipay" parameterMap="param_T_u_money_channel_from_alipay" >
+
+insert into t_u_money_channel_from_alipay   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="alipay_id != null and alipay_id != ''">
+alipay_id,
+ </if>
+<if test="fund_channel != null and fund_channel != ''">
+fund_channel,
+ </if>
+<if test="amount != null and amount != ''">
+amount,
+ </if>
+<if test="real_amount != null and real_amount != ''">
+real_amount,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="alipay_id != null and alipay_id != ''">
+#{alipay_id},
+ </if>
+<if test="fund_channel != null and fund_channel != ''">
+#{fund_channel},
+ </if>
+<if test="amount != null and amount != ''">
+#{amount},
+ </if>
+<if test="real_amount != null and real_amount != ''">
+#{real_amount},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_money_channel_from_alipay" parameterMap="param_T_u_money_channel_from_alipay" >
+update t_u_money_channel_from_alipay set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_money_channel_from_alipay" parameterMap="param_T_u_money_channel_from_alipay" >update t_u_money_channel_from_alipay   
+
+<set>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="alipay_id != null and alipay_id != ''">
+alipay_id=#{alipay_id},
+ </if>
+<if test="fund_channel != null and fund_channel != ''">
+fund_channel=#{fund_channel},
+ </if>
+<if test="amount != null and amount != ''">
+amount=#{amount},
+ </if>
+<if test="real_amount != null and real_amount != ''">
+real_amount=#{real_amount},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_money_channel_from_alipay" parameterMap="param_T_u_money_channel_from_alipay"  resultMap="result_T_u_money_channel_from_alipay">
+select ID,CREATETIME,ALIPAY_ID,FUND_CHANNEL,AMOUNT,REAL_AMOUNT
+ from t_u_money_channel_from_alipay where is_delete != 1<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="alipay_id != null and alipay_id != ''">
+ and alipay_id=#{alipay_id}
+ </if>
+<if test="fund_channel != null and fund_channel != ''">
+ and fund_channel=#{fund_channel}
+ </if>
+<if test="amount != null and amount != ''">
+ and amount=#{amount}
+ </if>
+<if test="real_amount != null and real_amount != ''">
+ and real_amount=#{real_amount}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

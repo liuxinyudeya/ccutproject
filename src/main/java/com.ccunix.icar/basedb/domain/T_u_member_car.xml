@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_member_car_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_member_car" id="result_T_u_member_car"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_member_car" id="param_T_u_member_car"/>
+<insert id="insert_t_u_member_car" parameterMap="param_T_u_member_car" >
+
+insert into t_u_member_car   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="car_model_photo != null and car_model_photo != ''">
+car_model_photo,
+ </if>
+<if test="price_of_base_service != null and price_of_base_service != ''">
+price_of_base_service,
+ </if>
+<if test="car_model_type_code != null and car_model_type_code != ''">
+car_model_type_code,
+ </if>
+<if test="car_model_type_name != null and car_model_type_name != ''">
+car_model_type_name,
+ </if>
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="car_no != null and car_no != ''">
+car_no,
+ </if>
+<if test="brand_id != null and brand_id != ''">
+brand_id,
+ </if>
+<if test="brand_name != null and brand_name != ''">
+brand_name,
+ </if>
+<if test="model_id != null and model_id != ''">
+model_id,
+ </if>
+<if test="model_name != null and model_name != ''">
+model_name,
+ </if>
+<if test="car_photo_front != null and car_photo_front != ''">
+car_photo_front,
+ </if>
+<if test="car_photo_after != null and car_photo_after != ''">
+car_photo_after,
+ </if>
+<if test="car_photo_left != null and car_photo_left != ''">
+car_photo_left,
+ </if>
+<if test="car_photo_right != null and car_photo_right != ''">
+car_photo_right,
+ </if>
+<if test="car_color_code != null and car_color_code != ''">
+car_color_code,
+ </if>
+<if test="car_color_name != null and car_color_name != ''">
+car_color_name,
+ </if>
+<if test="car_color_value != null and car_color_value != ''">
+car_color_value,
+ </if>
+<if test="contact_name != null and contact_name != ''">
+contact_name,
+ </if>
+<if test="contact_mobile != null and contact_mobile != ''">
+contact_mobile,
+ </if>
+<if test="car_owner_id != null and car_owner_id != ''">
+car_owner_id,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="car_model_photo != null and car_model_photo != ''">
+#{car_model_photo},
+ </if>
+<if test="price_of_base_service != null and price_of_base_service != ''">
+#{price_of_base_service},
+ </if>
+<if test="car_model_type_code != null and car_model_type_code != ''">
+#{car_model_type_code},
+ </if>
+<if test="car_model_type_name != null and car_model_type_name != ''">
+#{car_model_type_name},
+ </if>
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="car_no != null and car_no != ''">
+#{car_no},
+ </if>
+<if test="brand_id != null and brand_id != ''">
+#{brand_id},
+ </if>
+<if test="brand_name != null and brand_name != ''">
+#{brand_name},
+ </if>
+<if test="model_id != null and model_id != ''">
+#{model_id},
+ </if>
+<if test="model_name != null and model_name != ''">
+#{model_name},
+ </if>
+<if test="car_photo_front != null and car_photo_front != ''">
+#{car_photo_front},
+ </if>
+<if test="car_photo_after != null and car_photo_after != ''">
+#{car_photo_after},
+ </if>
+<if test="car_photo_left != null and car_photo_left != ''">
+#{car_photo_left},
+ </if>
+<if test="car_photo_right != null and car_photo_right != ''">
+#{car_photo_right},
+ </if>
+<if test="car_color_code != null and car_color_code != ''">
+#{car_color_code},
+ </if>
+<if test="car_color_name != null and car_color_name != ''">
+#{car_color_name},
+ </if>
+<if test="car_color_value != null and car_color_value != ''">
+#{car_color_value},
+ </if>
+<if test="contact_name != null and contact_name != ''">
+#{contact_name},
+ </if>
+<if test="contact_mobile != null and contact_mobile != ''">
+#{contact_mobile},
+ </if>
+<if test="car_owner_id != null and car_owner_id != ''">
+#{car_owner_id},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_member_car" parameterMap="param_T_u_member_car" >
+update t_u_member_car set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_member_car" parameterMap="param_T_u_member_car" >update t_u_member_car   
+
+<set>
+<if test="car_model_photo != null and car_model_photo != ''">
+car_model_photo=#{car_model_photo},
+ </if>
+<if test="price_of_base_service != null and price_of_base_service != ''">
+price_of_base_service=#{price_of_base_service},
+ </if>
+<if test="car_model_type_code != null and car_model_type_code != ''">
+car_model_type_code=#{car_model_type_code},
+ </if>
+<if test="car_model_type_name != null and car_model_type_name != ''">
+car_model_type_name=#{car_model_type_name},
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="car_no != null and car_no != ''">
+car_no=#{car_no},
+ </if>
+<if test="brand_id != null and brand_id != ''">
+brand_id=#{brand_id},
+ </if>
+<if test="brand_name != null and brand_name != ''">
+brand_name=#{brand_name},
+ </if>
+<if test="model_id != null and model_id != ''">
+model_id=#{model_id},
+ </if>
+<if test="model_name != null and model_name != ''">
+model_name=#{model_name},
+ </if>
+<if test="car_photo_front != null and car_photo_front != ''">
+car_photo_front=#{car_photo_front},
+ </if>
+<if test="car_photo_after != null and car_photo_after != ''">
+car_photo_after=#{car_photo_after},
+ </if>
+<if test="car_photo_left != null and car_photo_left != ''">
+car_photo_left=#{car_photo_left},
+ </if>
+<if test="car_photo_right != null and car_photo_right != ''">
+car_photo_right=#{car_photo_right},
+ </if>
+<if test="car_color_code != null and car_color_code != ''">
+car_color_code=#{car_color_code},
+ </if>
+<if test="car_color_name != null and car_color_name != ''">
+car_color_name=#{car_color_name},
+ </if>
+<if test="car_color_value != null and car_color_value != ''">
+car_color_value=#{car_color_value},
+ </if>
+<if test="contact_name != null and contact_name != ''">
+contact_name=#{contact_name},
+ </if>
+<if test="contact_mobile != null and contact_mobile != ''">
+contact_mobile=#{contact_mobile},
+ </if>
+<if test="car_owner_id != null and car_owner_id != ''">
+car_owner_id=#{car_owner_id},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_member_car" parameterMap="param_T_u_member_car"  resultMap="result_T_u_member_car">
+select CAR_MODEL_PHOTO,PRICE_OF_BASE_SERVICE,CAR_MODEL_TYPE_CODE,CAR_MODEL_TYPE_NAME,ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,CAR_NO,BRAND_ID,BRAND_NAME,MODEL_ID,MODEL_NAME,CAR_PHOTO_FRONT,CAR_PHOTO_AFTER,CAR_PHOTO_LEFT,CAR_PHOTO_RIGHT,CAR_COLOR_CODE,CAR_COLOR_NAME,CAR_COLOR_VALUE,CONTACT_NAME,CONTACT_MOBILE,CAR_OWNER_ID
+ from t_u_member_car where is_delete != 1<if test="car_model_photo != null and car_model_photo != ''">
+ and car_model_photo=#{car_model_photo}
+ </if>
+<if test="price_of_base_service != null and price_of_base_service != ''">
+ and price_of_base_service=#{price_of_base_service}
+ </if>
+<if test="car_model_type_code != null and car_model_type_code != ''">
+ and car_model_type_code=#{car_model_type_code}
+ </if>
+<if test="car_model_type_name != null and car_model_type_name != ''">
+ and car_model_type_name=#{car_model_type_name}
+ </if>
+<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="car_no != null and car_no != ''">
+ and car_no=#{car_no}
+ </if>
+<if test="brand_id != null and brand_id != ''">
+ and brand_id=#{brand_id}
+ </if>
+<if test="brand_name != null and brand_name != ''">
+ and brand_name=#{brand_name}
+ </if>
+<if test="model_id != null and model_id != ''">
+ and model_id=#{model_id}
+ </if>
+<if test="model_name != null and model_name != ''">
+ and model_name=#{model_name}
+ </if>
+<if test="car_photo_front != null and car_photo_front != ''">
+ and car_photo_front=#{car_photo_front}
+ </if>
+<if test="car_photo_after != null and car_photo_after != ''">
+ and car_photo_after=#{car_photo_after}
+ </if>
+<if test="car_photo_left != null and car_photo_left != ''">
+ and car_photo_left=#{car_photo_left}
+ </if>
+<if test="car_photo_right != null and car_photo_right != ''">
+ and car_photo_right=#{car_photo_right}
+ </if>
+<if test="car_color_code != null and car_color_code != ''">
+ and car_color_code=#{car_color_code}
+ </if>
+<if test="car_color_name != null and car_color_name != ''">
+ and car_color_name=#{car_color_name}
+ </if>
+<if test="car_color_value != null and car_color_value != ''">
+ and car_color_value=#{car_color_value}
+ </if>
+<if test="contact_name != null and contact_name != ''">
+ and contact_name=#{contact_name}
+ </if>
+<if test="contact_mobile != null and contact_mobile != ''">
+ and contact_mobile=#{contact_mobile}
+ </if>
+<if test="car_owner_id != null and car_owner_id != ''">
+ and car_owner_id=#{car_owner_id}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_s_role_2_menu_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_s_role_2_menu" id="result_T_s_role_2_menu"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_s_role_2_menu" id="param_T_s_role_2_menu"/>
+<insert id="insert_t_s_role_2_menu" parameterMap="param_T_s_role_2_menu" >
+
+insert into t_s_role_2_menu   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="role_id != null and role_id != ''">
+role_id,
+ </if>
+<if test="menu_id != null and menu_id != ''">
+menu_id,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="role_id != null and role_id != ''">
+#{role_id},
+ </if>
+<if test="menu_id != null and menu_id != ''">
+#{menu_id},
+ </if>
+
+</trim>
+</insert>
+
+<delete id="delete_t_s_role_2_menu" parameterMap="param_T_s_role_2_menu" >
+delete from t_s_role_2_menu where role_id=#{role_id}
+</delete>
+<update id="update_t_s_role_2_menu" parameterMap="param_T_s_role_2_menu" >update t_s_role_2_menu   
+
+<set>
+<if test="role_id != null and role_id != ''">
+role_id=#{role_id},
+ </if>
+<if test="menu_id != null and menu_id != ''">
+menu_id=#{menu_id},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_s_role_2_menu" parameterMap="param_T_s_role_2_menu"  resultMap="result_T_s_role_2_menu">
+select ID,ROLE_ID,MENU_ID
+ from t_s_role_2_menu 
+ <where>
+  <if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="role_id != null and role_id != ''">
+ and role_id=#{role_id}
+ </if>
+<if test="menu_id != null and menu_id != ''">
+ and menu_id=#{menu_id}
+ </if></where>
+
+</select>
+
+
+
+
+
+</mapper>

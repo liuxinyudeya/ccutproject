@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_set_menu_service_item_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_set_menu_service_item" id="result_T_u_set_menu_service_item"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_set_menu_service_item" id="param_T_u_set_menu_service_item"/>
+<insert id="insert_t_u_set_menu_service_item" parameterMap="param_T_u_set_menu_service_item" >
+
+insert into t_u_set_menu_service_item   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="set_menu_id != null and set_menu_id != ''">
+set_menu_id,
+ </if>
+<if test="service_item_id != null and service_item_id != ''">
+service_item_id,
+ </if>
+<if test="name != null and name != ''">
+name,
+ </if>
+<if test="price != null and price != ''">
+price,
+ </if>
+<if test="timespan_of_service != null and timespan_of_service != ''">
+timespan_of_service,
+ </if>
+<if test="service_city_id != null and service_city_id != ''">
+service_city_id,
+ </if>
+<if test="preview_photo != null and preview_photo != ''">
+preview_photo,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="set_menu_id != null and set_menu_id != ''">
+#{set_menu_id},
+ </if>
+<if test="service_item_id != null and service_item_id != ''">
+#{service_item_id},
+ </if>
+<if test="name != null and name != ''">
+#{name},
+ </if>
+<if test="price != null and price != ''">
+#{price},
+ </if>
+<if test="timespan_of_service != null and timespan_of_service != ''">
+#{timespan_of_service},
+ </if>
+<if test="service_city_id != null and service_city_id != ''">
+#{service_city_id},
+ </if>
+<if test="preview_photo != null and preview_photo != ''">
+#{preview_photo},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_set_menu_service_item" parameterMap="param_T_u_set_menu_service_item" >
+update t_u_set_menu_service_item set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_set_menu_service_item" parameterMap="param_T_u_set_menu_service_item" >update t_u_set_menu_service_item   
+
+<set>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="set_menu_id != null and set_menu_id != ''">
+set_menu_id=#{set_menu_id},
+ </if>
+<if test="service_item_id != null and service_item_id != ''">
+service_item_id=#{service_item_id},
+ </if>
+<if test="name != null and name != ''">
+name=#{name},
+ </if>
+<if test="price != null and price != ''">
+price=#{price},
+ </if>
+<if test="timespan_of_service != null and timespan_of_service != ''">
+timespan_of_service=#{timespan_of_service},
+ </if>
+<if test="service_city_id != null and service_city_id != ''">
+service_city_id=#{service_city_id},
+ </if>
+<if test="preview_photo != null and preview_photo != ''">
+preview_photo=#{preview_photo},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_set_menu_service_item" parameterMap="param_T_u_set_menu_service_item"  resultMap="result_T_u_set_menu_service_item">
+select ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,SET_MENU_ID,SERVICE_ITEM_ID,NAME,PRICE,TIMESPAN_OF_SERVICE,SERVICE_CITY_ID,PREVIEW_PHOTO
+ from t_u_set_menu_service_item where is_delete != 1<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="set_menu_id != null and set_menu_id != ''">
+ and set_menu_id=#{set_menu_id}
+ </if>
+<if test="service_item_id != null and service_item_id != ''">
+ and service_item_id=#{service_item_id}
+ </if>
+<if test="name != null and name != ''">
+ and name=#{name}
+ </if>
+<if test="price != null and price != ''">
+ and price=#{price}
+ </if>
+<if test="timespan_of_service != null and timespan_of_service != ''">
+ and timespan_of_service=#{timespan_of_service}
+ </if>
+<if test="service_city_id != null and service_city_id != ''">
+ and service_city_id=#{service_city_id}
+ </if>
+<if test="preview_photo != null and preview_photo != ''">
+ and preview_photo=#{preview_photo}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

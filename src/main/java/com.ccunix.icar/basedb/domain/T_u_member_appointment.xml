@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_member_appointment_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_member_appointment" id="result_T_u_member_appointment"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_member_appointment" id="param_T_u_member_appointment"/>
+<insert id="insert_t_u_member_appointment" parameterMap="param_T_u_member_appointment" >
+
+insert into t_u_member_appointment   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="car_id != null and car_id != ''">
+car_id,
+ </if>
+<if test="car_no != null and car_no != ''">
+car_no,
+ </if>
+<if test="appointment_id != null and appointment_id != ''">
+appointment_id,
+ </if>
+<if test="appointment_start_time != null and appointment_start_time != ''">
+appointment_start_time,
+ </if>
+<if test="appointment_end_time != null and appointment_end_time != ''">
+appointment_end_time,
+ </if>
+<if test="amount_appointment != null and amount_appointment != ''">
+amount_appointment,
+ </if>
+<if test="appointment_state_code != null and appointment_state_code != ''">
+appointment_state_code,
+ </if>
+<if test="appointment_state_name != null and appointment_state_name != ''">
+appointment_state_name,
+ </if>
+<if test="cancel_reason != null and cancel_reason != ''">
+cancel_reason,
+ </if>
+<if test="appointment_service_item_count != null and appointment_service_item_count != ''">
+appointment_service_item_count,
+ </if>
+<if test="province_id_appointment != null and province_id_appointment != ''">
+province_id_appointment,
+ </if>
+<if test="province_name_appointment != null and province_name_appointment != ''">
+province_name_appointment,
+ </if>
+<if test="city_id_appointment != null and city_id_appointment != ''">
+city_id_appointment,
+ </if>
+<if test="city_name_appointment != null and city_name_appointment != ''">
+city_name_appointment,
+ </if>
+<if test="area_id_appointment != null and area_id_appointment != ''">
+area_id_appointment,
+ </if>
+<if test="area_name_appointment != null and area_name_appointment != ''">
+area_name_appointment,
+ </if>
+<if test="street_id_appointment != null and street_id_appointment != ''">
+street_id_appointment,
+ </if>
+<if test="street_name_appointment != null and street_name_appointment != ''">
+street_name_appointment,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="car_id != null and car_id != ''">
+#{car_id},
+ </if>
+<if test="car_no != null and car_no != ''">
+#{car_no},
+ </if>
+<if test="appointment_id != null and appointment_id != ''">
+#{appointment_id},
+ </if>
+<if test="appointment_start_time != null and appointment_start_time != ''">
+#{appointment_start_time},
+ </if>
+<if test="appointment_end_time != null and appointment_end_time != ''">
+#{appointment_end_time},
+ </if>
+<if test="amount_appointment != null and amount_appointment != ''">
+#{amount_appointment},
+ </if>
+<if test="appointment_state_code != null and appointment_state_code != ''">
+#{appointment_state_code},
+ </if>
+<if test="appointment_state_name != null and appointment_state_name != ''">
+#{appointment_state_name},
+ </if>
+<if test="cancel_reason != null and cancel_reason != ''">
+#{cancel_reason},
+ </if>
+<if test="appointment_service_item_count != null and appointment_service_item_count != ''">
+#{appointment_service_item_count},
+ </if>
+<if test="province_id_appointment != null and province_id_appointment != ''">
+#{province_id_appointment},
+ </if>
+<if test="province_name_appointment != null and province_name_appointment != ''">
+#{province_name_appointment},
+ </if>
+<if test="city_id_appointment != null and city_id_appointment != ''">
+#{city_id_appointment},
+ </if>
+<if test="city_name_appointment != null and city_name_appointment != ''">
+#{city_name_appointment},
+ </if>
+<if test="area_id_appointment != null and area_id_appointment != ''">
+#{area_id_appointment},
+ </if>
+<if test="area_name_appointment != null and area_name_appointment != ''">
+#{area_name_appointment},
+ </if>
+<if test="street_id_appointment != null and street_id_appointment != ''">
+#{street_id_appointment},
+ </if>
+<if test="street_name_appointment != null and street_name_appointment != ''">
+#{street_name_appointment},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_member_appointment" parameterMap="param_T_u_member_appointment" >
+update t_u_member_appointment set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_member_appointment" parameterMap="param_T_u_member_appointment" >update t_u_member_appointment   
+
+<set>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="car_id != null and car_id != ''">
+car_id=#{car_id},
+ </if>
+<if test="car_no != null and car_no != ''">
+car_no=#{car_no},
+ </if>
+<if test="appointment_id != null and appointment_id != ''">
+appointment_id=#{appointment_id},
+ </if>
+<if test="appointment_start_time != null and appointment_start_time != ''">
+appointment_start_time=#{appointment_start_time},
+ </if>
+<if test="appointment_end_time != null and appointment_end_time != ''">
+appointment_end_time=#{appointment_end_time},
+ </if>
+<if test="amount_appointment != null and amount_appointment != ''">
+amount_appointment=#{amount_appointment},
+ </if>
+<if test="appointment_state_code != null and appointment_state_code != ''">
+appointment_state_code=#{appointment_state_code},
+ </if>
+<if test="appointment_state_name != null and appointment_state_name != ''">
+appointment_state_name=#{appointment_state_name},
+ </if>
+<if test="cancel_reason != null and cancel_reason != ''">
+cancel_reason=#{cancel_reason},
+ </if>
+<if test="appointment_service_item_count != null and appointment_service_item_count != ''">
+appointment_service_item_count=#{appointment_service_item_count},
+ </if>
+<if test="province_id_appointment != null and province_id_appointment != ''">
+province_id_appointment=#{province_id_appointment},
+ </if>
+<if test="province_name_appointment != null and province_name_appointment != ''">
+province_name_appointment=#{province_name_appointment},
+ </if>
+<if test="city_id_appointment != null and city_id_appointment != ''">
+city_id_appointment=#{city_id_appointment},
+ </if>
+<if test="city_name_appointment != null and city_name_appointment != ''">
+city_name_appointment=#{city_name_appointment},
+ </if>
+<if test="area_id_appointment != null and area_id_appointment != ''">
+area_id_appointment=#{area_id_appointment},
+ </if>
+<if test="area_name_appointment != null and area_name_appointment != ''">
+area_name_appointment=#{area_name_appointment},
+ </if>
+<if test="street_id_appointment != null and street_id_appointment != ''">
+street_id_appointment=#{street_id_appointment},
+ </if>
+<if test="street_name_appointment != null and street_name_appointment != ''">
+street_name_appointment=#{street_name_appointment},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_member_appointment" parameterMap="param_T_u_member_appointment"  resultMap="result_T_u_member_appointment">
+select ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,CAR_ID,CAR_NO,APPOINTMENT_ID,APPOINTMENT_START_TIME,APPOINTMENT_END_TIME,AMOUNT_APPOINTMENT,APPOINTMENT_STATE_CODE,APPOINTMENT_STATE_NAME,CANCEL_REASON,APPOINTMENT_SERVICE_ITEM_COUNT,PROVINCE_ID_APPOINTMENT,PROVINCE_NAME_APPOINTMENT,CITY_ID_APPOINTMENT,CITY_NAME_APPOINTMENT,AREA_ID_APPOINTMENT,AREA_NAME_APPOINTMENT,STREET_ID_APPOINTMENT,STREET_NAME_APPOINTMENT
+ from t_u_member_appointment where is_delete != 1<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="car_id != null and car_id != ''">
+ and car_id=#{car_id}
+ </if>
+<if test="car_no != null and car_no != ''">
+ and car_no=#{car_no}
+ </if>
+<if test="appointment_id != null and appointment_id != ''">
+ and appointment_id=#{appointment_id}
+ </if>
+<if test="appointment_start_time != null and appointment_start_time != ''">
+ and appointment_start_time=#{appointment_start_time}
+ </if>
+<if test="appointment_end_time != null and appointment_end_time != ''">
+ and appointment_end_time=#{appointment_end_time}
+ </if>
+<if test="amount_appointment != null and amount_appointment != ''">
+ and amount_appointment=#{amount_appointment}
+ </if>
+<if test="appointment_state_code != null and appointment_state_code != ''">
+ and appointment_state_code=#{appointment_state_code}
+ </if>
+<if test="appointment_state_name != null and appointment_state_name != ''">
+ and appointment_state_name=#{appointment_state_name}
+ </if>
+<if test="cancel_reason != null and cancel_reason != ''">
+ and cancel_reason=#{cancel_reason}
+ </if>
+<if test="appointment_service_item_count != null and appointment_service_item_count != ''">
+ and appointment_service_item_count=#{appointment_service_item_count}
+ </if>
+<if test="province_id_appointment != null and province_id_appointment != ''">
+ and province_id_appointment=#{province_id_appointment}
+ </if>
+<if test="province_name_appointment != null and province_name_appointment != ''">
+ and province_name_appointment=#{province_name_appointment}
+ </if>
+<if test="city_id_appointment != null and city_id_appointment != ''">
+ and city_id_appointment=#{city_id_appointment}
+ </if>
+<if test="city_name_appointment != null and city_name_appointment != ''">
+ and city_name_appointment=#{city_name_appointment}
+ </if>
+<if test="area_id_appointment != null and area_id_appointment != ''">
+ and area_id_appointment=#{area_id_appointment}
+ </if>
+<if test="area_name_appointment != null and area_name_appointment != ''">
+ and area_name_appointment=#{area_name_appointment}
+ </if>
+<if test="street_id_appointment != null and street_id_appointment != ''">
+ and street_id_appointment=#{street_id_appointment}
+ </if>
+<if test="street_name_appointment != null and street_name_appointment != ''">
+ and street_name_appointment=#{street_name_appointment}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

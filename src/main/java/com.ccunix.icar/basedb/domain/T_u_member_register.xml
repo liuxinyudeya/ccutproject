@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_member_register_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_member_register" id="result_T_u_member_register"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_member_register" id="param_T_u_member_register"/>
+<insert id="insert_t_u_member_register" parameterMap="param_T_u_member_register" >
+
+insert into t_u_member_register   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="login_time != null and login_time != ''">
+login_time,
+ </if>
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="account != null and account != ''">
+account,
+ </if>
+<if test="pwd != null and pwd != ''">
+pwd,
+ </if>
+<if test="valid_mobile != null and valid_mobile != ''">
+valid_mobile,
+ </if>
+<if test="login_access != null and login_access != ''">
+login_access,
+ </if>
+<if test="order_access != null and order_access != ''">
+order_access,
+ </if>
+<if test="member_id != null and member_id != ''">
+member_id,
+ </if>
+<if test="operating_system_for_user_code != null and operating_system_for_user_code != ''">
+operating_system_for_user_code,
+ </if>
+<if test="operating_system_for_user_name != null and operating_system_for_user_name != ''">
+operating_system_for_user_name,
+ </if>
+<if test="token != null and token != ''">
+token,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="login_time != null and login_time != ''">
+#{login_time},
+ </if>
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="account != null and account != ''">
+#{account},
+ </if>
+<if test="pwd != null and pwd != ''">
+#{pwd},
+ </if>
+<if test="valid_mobile != null and valid_mobile != ''">
+#{valid_mobile},
+ </if>
+<if test="login_access != null and login_access != ''">
+#{login_access},
+ </if>
+<if test="order_access != null and order_access != ''">
+#{order_access},
+ </if>
+<if test="member_id != null and member_id != ''">
+#{member_id},
+ </if>
+<if test="operating_system_for_user_code != null and operating_system_for_user_code != ''">
+#{operating_system_for_user_code},
+ </if>
+<if test="operating_system_for_user_name != null and operating_system_for_user_name != ''">
+#{operating_system_for_user_name},
+ </if>
+<if test="token != null and token != ''">
+#{token},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_member_register" parameterMap="param_T_u_member_register" >
+update t_u_member_register set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_member_register" parameterMap="param_T_u_member_register" >update t_u_member_register   
+
+<set>
+<if test="login_time != null and login_time != ''">
+login_time=#{login_time},
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="account != null and account != ''">
+account=#{account},
+ </if>
+<if test="pwd != null and pwd != ''">
+pwd=#{pwd},
+ </if>
+<if test="valid_mobile != null and valid_mobile != ''">
+valid_mobile=#{valid_mobile},
+ </if>
+<if test="login_access != null and login_access != ''">
+login_access=#{login_access},
+ </if>
+<if test="order_access != null and order_access != ''">
+order_access=#{order_access},
+ </if>
+<if test="member_id != null and member_id != ''">
+member_id=#{member_id},
+ </if>
+<if test="operating_system_for_user_code != null and operating_system_for_user_code != ''">
+operating_system_for_user_code=#{operating_system_for_user_code},
+ </if>
+<if test="operating_system_for_user_name != null and operating_system_for_user_name != ''">
+operating_system_for_user_name=#{operating_system_for_user_name},
+ </if>
+<if test="token != null and token != ''">
+token=#{token},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_member_register" parameterMap="param_T_u_member_register"  resultMap="result_T_u_member_register">
+select LOGIN_TIME,ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,ACCOUNT,PWD,VALID_MOBILE,LOGIN_ACCESS,ORDER_ACCESS,MEMBER_ID,OPERATING_SYSTEM_FOR_USER_CODE,OPERATING_SYSTEM_FOR_USER_NAME,TOKEN
+ from t_u_member_register where is_delete != 1<if test="login_time != null and login_time != ''">
+ and login_time=#{login_time}
+ </if>
+<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="account != null and account != ''">
+ and account=#{account}
+ </if>
+<if test="pwd != null and pwd != ''">
+ and pwd=#{pwd}
+ </if>
+<if test="valid_mobile != null and valid_mobile != ''">
+ and valid_mobile=#{valid_mobile}
+ </if>
+<if test="login_access != null and login_access != ''">
+ and login_access=#{login_access}
+ </if>
+<if test="order_access != null and order_access != ''">
+ and order_access=#{order_access}
+ </if>
+<if test="member_id != null and member_id != ''">
+ and member_id=#{member_id}
+ </if>
+<if test="operating_system_for_user_code != null and operating_system_for_user_code != ''">
+ and operating_system_for_user_code=#{operating_system_for_user_code}
+ </if>
+<if test="operating_system_for_user_name != null and operating_system_for_user_name != ''">
+ and operating_system_for_user_name=#{operating_system_for_user_name}
+ </if>
+<if test="token != null and token != ''">
+ and token=#{token}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_member_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_member" id="result_T_u_member"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_member" id="param_T_u_member"/>
+<insert id="insert_t_u_member" parameterMap="param_T_u_member" >
+
+insert into t_u_member   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="head_photo != null and head_photo != ''">
+head_photo,
+ </if>
+<if test="pay_total != null and pay_total != ''">
+pay_total,
+ </if>
+<if test="get_coupon_count != null and get_coupon_count != ''">
+get_coupon_count,
+ </if>
+<if test="pay_coupon_count != null and pay_coupon_count != ''">
+pay_coupon_count,
+ </if>
+<if test="get_free_voucher_count != null and get_free_voucher_count != ''">
+get_free_voucher_count,
+ </if>
+<if test="pay_free_voucher_count != null and pay_free_voucher_count != ''">
+pay_free_voucher_count,
+ </if>
+<if test="get_coupon_total != null and get_coupon_total != ''">
+get_coupon_total,
+ </if>
+<if test="pay_coupon_total != null and pay_coupon_total != ''">
+pay_coupon_total,
+ </if>
+<if test="cancel_count != null and cancel_count != ''">
+cancel_count,
+ </if>
+<if test="pay_damages_total != null and pay_damages_total != ''">
+pay_damages_total,
+ </if>
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="city_id_of_member != null and city_id_of_member != ''">
+city_id_of_member,
+ </if>
+<if test="city_name_of_member != null and city_name_of_member != ''">
+city_name_of_member,
+ </if>
+<if test="nick != null and nick != ''">
+nick,
+ </if>
+<if test="count_of_car != null and count_of_car != ''">
+count_of_car,
+ </if>
+<if test="order_count != null and order_count != ''">
+order_count,
+ </if>
+<if test="last_time_of_order != null and last_time_of_order != ''">
+last_time_of_order,
+ </if>
+<if test="last_position_of_order != null and last_position_of_order != ''">
+last_position_of_order,
+ </if>
+<if test="last_order_id != null and last_order_id != ''">
+last_order_id,
+ </if>
+<if test="last_order_car_number != null and last_order_car_number != ''">
+last_order_car_number,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="head_photo != null and head_photo != ''">
+#{head_photo},
+ </if>
+<if test="pay_total != null and pay_total != ''">
+#{pay_total},
+ </if>
+<if test="get_coupon_count != null and get_coupon_count != ''">
+#{get_coupon_count},
+ </if>
+<if test="pay_coupon_count != null and pay_coupon_count != ''">
+#{pay_coupon_count},
+ </if>
+<if test="get_free_voucher_count != null and get_free_voucher_count != ''">
+#{get_free_voucher_count},
+ </if>
+<if test="pay_free_voucher_count != null and pay_free_voucher_count != ''">
+#{pay_free_voucher_count},
+ </if>
+<if test="get_coupon_total != null and get_coupon_total != ''">
+#{get_coupon_total},
+ </if>
+<if test="pay_coupon_total != null and pay_coupon_total != ''">
+#{pay_coupon_total},
+ </if>
+<if test="cancel_count != null and cancel_count != ''">
+#{cancel_count},
+ </if>
+<if test="pay_damages_total != null and pay_damages_total != ''">
+#{pay_damages_total},
+ </if>
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="city_id_of_member != null and city_id_of_member != ''">
+#{city_id_of_member},
+ </if>
+<if test="city_name_of_member != null and city_name_of_member != ''">
+#{city_name_of_member},
+ </if>
+<if test="nick != null and nick != ''">
+#{nick},
+ </if>
+<if test="count_of_car != null and count_of_car != ''">
+#{count_of_car},
+ </if>
+<if test="order_count != null and order_count != ''">
+#{order_count},
+ </if>
+<if test="last_time_of_order != null and last_time_of_order != ''">
+#{last_time_of_order},
+ </if>
+<if test="last_position_of_order != null and last_position_of_order != ''">
+#{last_position_of_order},
+ </if>
+<if test="last_order_id != null and last_order_id != ''">
+#{last_order_id},
+ </if>
+<if test="last_order_car_number != null and last_order_car_number != ''">
+#{last_order_car_number},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_member" parameterMap="param_T_u_member" >
+update t_u_member set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_member" parameterMap="param_T_u_member" >update t_u_member   
+
+<set>
+<if test="head_photo != null and head_photo != ''">
+head_photo=#{head_photo},
+ </if>
+<if test="pay_total != null and pay_total != ''">
+pay_total=#{pay_total},
+ </if>
+<if test="get_coupon_count != null and get_coupon_count != ''">
+get_coupon_count=#{get_coupon_count},
+ </if>
+<if test="pay_coupon_count != null and pay_coupon_count != ''">
+pay_coupon_count=#{pay_coupon_count},
+ </if>
+<if test="get_free_voucher_count != null and get_free_voucher_count != ''">
+get_free_voucher_count=#{get_free_voucher_count},
+ </if>
+<if test="pay_free_voucher_count != null and pay_free_voucher_count != ''">
+pay_free_voucher_count=#{pay_free_voucher_count},
+ </if>
+<if test="get_coupon_total != null and get_coupon_total != ''">
+get_coupon_total=#{get_coupon_total},
+ </if>
+<if test="pay_coupon_total != null and pay_coupon_total != ''">
+pay_coupon_total=#{pay_coupon_total},
+ </if>
+<if test="cancel_count != null and cancel_count != ''">
+cancel_count=#{cancel_count},
+ </if>
+<if test="pay_damages_total != null and pay_damages_total != ''">
+pay_damages_total=#{pay_damages_total},
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="city_id_of_member != null and city_id_of_member != ''">
+city_id_of_member=#{city_id_of_member},
+ </if>
+<if test="city_name_of_member != null and city_name_of_member != ''">
+city_name_of_member=#{city_name_of_member},
+ </if>
+<if test="nick != null and nick != ''">
+nick=#{nick},
+ </if>
+<if test="count_of_car != null and count_of_car != ''">
+count_of_car=#{count_of_car},
+ </if>
+<if test="order_count != null and order_count != ''">
+order_count=#{order_count},
+ </if>
+<if test="last_time_of_order != null and last_time_of_order != ''">
+last_time_of_order=#{last_time_of_order},
+ </if>
+<if test="last_position_of_order != null and last_position_of_order != ''">
+last_position_of_order=#{last_position_of_order},
+ </if>
+<if test="last_order_id != null and last_order_id != ''">
+last_order_id=#{last_order_id},
+ </if>
+<if test="last_order_car_number != null and last_order_car_number != ''">
+last_order_car_number=#{last_order_car_number},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_member" parameterMap="param_T_u_member"  resultMap="result_T_u_member">
+select HEAD_PHOTO,PAY_TOTAL,GET_COUPON_COUNT,PAY_COUPON_COUNT,GET_FREE_VOUCHER_COUNT,PAY_FREE_VOUCHER_COUNT,GET_COUPON_TOTAL,PAY_COUPON_TOTAL,CANCEL_COUNT,PAY_DAMAGES_TOTAL,ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,CITY_ID_OF_MEMBER,CITY_NAME_OF_MEMBER,NICK,COUNT_OF_CAR,ORDER_COUNT,LAST_TIME_OF_ORDER,LAST_POSITION_OF_ORDER,LAST_ORDER_ID,LAST_ORDER_CAR_NUMBER
+ from t_u_member where is_delete != 1<if test="head_photo != null and head_photo != ''">
+ and head_photo=#{head_photo}
+ </if>
+<if test="pay_total != null and pay_total != ''">
+ and pay_total=#{pay_total}
+ </if>
+<if test="get_coupon_count != null and get_coupon_count != ''">
+ and get_coupon_count=#{get_coupon_count}
+ </if>
+<if test="pay_coupon_count != null and pay_coupon_count != ''">
+ and pay_coupon_count=#{pay_coupon_count}
+ </if>
+<if test="get_free_voucher_count != null and get_free_voucher_count != ''">
+ and get_free_voucher_count=#{get_free_voucher_count}
+ </if>
+<if test="pay_free_voucher_count != null and pay_free_voucher_count != ''">
+ and pay_free_voucher_count=#{pay_free_voucher_count}
+ </if>
+<if test="get_coupon_total != null and get_coupon_total != ''">
+ and get_coupon_total=#{get_coupon_total}
+ </if>
+<if test="pay_coupon_total != null and pay_coupon_total != ''">
+ and pay_coupon_total=#{pay_coupon_total}
+ </if>
+<if test="cancel_count != null and cancel_count != ''">
+ and cancel_count=#{cancel_count}
+ </if>
+<if test="pay_damages_total != null and pay_damages_total != ''">
+ and pay_damages_total=#{pay_damages_total}
+ </if>
+<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="city_id_of_member != null and city_id_of_member != ''">
+ and city_id_of_member=#{city_id_of_member}
+ </if>
+<if test="city_name_of_member != null and city_name_of_member != ''">
+ and city_name_of_member=#{city_name_of_member}
+ </if>
+<if test="nick != null and nick != ''">
+ and nick=#{nick}
+ </if>
+<if test="count_of_car != null and count_of_car != ''">
+ and count_of_car=#{count_of_car}
+ </if>
+<if test="order_count != null and order_count != ''">
+ and order_count=#{order_count}
+ </if>
+<if test="last_time_of_order != null and last_time_of_order != ''">
+ and last_time_of_order=#{last_time_of_order}
+ </if>
+<if test="last_position_of_order != null and last_position_of_order != ''">
+ and last_position_of_order=#{last_position_of_order}
+ </if>
+<if test="last_order_id != null and last_order_id != ''">
+ and last_order_id=#{last_order_id}
+ </if>
+<if test="last_order_car_number != null and last_order_car_number != ''">
+ and last_order_car_number=#{last_order_car_number}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

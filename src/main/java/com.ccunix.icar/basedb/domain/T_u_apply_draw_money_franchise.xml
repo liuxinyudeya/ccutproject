@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_apply_draw_money_franchise_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_apply_draw_money_franchise" id="result_T_u_apply_draw_money_franchise"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_apply_draw_money_franchise" id="param_T_u_apply_draw_money_franchise"/>
+<insert id="insert_t_u_apply_draw_money_franchise" parameterMap="param_T_u_apply_draw_money_franchise" >
+
+insert into t_u_apply_draw_money_franchise   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="applicant_id != null and applicant_id != ''">
+applicant_id,
+ </if>
+<if test="applicant_name != null and applicant_name != ''">
+applicant_name,
+ </if>
+<if test="applicant_mobile != null and applicant_mobile != ''">
+applicant_mobile,
+ </if>
+<if test="apply_time != null and apply_time != ''">
+apply_time,
+ </if>
+<if test="amount != null and amount != ''">
+amount,
+ </if>
+<if test="amount_before_draw_money != null and amount_before_draw_money != ''">
+amount_before_draw_money,
+ </if>
+<if test="amount_can_be_draw != null and amount_can_be_draw != ''">
+amount_can_be_draw,
+ </if>
+<if test="applicant_memo != null and applicant_memo != ''">
+applicant_memo,
+ </if>
+<if test="auditor_id != null and auditor_id != ''">
+auditor_id,
+ </if>
+<if test="auditor_name != null and auditor_name != ''">
+auditor_name,
+ </if>
+<if test="audit_time != null and audit_time != ''">
+audit_time,
+ </if>
+<if test="audit_result_code != null and audit_result_code != ''">
+audit_result_code,
+ </if>
+<if test="audit_result_name != null and audit_result_name != ''">
+audit_result_name,
+ </if>
+<if test="audit_failed_reason != null and audit_failed_reason != ''">
+audit_failed_reason,
+ </if>
+<if test="is_transfer_account != null and is_transfer_account != ''">
+is_transfer_account,
+ </if>
+<if test="transfer_time != null and transfer_time != ''">
+transfer_time,
+ </if>
+<if test="transfer_operator_id != null and transfer_operator_id != ''">
+transfer_operator_id,
+ </if>
+<if test="transfer_operator_name != null and transfer_operator_name != ''">
+transfer_operator_name,
+ </if>
+<if test="transfer_to_account != null and transfer_to_account != ''">
+transfer_to_account,
+ </if>
+<if test="account_owner_name != null and account_owner_name != ''">
+account_owner_name,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="applicant_id != null and applicant_id != ''">
+#{applicant_id},
+ </if>
+<if test="applicant_name != null and applicant_name != ''">
+#{applicant_name},
+ </if>
+<if test="applicant_mobile != null and applicant_mobile != ''">
+#{applicant_mobile},
+ </if>
+<if test="apply_time != null and apply_time != ''">
+#{apply_time},
+ </if>
+<if test="amount != null and amount != ''">
+#{amount},
+ </if>
+<if test="amount_before_draw_money != null and amount_before_draw_money != ''">
+#{amount_before_draw_money},
+ </if>
+<if test="amount_can_be_draw != null and amount_can_be_draw != ''">
+#{amount_can_be_draw},
+ </if>
+<if test="applicant_memo != null and applicant_memo != ''">
+#{applicant_memo},
+ </if>
+<if test="auditor_id != null and auditor_id != ''">
+#{auditor_id},
+ </if>
+<if test="auditor_name != null and auditor_name != ''">
+#{auditor_name},
+ </if>
+<if test="audit_time != null and audit_time != ''">
+#{audit_time},
+ </if>
+<if test="audit_result_code != null and audit_result_code != ''">
+#{audit_result_code},
+ </if>
+<if test="audit_result_name != null and audit_result_name != ''">
+#{audit_result_name},
+ </if>
+<if test="audit_failed_reason != null and audit_failed_reason != ''">
+#{audit_failed_reason},
+ </if>
+<if test="is_transfer_account != null and is_transfer_account != ''">
+#{is_transfer_account},
+ </if>
+<if test="transfer_time != null and transfer_time != ''">
+#{transfer_time},
+ </if>
+<if test="transfer_operator_id != null and transfer_operator_id != ''">
+#{transfer_operator_id},
+ </if>
+<if test="transfer_operator_name != null and transfer_operator_name != ''">
+#{transfer_operator_name},
+ </if>
+<if test="transfer_to_account != null and transfer_to_account != ''">
+#{transfer_to_account},
+ </if>
+<if test="account_owner_name != null and account_owner_name != ''">
+#{account_owner_name},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_apply_draw_money_franchise" parameterMap="param_T_u_apply_draw_money_franchise" >
+update t_u_apply_draw_money_franchise set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_apply_draw_money_franchise" parameterMap="param_T_u_apply_draw_money_franchise" >update t_u_apply_draw_money_franchise   
+
+<set>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="applicant_id != null and applicant_id != ''">
+applicant_id=#{applicant_id},
+ </if>
+<if test="applicant_name != null and applicant_name != ''">
+applicant_name=#{applicant_name},
+ </if>
+<if test="applicant_mobile != null and applicant_mobile != ''">
+applicant_mobile=#{applicant_mobile},
+ </if>
+<if test="apply_time != null and apply_time != ''">
+apply_time=#{apply_time},
+ </if>
+<if test="amount != null and amount != ''">
+amount=#{amount},
+ </if>
+<if test="amount_before_draw_money != null and amount_before_draw_money != ''">
+amount_before_draw_money=#{amount_before_draw_money},
+ </if>
+<if test="amount_can_be_draw != null and amount_can_be_draw != ''">
+amount_can_be_draw=#{amount_can_be_draw},
+ </if>
+<if test="applicant_memo != null and applicant_memo != ''">
+applicant_memo=#{applicant_memo},
+ </if>
+<if test="auditor_id != null and auditor_id != ''">
+auditor_id=#{auditor_id},
+ </if>
+<if test="auditor_name != null and auditor_name != ''">
+auditor_name=#{auditor_name},
+ </if>
+<if test="audit_time != null and audit_time != ''">
+audit_time=#{audit_time},
+ </if>
+<if test="audit_result_code != null and audit_result_code != ''">
+audit_result_code=#{audit_result_code},
+ </if>
+<if test="audit_result_name != null and audit_result_name != ''">
+audit_result_name=#{audit_result_name},
+ </if>
+<if test="audit_failed_reason != null and audit_failed_reason != ''">
+audit_failed_reason=#{audit_failed_reason},
+ </if>
+<if test="is_transfer_account != null and is_transfer_account != ''">
+is_transfer_account=#{is_transfer_account},
+ </if>
+<if test="transfer_time != null and transfer_time != ''">
+transfer_time=#{transfer_time},
+ </if>
+<if test="transfer_operator_id != null and transfer_operator_id != ''">
+transfer_operator_id=#{transfer_operator_id},
+ </if>
+<if test="transfer_operator_name != null and transfer_operator_name != ''">
+transfer_operator_name=#{transfer_operator_name},
+ </if>
+<if test="transfer_to_account != null and transfer_to_account != ''">
+transfer_to_account=#{transfer_to_account},
+ </if>
+<if test="account_owner_name != null and account_owner_name != ''">
+account_owner_name=#{account_owner_name},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_apply_draw_money_franchise" parameterMap="param_T_u_apply_draw_money_franchise"  resultMap="result_T_u_apply_draw_money_franchise">
+select ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,APPLICANT_ID,APPLICANT_NAME,APPLICANT_MOBILE,APPLY_TIME,AMOUNT,AMOUNT_BEFORE_DRAW_MONEY,AMOUNT_CAN_BE_DRAW,APPLICANT_MEMO,AUDITOR_ID,AUDITOR_NAME,AUDIT_TIME,AUDIT_RESULT_CODE,AUDIT_RESULT_NAME,AUDIT_FAILED_REASON,IS_TRANSFER_ACCOUNT,TRANSFER_TIME,TRANSFER_OPERATOR_ID,TRANSFER_OPERATOR_NAME,TRANSFER_TO_ACCOUNT,ACCOUNT_OWNER_NAME
+ from t_u_apply_draw_money_franchise where is_delete != 1<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="applicant_id != null and applicant_id != ''">
+ and applicant_id=#{applicant_id}
+ </if>
+<if test="applicant_name != null and applicant_name != ''">
+ and applicant_name=#{applicant_name}
+ </if>
+<if test="applicant_mobile != null and applicant_mobile != ''">
+ and applicant_mobile=#{applicant_mobile}
+ </if>
+<if test="apply_time != null and apply_time != ''">
+ and apply_time=#{apply_time}
+ </if>
+<if test="amount != null and amount != ''">
+ and amount=#{amount}
+ </if>
+<if test="amount_before_draw_money != null and amount_before_draw_money != ''">
+ and amount_before_draw_money=#{amount_before_draw_money}
+ </if>
+<if test="amount_can_be_draw != null and amount_can_be_draw != ''">
+ and amount_can_be_draw=#{amount_can_be_draw}
+ </if>
+<if test="applicant_memo != null and applicant_memo != ''">
+ and applicant_memo=#{applicant_memo}
+ </if>
+<if test="auditor_id != null and auditor_id != ''">
+ and auditor_id=#{auditor_id}
+ </if>
+<if test="auditor_name != null and auditor_name != ''">
+ and auditor_name=#{auditor_name}
+ </if>
+<if test="audit_time != null and audit_time != ''">
+ and audit_time=#{audit_time}
+ </if>
+<if test="audit_result_code != null and audit_result_code != ''">
+ and audit_result_code=#{audit_result_code}
+ </if>
+<if test="audit_result_name != null and audit_result_name != ''">
+ and audit_result_name=#{audit_result_name}
+ </if>
+<if test="audit_failed_reason != null and audit_failed_reason != ''">
+ and audit_failed_reason=#{audit_failed_reason}
+ </if>
+<if test="is_transfer_account != null and is_transfer_account != ''">
+ and is_transfer_account=#{is_transfer_account}
+ </if>
+<if test="transfer_time != null and transfer_time != ''">
+ and transfer_time=#{transfer_time}
+ </if>
+<if test="transfer_operator_id != null and transfer_operator_id != ''">
+ and transfer_operator_id=#{transfer_operator_id}
+ </if>
+<if test="transfer_operator_name != null and transfer_operator_name != ''">
+ and transfer_operator_name=#{transfer_operator_name}
+ </if>
+<if test="transfer_to_account != null and transfer_to_account != ''">
+ and transfer_to_account=#{transfer_to_account}
+ </if>
+<if test="account_owner_name != null and account_owner_name != ''">
+ and account_owner_name=#{account_owner_name}
+ </if>
+ order by apply_time desc
+</select>
+
+
+
+
+
+</mapper>

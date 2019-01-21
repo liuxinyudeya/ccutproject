@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_s_user_menu_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_s_user_menu" id="result_T_s_user_menu"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_s_user_menu" id="param_T_s_user_menu"/>
+<insert id="insert_t_s_user_menu" parameterMap="param_T_s_user_menu" >
+
+insert into t_s_user_menu   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="name != null and name != ''">
+name,
+ </if>
+<if test="description != null and description != ''">
+description,
+ </if>
+<if test="code != null and code != ''">
+code,
+ </if>
+<if test="tag != null and tag != ''">
+tag,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="name != null and name != ''">
+#{name},
+ </if>
+<if test="description != null and description != ''">
+#{description},
+ </if>
+<if test="code != null and code != ''">
+#{code},
+ </if>
+<if test="tag != null and tag != ''">
+#{tag},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_s_user_menu" parameterMap="param_T_s_user_menu" >
+update t_s_user_menu set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_s_user_menu" parameterMap="param_T_s_user_menu" >update t_s_user_menu   
+
+<set>
+<if test="name != null and name != ''">
+name=#{name},
+ </if>
+<if test="description != null and description != ''">
+description=#{description},
+ </if>
+<if test="code != null and code != ''">
+code=#{code},
+ </if>
+<if test="tag != null and tag != ''">
+tag=#{tag},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_s_user_menu" parameterMap="param_T_s_user_menu"  resultMap="result_T_s_user_menu">
+select ID,NAME,DESCRIPTION,CODE,TAG
+ from t_s_user_menu where is_delete != 1<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="name != null and name != ''">
+ and name=#{name}
+ </if>
+<if test="description != null and description != ''">
+ and description=#{description}
+ </if>
+<if test="code != null and code != ''">
+ and code=#{code}
+ </if>
+<if test="tag != null and tag != ''">
+ and tag=#{tag}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

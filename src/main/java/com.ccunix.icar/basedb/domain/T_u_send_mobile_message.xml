@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_send_mobile_message_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_send_mobile_message" id="result_T_u_send_mobile_message"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_send_mobile_message" id="param_T_u_send_mobile_message"/>
+<insert id="insert_t_u_send_mobile_message" parameterMap="param_T_u_send_mobile_message" >
+
+insert into t_u_send_mobile_message   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="user_id != null and user_id != ''">
+user_id,
+ </if>
+<if test="title != null and title != ''">
+title,
+ </if>
+<if test="content != null and content != ''">
+content,
+ </if>
+<if test="parameter != null and parameter != ''">
+parameter,
+ </if>
+<if test="system_code != null and system_code != ''">
+system_code,
+ </if>
+<if test="system_name != null and system_name != ''">
+system_name,
+ </if>
+<if test="token != null and token != ''">
+token,
+ </if>
+<if test="send_time != null and send_time != ''">
+send_time,
+ </if>
+<if test="receive_time != null and receive_time != ''">
+receive_time,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="user_id != null and user_id != ''">
+#{user_id},
+ </if>
+<if test="title != null and title != ''">
+#{title},
+ </if>
+<if test="content != null and content != ''">
+#{content},
+ </if>
+<if test="parameter != null and parameter != ''">
+#{parameter},
+ </if>
+<if test="system_code != null and system_code != ''">
+#{system_code},
+ </if>
+<if test="system_name != null and system_name != ''">
+#{system_name},
+ </if>
+<if test="token != null and token != ''">
+#{token},
+ </if>
+<if test="send_time != null and send_time != ''">
+#{send_time},
+ </if>
+<if test="receive_time != null and receive_time != ''">
+#{receive_time},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_send_mobile_message" parameterMap="param_T_u_send_mobile_message" >
+update t_u_send_mobile_message set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_send_mobile_message" parameterMap="param_T_u_send_mobile_message" >update t_u_send_mobile_message   
+
+<set>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="user_id != null and user_id != ''">
+user_id=#{user_id},
+ </if>
+<if test="title != null and title != ''">
+title=#{title},
+ </if>
+<if test="content != null and content != ''">
+content=#{content},
+ </if>
+<if test="parameter != null and parameter != ''">
+parameter=#{parameter},
+ </if>
+<if test="system_code != null and system_code != ''">
+system_code=#{system_code},
+ </if>
+<if test="system_name != null and system_name != ''">
+system_name=#{system_name},
+ </if>
+<if test="token != null and token != ''">
+token=#{token},
+ </if>
+<if test="send_time != null and send_time != ''">
+send_time=#{send_time},
+ </if>
+<if test="receive_time != null and receive_time != ''">
+receive_time=#{receive_time},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_send_mobile_message" parameterMap="param_T_u_send_mobile_message"  resultMap="result_T_u_send_mobile_message">
+select ID,CREATETIME,USER_ID,TITLE,CONTENT,PARAMETER,SYSTEM_CODE,SYSTEM_NAME,TOKEN,SEND_TIME,RECEIVE_TIME
+ from t_u_send_mobile_message where is_delete != 1<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="user_id != null and user_id != ''">
+ and user_id=#{user_id}
+ </if>
+<if test="title != null and title != ''">
+ and title=#{title}
+ </if>
+<if test="content != null and content != ''">
+ and content=#{content}
+ </if>
+<if test="parameter != null and parameter != ''">
+ and parameter=#{parameter}
+ </if>
+<if test="system_code != null and system_code != ''">
+ and system_code=#{system_code}
+ </if>
+<if test="system_name != null and system_name != ''">
+ and system_name=#{system_name}
+ </if>
+<if test="token != null and token != ''">
+ and token=#{token}
+ </if>
+<if test="send_time != null and send_time != ''">
+ and send_time=#{send_time}
+ </if>
+<if test="receive_time != null and receive_time != ''">
+ and receive_time=#{receive_time}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

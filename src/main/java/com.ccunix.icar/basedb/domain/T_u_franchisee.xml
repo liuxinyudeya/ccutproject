@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_franchisee_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_franchisee" id="result_T_u_franchisee"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_franchisee" id="param_T_u_franchisee"/>
+<insert id="insert_t_u_franchisee" parameterMap="param_T_u_franchisee" >
+
+insert into t_u_franchisee   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="working_time != null and working_time != ''">
+working_time,
+ </if>
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="name != null and name != ''">
+name,
+ </if>
+<if test="sex_code != null and sex_code != ''">
+sex_code,
+ </if>
+<if test="sex_name != null and sex_name != ''">
+sex_name,
+ </if>
+<if test="mobile != null and mobile != ''">
+mobile,
+ </if>
+<if test="city_id_of_service != null and city_id_of_service != ''">
+city_id_of_service,
+ </if>
+<if test="city_name_of_service != null and city_name_of_service != ''">
+city_name_of_service,
+ </if>
+<if test="role_id != null and role_id != ''">
+role_id,
+ </if>
+<if test="role_name != null and role_name != ''">
+role_name,
+ </if>
+<if test="role_level != null and role_level != ''">
+role_level,
+ </if>
+<if test="manager_id != null and manager_id != ''">
+manager_id,
+ </if>
+<if test="manager_name != null and manager_name != ''">
+manager_name,
+ </if>
+<if test="manager_mobile != null and manager_mobile != ''">
+manager_mobile,
+ </if>
+<if test="role_id_of_manager != null and role_id_of_manager != ''">
+role_id_of_manager,
+ </if>
+<if test="role_name_of_manager != null and role_name_of_manager != ''">
+role_name_of_manager,
+ </if>
+<if test="department_person_count != null and department_person_count != ''">
+department_person_count,
+ </if>
+<if test="order_count != null and order_count != ''">
+order_count,
+ </if>
+<if test="order_amount != null and order_amount != ''">
+order_amount,
+ </if>
+<if test="cancel_count != null and cancel_count != ''">
+cancel_count,
+ </if>
+<if test="cancel_amount != null and cancel_amount != ''">
+cancel_amount,
+ </if>
+<if test="complete_count != null and complete_count != ''">
+complete_count,
+ </if>
+<if test="complete_amount != null and complete_amount != ''">
+complete_amount,
+ </if>
+<if test="department_order_count != null and department_order_count != ''">
+department_order_count,
+ </if>
+<if test="department_order_amount != null and department_order_amount != ''">
+department_order_amount,
+ </if>
+<if test="department_cancel_count != null and department_cancel_count != ''">
+department_cancel_count,
+ </if>
+<if test="department_cancel_amount != null and department_cancel_amount != ''">
+department_cancel_amount,
+ </if>
+<if test="department_complete_count != null and department_complete_count != ''">
+department_complete_count,
+ </if>
+<if test="department_complete_amount != null and department_complete_amount != ''">
+department_complete_amount,
+ </if>
+<if test="photo != null and photo != ''">
+photo,
+ </if>
+<if test="working_state != null and working_state != ''">
+working_state,
+ </if>
+<if test="working_desire != null and working_desire != ''">
+working_desire,
+ </if>
+<if test="current_gps != null and current_gps != ''">
+current_gps,
+ </if>
+<if test="alipay_account_name != null and alipay_account_name != ''">
+alipay_account_name,
+ </if>
+<if test="alipay_account != null and alipay_account != ''">
+alipay_account,
+ </if>
+<if test="no != null and no != ''">
+no,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="working_time != null and working_time != ''">
+#{working_time},
+ </if>
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="name != null and name != ''">
+#{name},
+ </if>
+<if test="sex_code != null and sex_code != ''">
+#{sex_code},
+ </if>
+<if test="sex_name != null and sex_name != ''">
+#{sex_name},
+ </if>
+<if test="mobile != null and mobile != ''">
+#{mobile},
+ </if>
+<if test="city_id_of_service != null and city_id_of_service != ''">
+#{city_id_of_service},
+ </if>
+<if test="city_name_of_service != null and city_name_of_service != ''">
+#{city_name_of_service},
+ </if>
+<if test="role_id != null and role_id != ''">
+#{role_id},
+ </if>
+<if test="role_name != null and role_name != ''">
+#{role_name},
+ </if>
+<if test="role_level != null and role_level != ''">
+#{role_level},
+ </if>
+<if test="manager_id != null and manager_id != ''">
+#{manager_id},
+ </if>
+<if test="manager_name != null and manager_name != ''">
+#{manager_name},
+ </if>
+<if test="manager_mobile != null and manager_mobile != ''">
+#{manager_mobile},
+ </if>
+<if test="role_id_of_manager != null and role_id_of_manager != ''">
+#{role_id_of_manager},
+ </if>
+<if test="role_name_of_manager != null and role_name_of_manager != ''">
+#{role_name_of_manager},
+ </if>
+<if test="department_person_count != null and department_person_count != ''">
+#{department_person_count},
+ </if>
+<if test="order_count != null and order_count != ''">
+#{order_count},
+ </if>
+<if test="order_amount != null and order_amount != ''">
+#{order_amount},
+ </if>
+<if test="cancel_count != null and cancel_count != ''">
+#{cancel_count},
+ </if>
+<if test="cancel_amount != null and cancel_amount != ''">
+#{cancel_amount},
+ </if>
+<if test="complete_count != null and complete_count != ''">
+#{complete_count},
+ </if>
+<if test="complete_amount != null and complete_amount != ''">
+#{complete_amount},
+ </if>
+<if test="department_order_count != null and department_order_count != ''">
+#{department_order_count},
+ </if>
+<if test="department_order_amount != null and department_order_amount != ''">
+#{department_order_amount},
+ </if>
+<if test="department_cancel_count != null and department_cancel_count != ''">
+#{department_cancel_count},
+ </if>
+<if test="department_cancel_amount != null and department_cancel_amount != ''">
+#{department_cancel_amount},
+ </if>
+<if test="department_complete_count != null and department_complete_count != ''">
+#{department_complete_count},
+ </if>
+<if test="department_complete_amount != null and department_complete_amount != ''">
+#{department_complete_amount},
+ </if>
+<if test="photo != null and photo != ''">
+#{photo},
+ </if>
+<if test="working_state != null and working_state != ''">
+#{working_state},
+ </if>
+<if test="working_desire != null and working_desire != ''">
+#{working_desire},
+ </if>
+<if test="current_gps != null and current_gps != ''">
+#{current_gps},
+ </if>
+<if test="alipay_account_name != null and alipay_account_name != ''">
+#{alipay_account_name},
+ </if>
+<if test="alipay_account != null and alipay_account != ''">
+#{alipay_account},
+ </if>
+<if test="no != null and no != ''">
+#{no},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_franchisee" parameterMap="param_T_u_franchisee" >
+update t_u_franchisee set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_franchisee" parameterMap="param_T_u_franchisee" >update t_u_franchisee   
+
+<set>
+<if test="working_time != null and working_time != ''">
+working_time=#{working_time},
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="name != null and name != ''">
+name=#{name},
+ </if>
+<if test="sex_code != null and sex_code != ''">
+sex_code=#{sex_code},
+ </if>
+<if test="sex_name != null and sex_name != ''">
+sex_name=#{sex_name},
+ </if>
+<if test="mobile != null and mobile != ''">
+mobile=#{mobile},
+ </if>
+<if test="city_id_of_service != null and city_id_of_service != ''">
+city_id_of_service=#{city_id_of_service},
+ </if>
+<if test="city_name_of_service != null and city_name_of_service != ''">
+city_name_of_service=#{city_name_of_service},
+ </if>
+<if test="role_id != null and role_id != ''">
+role_id=#{role_id},
+ </if>
+<if test="role_name != null and role_name != ''">
+role_name=#{role_name},
+ </if>
+<if test="role_level != null and role_level != ''">
+role_level=#{role_level},
+ </if>
+<if test="manager_id != null and manager_id != ''">
+manager_id=#{manager_id},
+ </if>
+<if test="manager_name != null and manager_name != ''">
+manager_name=#{manager_name},
+ </if>
+<if test="manager_mobile != null and manager_mobile != ''">
+manager_mobile=#{manager_mobile},
+ </if>
+<if test="role_id_of_manager != null and role_id_of_manager != ''">
+role_id_of_manager=#{role_id_of_manager},
+ </if>
+<if test="role_name_of_manager != null and role_name_of_manager != ''">
+role_name_of_manager=#{role_name_of_manager},
+ </if>
+<if test="department_person_count != null and department_person_count != ''">
+department_person_count=#{department_person_count},
+ </if>
+<if test="order_count != null and order_count != ''">
+order_count=#{order_count},
+ </if>
+<if test="order_amount != null and order_amount != ''">
+order_amount=#{order_amount},
+ </if>
+<if test="cancel_count != null and cancel_count != ''">
+cancel_count=#{cancel_count},
+ </if>
+<if test="cancel_amount != null and cancel_amount != ''">
+cancel_amount=#{cancel_amount},
+ </if>
+<if test="complete_count != null and complete_count != ''">
+complete_count=#{complete_count},
+ </if>
+<if test="complete_amount != null and complete_amount != ''">
+complete_amount=#{complete_amount},
+ </if>
+<if test="department_order_count != null and department_order_count != ''">
+department_order_count=#{department_order_count},
+ </if>
+<if test="department_order_amount != null and department_order_amount != ''">
+department_order_amount=#{department_order_amount},
+ </if>
+<if test="department_cancel_count != null and department_cancel_count != ''">
+department_cancel_count=#{department_cancel_count},
+ </if>
+<if test="department_cancel_amount != null and department_cancel_amount != ''">
+department_cancel_amount=#{department_cancel_amount},
+ </if>
+<if test="department_complete_count != null and department_complete_count != ''">
+department_complete_count=#{department_complete_count},
+ </if>
+<if test="department_complete_amount != null and department_complete_amount != ''">
+department_complete_amount=#{department_complete_amount},
+ </if>
+<if test="photo != null and photo != ''">
+photo=#{photo},
+ </if>
+<if test="working_state != null and working_state != ''">
+working_state=#{working_state},
+ </if>
+<if test="working_desire != null and working_desire != ''">
+working_desire=#{working_desire},
+ </if>
+<if test="current_gps != null and current_gps != ''">
+current_gps=#{current_gps},
+ </if>
+<if test="alipay_account_name != null and alipay_account_name != ''">
+alipay_account_name=#{alipay_account_name},
+ </if>
+<if test="alipay_account != null and alipay_account != ''">
+alipay_account=#{alipay_account},
+ </if>
+<if test="no != null and no != ''">
+no=#{no},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_franchisee" parameterMap="param_T_u_franchisee"  resultMap="result_T_u_franchisee">
+select WORKING_TIME,ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,NAME,SEX_CODE,SEX_NAME,MOBILE,CITY_ID_OF_SERVICE,CITY_NAME_OF_SERVICE,ROLE_ID,ROLE_NAME,ROLE_LEVEL,MANAGER_ID,MANAGER_NAME,MANAGER_MOBILE,ROLE_ID_OF_MANAGER,ROLE_NAME_OF_MANAGER,DEPARTMENT_PERSON_COUNT,ORDER_COUNT,ORDER_AMOUNT,CANCEL_COUNT,CANCEL_AMOUNT,COMPLETE_COUNT,COMPLETE_AMOUNT,DEPARTMENT_ORDER_COUNT,DEPARTMENT_ORDER_AMOUNT,DEPARTMENT_CANCEL_COUNT,DEPARTMENT_CANCEL_AMOUNT,DEPARTMENT_COMPLETE_COUNT,DEPARTMENT_COMPLETE_AMOUNT,PHOTO,WORKING_STATE,WORKING_DESIRE,CURRENT_GPS,ALIPAY_ACCOUNT_NAME,ALIPAY_ACCOUNT,NO
+ from t_u_franchisee where is_delete != 1<if test="working_time != null and working_time != ''">
+ and working_time=#{working_time}
+ </if>
+<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="name != null and name != ''">
+ and name=#{name}
+ </if>
+<if test="sex_code != null and sex_code != ''">
+ and sex_code=#{sex_code}
+ </if>
+<if test="sex_name != null and sex_name != ''">
+ and sex_name=#{sex_name}
+ </if>
+<if test="mobile != null and mobile != ''">
+ and mobile=#{mobile}
+ </if>
+<if test="city_id_of_service != null and city_id_of_service != ''">
+ and city_id_of_service=#{city_id_of_service}
+ </if>
+<if test="city_name_of_service != null and city_name_of_service != ''">
+ and city_name_of_service=#{city_name_of_service}
+ </if>
+<if test="role_id != null and role_id != ''">
+ and role_id=#{role_id}
+ </if>
+<if test="role_name != null and role_name != ''">
+ and role_name=#{role_name}
+ </if>
+<if test="role_level != null and role_level != ''">
+ and role_level=#{role_level}
+ </if>
+<if test="manager_id != null and manager_id != ''">
+ and manager_id=#{manager_id}
+ </if>
+<if test="manager_name != null and manager_name != ''">
+ and manager_name=#{manager_name}
+ </if>
+<if test="manager_mobile != null and manager_mobile != ''">
+ and manager_mobile=#{manager_mobile}
+ </if>
+<if test="role_id_of_manager != null and role_id_of_manager != ''">
+ and role_id_of_manager=#{role_id_of_manager}
+ </if>
+<if test="role_name_of_manager != null and role_name_of_manager != ''">
+ and role_name_of_manager=#{role_name_of_manager}
+ </if>
+<if test="department_person_count != null and department_person_count != ''">
+ and department_person_count=#{department_person_count}
+ </if>
+<if test="order_count != null and order_count != ''">
+ and order_count=#{order_count}
+ </if>
+<if test="order_amount != null and order_amount != ''">
+ and order_amount=#{order_amount}
+ </if>
+<if test="cancel_count != null and cancel_count != ''">
+ and cancel_count=#{cancel_count}
+ </if>
+<if test="cancel_amount != null and cancel_amount != ''">
+ and cancel_amount=#{cancel_amount}
+ </if>
+<if test="complete_count != null and complete_count != ''">
+ and complete_count=#{complete_count}
+ </if>
+<if test="complete_amount != null and complete_amount != ''">
+ and complete_amount=#{complete_amount}
+ </if>
+<if test="department_order_count != null and department_order_count != ''">
+ and department_order_count=#{department_order_count}
+ </if>
+<if test="department_order_amount != null and department_order_amount != ''">
+ and department_order_amount=#{department_order_amount}
+ </if>
+<if test="department_cancel_count != null and department_cancel_count != ''">
+ and department_cancel_count=#{department_cancel_count}
+ </if>
+<if test="department_cancel_amount != null and department_cancel_amount != ''">
+ and department_cancel_amount=#{department_cancel_amount}
+ </if>
+<if test="department_complete_count != null and department_complete_count != ''">
+ and department_complete_count=#{department_complete_count}
+ </if>
+<if test="department_complete_amount != null and department_complete_amount != ''">
+ and department_complete_amount=#{department_complete_amount}
+ </if>
+<if test="photo != null and photo != ''">
+ and photo=#{photo}
+ </if>
+<if test="working_state != null and working_state != ''">
+ and working_state=#{working_state}
+ </if>
+<if test="working_desire != null and working_desire != ''">
+ and working_desire=#{working_desire}
+ </if>
+<if test="current_gps != null and current_gps != ''">
+ and current_gps=#{current_gps}
+ </if>
+<if test="alipay_account_name != null and alipay_account_name != ''">
+ and alipay_account_name=#{alipay_account_name}
+ </if>
+<if test="alipay_account != null and alipay_account != ''">
+ and alipay_account=#{alipay_account}
+ </if>
+<if test="no != null and no != ''">
+ and no=#{no}
+ </if>
+</select>
+
+
+
+
+
+</mapper>

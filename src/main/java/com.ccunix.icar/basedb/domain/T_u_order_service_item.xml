@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.basedb.dao.T_u_order_service_item_Dao_Iface" >
+<cache type="com.ccunix.icar.base.util.RedisCache" />
+<resultMap type="com.ccunix.icar.basedb.domain.T_u_order_service_item" id="result_T_u_order_service_item"/>
+<parameterMap type="com.ccunix.icar.basedb.domain.T_u_order_service_item" id="param_T_u_order_service_item"/>
+<insert id="insert_t_u_order_service_item" parameterMap="param_T_u_order_service_item" >
+
+insert into t_u_order_service_item   
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="service_type_name != null and service_type_name != ''">
+service_type_name,
+ </if>
+<if test="service_type_code != null and service_type_code != ''">
+service_type_code,
+ </if>
+<if test="set_menu_item_list != null and set_menu_item_list != ''">
+set_menu_item_list,
+ </if>
+<if test="set_menu_no != null and set_menu_no != ''">
+set_menu_no,
+ </if>
+<if test="id != null and id != ''">
+id,
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime,
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime,
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete,
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime,
+ </if>
+<if test="creator != null and creator != ''">
+creator,
+ </if>
+<if test="updater != null and updater != ''">
+updater,
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user,
+ </if>
+<if test="service_item_id != null and service_item_id != ''">
+service_item_id,
+ </if>
+<if test="service_item_name != null and service_item_name != ''">
+service_item_name,
+ </if>
+<if test="service_item_price != null and service_item_price != ''">
+service_item_price,
+ </if>
+<if test="order_id != null and order_id != ''">
+order_id,
+ </if>
+<if test="order_buyer != null and order_buyer != ''">
+order_buyer,
+ </if>
+<if test="order_no != null and order_no != ''">
+order_no,
+ </if>
+</trim>
+VALUES
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<if test="service_type_name != null and service_type_name != ''">
+#{service_type_name},
+ </if>
+<if test="service_type_code != null and service_type_code != ''">
+#{service_type_code},
+ </if>
+<if test="set_menu_item_list != null and set_menu_item_list != ''">
+#{set_menu_item_list},
+ </if>
+<if test="set_menu_no != null and set_menu_no != ''">
+#{set_menu_no},
+ </if>
+<if test="id != null and id != ''">
+#{id},
+ </if>
+<if test="createtime != null and createtime != ''">
+#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+#{delete_user},
+ </if>
+<if test="service_item_id != null and service_item_id != ''">
+#{service_item_id},
+ </if>
+<if test="service_item_name != null and service_item_name != ''">
+#{service_item_name},
+ </if>
+<if test="service_item_price != null and service_item_price != ''">
+#{service_item_price},
+ </if>
+<if test="order_id != null and order_id != ''">
+#{order_id},
+ </if>
+<if test="order_buyer != null and order_buyer != ''">
+#{order_buyer},
+ </if>
+<if test="order_no != null and order_no != ''">
+#{order_no},
+ </if>
+
+</trim>
+</insert>
+
+
+<update id="delete_t_u_order_service_item" parameterMap="param_T_u_order_service_item" >
+update t_u_order_service_item set is_delete=1,deletetime=sysdate where  id=#{id}
+</update>
+<update id="update_t_u_order_service_item" parameterMap="param_T_u_order_service_item" >update t_u_order_service_item   
+
+<set>
+<if test="service_type_name != null and service_type_name != ''">
+service_type_name=#{service_type_name},
+ </if>
+<if test="service_type_code != null and service_type_code != ''">
+service_type_code=#{service_type_code},
+ </if>
+<if test="set_menu_item_list != null and set_menu_item_list != ''">
+set_menu_item_list=#{set_menu_item_list},
+ </if>
+<if test="set_menu_no != null and set_menu_no != ''">
+set_menu_no=#{set_menu_no},
+ </if>
+<if test="createtime != null and createtime != ''">
+createtime=#{createtime},
+ </if>
+<if test="updatetime != null and updatetime != ''">
+updatetime=#{updatetime},
+ </if>
+<if test="is_delete != null and is_delete != ''">
+is_delete=#{is_delete},
+ </if>
+<if test="deletetime != null and deletetime != ''">
+deletetime=#{deletetime},
+ </if>
+<if test="creator != null and creator != ''">
+creator=#{creator},
+ </if>
+<if test="updater != null and updater != ''">
+updater=#{updater},
+ </if>
+<if test="delete_user != null and delete_user != ''">
+delete_user=#{delete_user},
+ </if>
+<if test="service_item_id != null and service_item_id != ''">
+service_item_id=#{service_item_id},
+ </if>
+<if test="service_item_name != null and service_item_name != ''">
+service_item_name=#{service_item_name},
+ </if>
+<if test="service_item_price != null and service_item_price != ''">
+service_item_price=#{service_item_price},
+ </if>
+<if test="order_id != null and order_id != ''">
+order_id=#{order_id},
+ </if>
+<if test="order_buyer != null and order_buyer != ''">
+order_buyer=#{order_buyer},
+ </if>
+<if test="order_no != null and order_no != ''">
+order_no=#{order_no},
+ </if>
+
+</set>
+ where id=#{id}
+</update>
+<select id="queryAll_t_u_order_service_item" parameterMap="param_T_u_order_service_item"  resultMap="result_T_u_order_service_item">
+select SERVICE_TYPE_NAME,SERVICE_TYPE_CODE,SET_MENU_ITEM_LIST,SET_MENU_NO,ID,CREATETIME,UPDATETIME,IS_DELETE,DELETETIME,CREATOR,UPDATER,DELETE_USER,SERVICE_ITEM_ID,SERVICE_ITEM_NAME,SERVICE_ITEM_PRICE,ORDER_ID,ORDER_BUYER,ORDER_NO
+ from t_u_order_service_item where is_delete != 1<if test="service_type_name != null and service_type_name != ''">
+ and service_type_name=#{service_type_name}
+ </if>
+<if test="service_type_code != null and service_type_code != ''">
+ and service_type_code=#{service_type_code}
+ </if>
+<if test="set_menu_item_list != null and set_menu_item_list != ''">
+ and set_menu_item_list=#{set_menu_item_list}
+ </if>
+<if test="set_menu_no != null and set_menu_no != ''">
+ and set_menu_no=#{set_menu_no}
+ </if>
+<if test="id != null and id != ''">
+ and id=#{id}
+ </if>
+<if test="createtime != null and createtime != ''">
+ and createtime=#{createtime}
+ </if>
+<if test="updatetime != null and updatetime != ''">
+ and updatetime=#{updatetime}
+ </if>
+<if test="is_delete != null and is_delete != ''">
+ and is_delete=#{is_delete}
+ </if>
+<if test="deletetime != null and deletetime != ''">
+ and deletetime=#{deletetime}
+ </if>
+<if test="creator != null and creator != ''">
+ and creator=#{creator}
+ </if>
+<if test="updater != null and updater != ''">
+ and updater=#{updater}
+ </if>
+<if test="delete_user != null and delete_user != ''">
+ and delete_user=#{delete_user}
+ </if>
+<if test="service_item_id != null and service_item_id != ''">
+ and service_item_id=#{service_item_id}
+ </if>
+<if test="service_item_name != null and service_item_name != ''">
+ and service_item_name=#{service_item_name}
+ </if>
+<if test="service_item_price != null and service_item_price != ''">
+ and service_item_price=#{service_item_price}
+ </if>
+<if test="order_id != null and order_id != ''">
+ and order_id=#{order_id}
+ </if>
+<if test="order_buyer != null and order_buyer != ''">
+ and order_buyer=#{order_buyer}
+ </if>
+<if test="order_no != null and order_no != ''">
+ and order_no=#{order_no}
+ </if>
+</select>
+
+
+
+
+
+</mapper>
